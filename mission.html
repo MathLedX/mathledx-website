@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mission — MathLedX</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            night: '#0D1B3E', nightLight: '#142252',
+            battleship: '#5E7B9A', silver: '#B8C2CC', silverLight: '#D9E0E6',
+            brand: '#1E4099', brandLight: '#2554BF',
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans:    ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #0D1B3E; color: #fff; overflow-x: hidden; }
+
+    .grain::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 256px 256px; pointer-events: none; z-index: 0; border-radius: inherit;
+    }
+
+    .nav-glass {
+      background: rgba(13,27,62,0.90); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(184,194,204,0.10); box-shadow: 0 4px 24px rgba(0,0,0,0.28);
+    }
+    .logo-pill {
+      display: inline-flex; align-items: center; background: #fff;
+      padding: 8px 20px 8px 14px; border-radius: 16px; box-shadow: 0 3px 16px rgba(0,0,0,0.24);
+      text-decoration: none; flex-shrink: 0;
+      transition: box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .logo-pill:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.34); transform: translateY(-1px); }
+    .logo-pill:focus-visible { outline: 2px solid #5E7B9A; outline-offset: 3px; border-radius: 16px; }
+
+    .section-rule { width: 56px; height: 3px; background: linear-gradient(90deg, #2554BF, #5E7B9A); border-radius: 2px; }
+
+    .card-base {
+      background: rgba(20,34,82,0.70); border: 1px solid rgba(184,194,204,0.12); border-radius: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.20), 0 8px 32px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2554BF 0%, #1E4099 100%); color: #fff;
+      border: 1px solid rgba(37,84,191,0.6); border-radius: 10px; padding: 14px 32px;
+      font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.9375rem;
+      letter-spacing: 0.01em; cursor: pointer; text-decoration: none;
+      box-shadow: 0 4px 16px rgba(37,84,191,0.35); display: inline-flex; align-items: center; gap: 8px;
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .btn-primary:hover { background: linear-gradient(135deg, #2D5FD0 0%, #254DB0 100%); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,84,191,0.50); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:focus-visible { outline: 2px solid #5E7B9A; outline-offset: 3px; }
+
+    .btn-outline {
+      background: transparent; color: #D9E0E6; border: 1.5px solid rgba(184,194,204,0.45);
+      border-radius: 10px; padding: 14px 32px; font-family: 'Inter', sans-serif; font-weight: 500;
+      font-size: 0.9375rem; cursor: pointer; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+    .btn-outline:hover { background: rgba(184,194,204,0.08); border-color: rgba(184,194,204,0.70); transform: translateY(-2px); }
+    .btn-outline:focus-visible { outline: 2px solid #5E7B9A; outline-offset: 3px; }
+
+    .nav-link {
+      color: #B8C2CC; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.01em;
+      padding: 6px 4px; border-bottom: 2px solid transparent; text-decoration: none;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .nav-link:hover, .nav-link.active { color: #fff; border-color: #2554BF; }
+    .nav-link:focus-visible { outline: 2px solid #5E7B9A; outline-offset: 4px; border-radius: 3px; }
+
+    .icon-ring {
+      width: 56px; height: 56px; border-radius: 16px;
+      background: rgba(37,84,191,0.18); border: 1px solid rgba(37,84,191,0.30);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+
+    .footer-bg { background: #080F22; border-top: 1px solid rgba(184,194,204,0.08); }
+
+    .fade-up {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22,1,0.36,1);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    #mobile-menu {
+      background: rgba(13,27,62,0.97); border-bottom: 1px solid rgba(184,194,204,0.10);
+      max-height: 0; overflow: hidden; opacity: 0;
+      transition: max-height 0.35s ease, opacity 0.3s ease;
+    }
+    #mobile-menu.open { max-height: 420px; opacity: 1; }
+
+    .page-hero-bg {
+      background:
+        radial-gradient(ellipse 70% 80% at 50% 0%, rgba(37,84,191,0.28) 0%, transparent 65%),
+        linear-gradient(180deg, #0D1B3E 0%, #101E45 70%, #0D1B3E 100%);
+    }
+
+    .value-card {
+      background: rgba(20,34,82,0.60); border: 1px solid rgba(184,194,204,0.10); border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), border-color 0.3s ease;
+    }
+    .value-card:hover { transform: translateY(-5px); border-color: rgba(37,84,191,0.35); }
+
+    .cta-bg {
+      background:
+        radial-gradient(ellipse 70% 80% at 50% 50%, rgba(37,84,191,0.28) 0%, transparent 70%),
+        linear-gradient(180deg, #101E45 0%, #0D1B3E 100%);
+      border-top: 1px solid rgba(37,84,191,0.18); border-bottom: 1px solid rgba(37,84,191,0.18);
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- ═══ NAV ═══ -->
+  <header class="fixed top-0 left-0 right-0 z-50 nav-glass">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between" style="height:92px;">
+
+        <a href="index.html" class="logo-pill">
+          <img src="brand_assets/MathLedX (2).png" alt="MathLedX" style="height:60px; width:auto;" />
+        </a>
+
+        <nav class="hidden md:flex items-center gap-9">
+          <a href="index.html"        class="nav-link">Home</a>
+          <a href="mission.html"      class="nav-link active">Mission</a>
+          <a href="curriculum.html"   class="nav-link">Curriculum</a>
+          <a href="work-with-me.html" class="btn-primary" style="padding:11px 24px; font-size:0.875rem;">Work With Me</a>
+        </nav>
+
+        <button id="menu-btn" aria-label="Toggle menu" class="md:hidden p-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-battleship cursor-pointer">
+          <span class="block w-6 h-0.5 bg-silver rounded mb-1.5 transition-transform duration-200" id="bar1"></span>
+          <span class="block w-6 h-0.5 bg-silver rounded mb-1.5 transition-opacity duration-200" id="bar2"></span>
+          <span class="block w-6 h-0.5 bg-silver rounded transition-transform duration-200" id="bar3"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu">
+      <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col gap-4">
+        <a href="index.html"        class="nav-link text-base">Home</a>
+        <a href="mission.html"      class="nav-link text-base active">Mission</a>
+        <a href="curriculum.html"   class="nav-link text-base">Curriculum</a>
+        <a href="work-with-me.html" class="btn-primary mt-2 self-start">Work With Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ PAGE HERO ═══ -->
+  <section class="page-hero-bg grain relative overflow-hidden" style="padding-top:160px; padding-bottom:100px;">
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
+
+      <div class="flex justify-center mb-8">
+        <img src="brand_assets/MathLedX (3).png" alt="MathLedX" style="height:110px; width:auto; filter: drop-shadow(0 8px 24px rgba(37,84,191,0.40));" />
+      </div>
+
+      <div class="flex items-center justify-center gap-3 mb-5">
+        <div class="section-rule"></div>
+        <span class="text-silver font-sans text-sm uppercase tracking-widest">Who We Are</span>
+        <div class="section-rule"></div>
+      </div>
+
+      <h1 class="font-display font-bold text-white mb-5"
+          style="font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.08; letter-spacing: -0.03em;">
+        Our Mission
+      </h1>
+
+      <p class="font-sans text-silver text-xl max-w-2xl mx-auto" style="line-height:1.75;">
+        A passion for mathematics. A commitment to every student.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ MISSION STATEMENT ═══ -->
+  <section style="padding: 96px 0;">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="fade-up text-center" style="position:relative; padding: 64px 48px; background: rgba(20,34,82,0.55); border: 1px solid rgba(37,84,191,0.22); border-radius: 24px; box-shadow: 0 8px 48px rgba(0,0,0,0.25);">
+        <!-- Quote mark -->
+        <div aria-hidden="true" style="position:absolute; top:28px; left:36px; font-size:7rem; line-height:1; font-family:'Playfair Display',serif; color:rgba(37,84,191,0.18); font-weight:700; pointer-events:none;">"</div>
+        <p class="font-display text-white relative z-10" style="font-size: clamp(1.5rem, 3.5vw, 2.4rem); line-height: 1.45; font-style: italic; letter-spacing: -0.01em;">
+          MathLedX exists to light the torch of mathematical understanding in every student — building confidence, capability, and a lifelong love of learning.
+        </p>
+        <div class="mt-8 flex justify-center">
+          <div class="section-rule"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CORE VALUES ═══ -->
+  <section style="padding: 0 0 96px; background: rgba(20,34,82,0.30); border-top: 1px solid rgba(184,194,204,0.07);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8" style="padding-top:80px;">
+
+      <div class="text-center mb-14 fade-up">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <div class="section-rule"></div>
+          <span class="text-silver font-sans text-sm uppercase tracking-widest">What We Stand For</span>
+          <div class="section-rule"></div>
+        </div>
+        <h2 class="font-display font-bold text-white" style="font-size:clamp(2rem,4vw,2.8rem); letter-spacing:-0.03em;">
+          Our Core Values
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-7">
+
+        <div class="value-card p-9 fade-up">
+          <div class="icon-ring mb-6" style="width:60px;height:60px;border-radius:17px;">
+            <svg width="26" height="26" fill="none" viewBox="0 0 26 26"><circle cx="13" cy="13" r="10" stroke="#5E7B9A" stroke-width="1.7"/><path d="M9 13l3 3 5-5" stroke="#5E7B9A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-white text-2xl mb-3" style="letter-spacing:-0.01em;">Understanding First</h3>
+          <p class="text-silver font-sans text-sm" style="line-height:1.80;">
+            We reject rote memorization. Every concept is introduced through intuition, built with reasoning, and cemented through deliberate practice. Students don't just compute — they understand <em>why</em> math works.
+          </p>
+        </div>
+
+        <div class="value-card p-9 fade-up" style="transition-delay:0.10s;">
+          <div class="icon-ring mb-6" style="width:60px;height:60px;border-radius:17px;">
+            <svg width="26" height="26" fill="none" viewBox="0 0 26 26"><path d="M13 3L3 9l10 6 10-6-10-6zM3 15l10 6 10-6M3 12l10 6 10-6" stroke="#5E7B9A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-white text-2xl mb-3" style="letter-spacing:-0.01em;">Every Student Can Excel</h3>
+          <p class="text-silver font-sans text-sm" style="line-height:1.80;">
+            We believe mathematical ability is not fixed at birth — it is developed. With the right instruction, the right environment, and consistent effort, every student can achieve genuine mathematical excellence.
+          </p>
+        </div>
+
+        <div class="value-card p-9 fade-up" style="transition-delay:0.20s;">
+          <div class="icon-ring mb-6" style="width:60px;height:60px;border-radius:17px;">
+            <svg width="26" height="26" fill="none" viewBox="0 0 26 26"><path d="M13 3l2.59 5.26L21 9.27l-4 3.9 1 5.83L13 16.27l-5 2.73 1-5.83-4-3.9 5.41-1.01L13 3z" stroke="#5E7B9A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-white text-2xl mb-3" style="letter-spacing:-0.01em;">Excellence Through Practice</h3>
+          <p class="text-silver font-sans text-sm" style="line-height:1.80;">
+            Mastery is not a destination — it is a daily habit. We instill the discipline, curiosity, and confidence that allow students to keep growing long after they leave our programs.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT / STORY ═══ -->
+  <section style="padding: 96px 0;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <div class="fade-up">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="section-rule"></div>
+            <span class="text-silver font-sans text-sm uppercase tracking-widest">About MathLedX</span>
+          </div>
+          <h2 class="font-display font-bold text-white mb-6" style="font-size:clamp(1.9rem,3.5vw,2.8rem); letter-spacing:-0.03em; line-height:1.12;">
+            A Torch of Learning,<br/>
+            <span style="color:#B8C2CC;">Passed to Every Student</span>
+          </h2>
+          <p class="text-silver font-sans mb-5" style="line-height:1.80;">
+            MathLedX was founded on a simple but powerful belief: that mathematics is not a subject to be survived — it is a language to be mastered, a tool for understanding the world, and a gateway to limitless possibility.
+          </p>
+          <p class="text-silver font-sans mb-5" style="line-height:1.80;">
+            Our instructors — all holding advanced degrees in mathematics or STEM fields — use a Socratic approach, guiding students to discover solutions rather than passively receive them. We meet every student where they are and build a personalized path to where they need to be.
+          </p>
+          <p class="text-silver font-sans" style="line-height:1.80;">
+            From K–8 foundations to university-level calculus, competition preparation to standardized test mastery, MathLedX is the partner families trust to light the way.
+          </p>
+        </div>
+
+        <div class="fade-up flex flex-col items-center justify-center gap-8" style="transition-delay:0.12s;">
+          <!-- Large badge -->
+          <img src="brand_assets/MathLedX (3).png" alt="MathLedX"
+               style="width:260px; height:260px; object-fit:contain; filter: drop-shadow(0 16px 40px rgba(37,84,191,0.45));" />
+
+          <!-- Pillars -->
+          <div class="grid grid-cols-2 gap-4 w-full max-w-xs">
+            <div class="card-base p-4 text-center">
+              <div class="font-display font-bold text-white mb-0.5" style="font-size:1.8rem; letter-spacing:-0.03em;">15+</div>
+              <div class="text-silver font-sans text-xs">Years Excellence</div>
+            </div>
+            <div class="card-base p-4 text-center">
+              <div class="font-display font-bold text-white mb-0.5" style="font-size:1.8rem; letter-spacing:-0.03em;">94%</div>
+              <div class="text-silver font-sans text-xs">Improvement Rate</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="cta-bg" style="padding: 96px 0;">
+    <div class="max-w-2xl mx-auto px-6 lg:px-8 text-center fade-up">
+      <h2 class="font-display font-bold text-white mb-5" style="font-size:clamp(2rem,4vw,3rem); letter-spacing:-0.03em; line-height:1.12;">
+        Ready to Start the Journey?
+      </h2>
+      <p class="text-silver font-sans mb-9 text-lg" style="line-height:1.75;">
+        See how MathLedX can transform your student's relationship with mathematics.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="work-with-me.html" class="btn-primary">
+          Work With Me
+          <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="curriculum.html" class="btn-outline">View Curriculum</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer-bg pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-12" style="border-bottom: 1px solid rgba(184,194,204,0.10);">
+        <div>
+          <div class="inline-block mb-5" style="background:#fff; padding:7px 18px 7px 12px; border-radius:14px; box-shadow:0 3px 12px rgba(0,0,0,0.22);">
+            <img src="brand_assets/MathLedX (2).png" alt="MathLedX" style="height:52px; width:auto;" />
+          </div>
+          <p class="text-silver font-sans text-sm" style="line-height:1.75;">Leading mathematics education through expert instruction, proven methods, and a commitment to every student's success.</p>
+        </div>
+        <div>
+          <h5 class="font-sans font-semibold text-white text-sm mb-4 uppercase tracking-wider">Quick Links</h5>
+          <ul class="flex flex-col gap-2.5">
+            <li><a href="index.html"        class="text-silver hover:text-white font-sans text-sm transition-colors duration-200">Home</a></li>
+            <li><a href="mission.html"      class="text-silver hover:text-white font-sans text-sm transition-colors duration-200">Mission</a></li>
+            <li><a href="curriculum.html"   class="text-silver hover:text-white font-sans text-sm transition-colors duration-200">Curriculum</a></li>
+            <li><a href="work-with-me.html" class="text-silver hover:text-white font-sans text-sm transition-colors duration-200">Work With Me</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-sans font-semibold text-white text-sm mb-4 uppercase tracking-wider">Contact</h5>
+          <ul class="flex flex-col gap-3">
+            <li class="flex items-center gap-2.5">
+              <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M1.5 3.5h13v9h-13v-9zm0 0l6.5 5.5 6.5-5.5" stroke="#5E7B9A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="mailto:richhollinger@mathledx.com" class="text-silver hover:text-white font-sans text-sm transition-colors duration-200">richhollinger@mathledx.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+        <p class="text-silver font-sans text-xs">&copy; 2026 MathLedX. All rights reserved.</p>
+        <div class="flex gap-5">
+          <a href="#" class="text-silver hover:text-white font-sans text-xs transition-colors duration-200">Privacy Policy</a>
+          <a href="#" class="text-silver hover:text-white font-sans text-xs transition-colors duration-200">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const bar1 = document.getElementById('bar1');
+    const bar2 = document.getElementById('bar2');
+    const bar3 = document.getElementById('bar3');
+    let open = false;
+    menuBtn.addEventListener('click', () => {
+      open = !open; mobileMenu.classList.toggle('open', open);
+      bar1.style.transform = open ? 'translateY(8px) rotate(45deg)' : '';
+      bar2.style.opacity   = open ? '0' : '1';
+      bar3.style.transform = open ? 'translateY(-8px) rotate(-45deg)' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+      open = false; mobileMenu.classList.remove('open');
+      bar1.style.transform = ''; bar2.style.opacity = '1'; bar3.style.transform = '';
+    }));
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.10 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+    window.addEventListener('scroll', () => {
+      document.querySelector('header').style.boxShadow = window.scrollY > 10 ? '0 4px 32px rgba(0,0,0,0.40)' : '0 4px 24px rgba(0,0,0,0.28)';
+    }, { passive: true });
+  </script>
+</body>
+</html>

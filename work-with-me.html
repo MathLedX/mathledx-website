@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work With Me — MathLedX</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            night: '#0D1B3E', nightLight: '#142252',
+            battleship: '#5E7B9A', silver: '#B8C2CC', silverLight: '#D9E0E6',
+            brand: '#1E4099', brandLight: '#2554BF',
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans:    ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #0D1B3E; color: #fff; overflow-x: hidden; }
+
+    .grain::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 256px 256px; pointer-events: none; z-index: 0; border-radius: inherit;
+    }
+
+    .nav-glass {
+      background: rgba(13,27,62,0.90); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(184,194,204,0.10); box-shadow: 0 4px 24px rgba(0,0,0,0.28);
+    }
+    .logo-pill {
+      display: inline-flex; align-items: center; background: #fff;
+      padding: 8px 20px 8px 14px; border-radius: 16px; box-shadow: 0 3px 16px rgba(0,0,0,0.24);
+      text-decoration: none; flex-shrink: 0;
+      transition: box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .logo-pill:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.34); transform: translateY(-1px); }
+    .logo-pill:focus-visible { outline: 2px solid #5E7B9A; outline-offset: 3px; border-radius: 16px; }
+
+    .section-rule { width: 56px; height: 3px; background: linear-gradient(90deg, #2554BF, #5E7B9A); border-radius: 2px; }
+
+    .card-base {
+      background: rgba(20,34,82,0.70); border: 1px solid rgba(184,194,204,0.12); border-radius: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.20), 0 8px 32px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2554BF 0%, #1E4099 100%); color: #fff;
+      border: 1px solid rgba(37,84,191,0.6); border-radius: 10px; padding: 14px 32px;
+      font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.9375rem;
+      letter-spacing: 0.01em; cursor: pointer; text-decoration: none;
+      box-shadow: 0 4px 16px rgba(37,84,191,0.35); display: inline-flex; align-items: center; gap: 8px;
+      width: 100%; justify-content: center;
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .btn-primary:hover { background: linear-gradient(135deg, #2D5FD0 0%, #254DB0 100%); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,84,191,0.50); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:focus-visible { outline: 2px solid #5E7B9A; outline-offset: 3px; }
+
+    .btn-nav {
+      background: linear-gradient(135deg, #2554BF 0%, #1E4099 100%); color: #fff;
+      border: 1px solid rgba(37,84,191,0.6); border-radius: 10px;
+      font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.875rem;
+      letter-spacing: 0.01em; cursor: pointer; text-decoration: none;
+      box-shadow: 0 4px 16px rgba(37,84,191,0.35); display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 24px;
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .btn-nav:hover { background: linear-gradient(135deg, #2D5FD0 0%, #254DB0 100%); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,84,191,0.50); }
+    .btn-nav:focus-visible { outline: 2px solid #5E7B9A; outline-offset: 3px; }
+
+    .nav-link {
+      color: #B8C2CC; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.01em;
+      padding: 6px 4px; border-bottom: 2px solid transparent; text-decoration: none;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .nav-link:hover, .nav-link.active { color: #fff; border-color: #2554BF; }
+    .nav-link:focus-visible { outline: 2px solid #5E7B9A; outline-offset: 4px; border-radius: 3px; }
+
+    .icon-ring {
+      width: 56px; height: 56px; border-radius: 16px;
+      background: rgba(37,84,191,0.18); border: 1px solid rgba(37,84,191,0.30);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+
+    .footer-bg { background: #080F22; border-top: 1px solid rgba(184,194,204,0.08); }
+
+    .fade-up {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22,1,0.36,1);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    #mobile-menu {
+      background: rgba(13,27,62,0.97); border-bottom: 1px solid rgba(184,194,204,0.10);
+      max-height: 0; overflow: hidden; opacity: 0;
+      transition: max-height 0.35s ease, opacity 0.3s ease;
+    }
+    #mobile-menu.open { max-height: 420px; opacity: 1; }
+
+    .page-hero-bg {
+      background:
+        radial-gradient(ellipse 70% 80% at 50% 0%, rgba(37,84,191,0.28) 0%, transparent 65%),
+        linear-gradient(180deg, #0D1B3E 0%, #101E45 70%, #0D1B3E 100%);
+    }
+
+    /* ── Form inputs ── */
+    .form-input {
+      width: 100%; padding: 13px 16px;
+      background: rgba(13,27,62,0.80); border: 1px solid rgba(184,194,204,0.18);
+      border-radius: 10px; color: #fff; font-family: 'Inter', sans-serif; font-size: 0.9rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      outline: none;
+    }
+    .form-input::placeholder { color: #5E7B9A; }
+    .form-input:focus { border-color: rgba(37,84,191,0.65); box-shadow: 0 0 0 3px rgba(37,84,191,0.12); }
+    select.form-input { -webkit-appearance: none; cursor: pointer; }
+    select.form-input option { background: #0D1B3E; }
+
+    .form-label { display: block; color: #B8C2CC; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 500; margin-bottom: 6px; }
+
+    /* ── Process step ── */
+    .step-card {
+      background: rgba(20,34,82,0.55); border: 1px solid rgba(184,194,204,0.10); border-radius: 20px;
+      padding: 36px; text-align: center;
+      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), border-color 0.3s ease;
+    }
+    .step-card:hover { transform: translateY(-5px); border-color: rgba(37,84,191,0.35); }
+
+    .step-number {
+      width: 48px; height: 48px; border-radius: 50%; margin: 0 auto 20px;
+      background: linear-gradient(135deg, #2554BF, #1E4099);
+      border: 1px solid rgba(37,84,191,0.5);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.2rem; color: #fff;
+      box-shadow: 0 4px 16px rgba(37,84,191,0.35);
+    }
+
+    /* success overlay */
+    #success-overlay {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(13,27,62,0.92); backdrop-filter: blur(8px);
+      align-items: center; justify-content: center; flex-direction: column; text-align: center; padding: 32px;
+    }
+    #success-overlay.show { display: flex; }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- ═══ NAV ═══ -->
+  <header class="fixed top-0 left-0 right-0 z-50 nav-glass">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between" style="height:92px;">
+
+        <a href="index.html" class="logo-pill">
+          <img src="brand_assets/MathLedX (2).png" alt="MathLedX" style="height:60px; width:auto;" />
+        </a>
+
+        <nav class="hidden md:flex items-center gap-9">
+          <a href="index.html"        class="nav-link">Home</a>
+          <a href="mission.html"      class="nav-link">Mission</a>
+          <a href="curriculum.html"   class="nav-link">Curriculum</a>
+          <a href="work-with-me.html" class="btn-nav active" style="box-shadow: 0 4px 16px rgba(37,84,191,0.50), 0 0 0 2px rgba(37,84,191,0.30);">Work With Me</a>
+        </nav>
+
+        <button id="menu-btn" aria-label="Toggle menu" class="md:hidden p-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-battleship cursor-pointer">
+          <span class="block w-6 h-0.5 bg-silver rounded mb-1.5" id="bar1"></span>
+          <span class="block w-6 h-0.5 bg-silver rounded mb-1.5" id="bar2"></span>
+          <span class="block w-6 h-0.5 bg-silver rounded" id="bar3"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu">
+      <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col gap-4">
+        <a href="index.html"        class="nav-link text-base">Home</a>
+        <a href="mission.html"      class="nav-link text-base">Mission</a>
+        <a href="curriculum.html"   class="nav-link text-base">Curriculum</a>
+        <a href="work-with-me.html" class="btn-nav mt-2 self-start">Work With Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ PAGE HERO ═══ -->
+  <section class="page-hero-bg grain relative overflow-hidden" style="padding-top:160px; padding-bottom:100px;">
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
+
+      <div class="flex justify-center mb-8">
+        <img src="brand_assets/MathLedX (3).png" alt="MathLedX" style="height:110px; width:auto; filter: drop-shadow(0 8px 24px rgba(37,84,191,0.40));" />
+      </div>
+
+      <div class="flex items-center justify-center gap-3 mb-5">
+        <div class="section-rule"></div>
+        <span class="text-silver font-sans text-sm uppercase tracking-widest">Let's Get Started</span>
+        <div class="section-rule"></div>
+      </div>
+
+      <h1 class="font-display font-bold text-white mb-5"
+          style="font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.08; letter-spacing: -0.03em;">
+        Work With Me
+      </h1>
+
+      <p class="font-sans text-silver text-xl max-w-2xl mx-auto" style="line-height:1.75;">
+        Let's build a personalized path to mathematical mastery. Reach out and I'll get back to you within 24 hours.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ PROCESS ═══ -->
+  <section style="padding: 96px 0;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+      <div class="text-center mb-14 fade-up">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <div class="section-rule"></div>
+          <span class="text-silver font-sans text-sm uppercase tracking-widest">How It Works</span>
+          <div class="section-rule"></div>
+        </div>
+        <h2 class="font-display font-bold text-white" style="font-size:clamp(2rem,4vw,2.8rem); letter-spacing:-0.03em;">
+          What to Expect
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+
+        <div class="step-card fade-up">
+          <div class="step-number">1</div>
+          <h3 class="font-display font-semibold text-white text-xl mb-3" style="letter-spacing:-0.01em;">Free Consultation</h3>
+          <p class="text-silver font-sans text-sm" style="line-height:1.75;">We'll connect to understand your student's current level, goals, and challenges — no pressure, just a genuine conversation about how we can help.</p>
+        </div>
+
+        <div class="step-card fade-up" style="transition-delay:0.10s;">
+          <div class="step-number">2</div>
+          <h3 class="font-display font-semibold text-white text-xl mb-3" style="letter-spacing:-0.01em;">Personalized Plan</h3>
+          <p class="text-silver font-sans text-sm" style="line-height:1.75;">I'll recommend the right program, format, and schedule — tailored specifically to your student's needs, learning style, and timeline.</p>
+        </div>
+
+        <div class="step-card fade-up" style="transition-delay:0.20s;">
+          <div class="step-number">3</div>
+          <h3 class="font-display font-semibold text-white text-xl mb-3" style="letter-spacing:-0.01em;">Begin Learning</h3>
+          <p class="text-silver font-sans text-sm" style="line-height:1.75;">Start your program and experience the MathLedX difference — expert instruction, clear progress, and real results you can measure.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT FORM ═══ -->
+  <section style="background: rgba(20,34,82,0.35); border-top: 1px solid rgba(184,194,204,0.07); border-bottom: 1px solid rgba(184,194,204,0.07); padding: 96px 0;">
+    <div class="max-w-2xl mx-auto px-6 lg:px-8">
+
+      <div class="text-center mb-12 fade-up">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <div class="section-rule"></div>
+          <span class="text-silver font-sans text-sm uppercase tracking-widest">Get In Touch</span>
+          <div class="section-rule"></div>
+        </div>
+        <h2 class="font-display font-bold text-white mb-3" style="font-size:clamp(1.9rem,4vw,2.8rem); letter-spacing:-0.03em;">
+          Send Me a Message
+        </h2>
+        <p class="text-silver font-sans text-sm" style="line-height:1.75;">
+          Fill out the form below and I'll reply within 24 hours at
+          <a href="mailto:richhollinger@mathledx.com" class="text-white hover:text-silverLight" style="font-weight:500; transition:color 0.2s ease;">richhollinger@mathledx.com</a>.
+        </p>
+      </div>
+
+      <div class="card-base p-8 lg:p-10 fade-up" style="transition-delay:0.08s;">
+        <form id="contact-form" novalidate>
+
+          <div class="grid sm:grid-cols-2 gap-5 mb-5">
+            <div>
+              <label class="form-label" for="firstName">First Name <span style="color:#5E7B9A;">*</span></label>
+              <input class="form-input" type="text" id="firstName" name="First Name" placeholder="John" required />
+            </div>
+            <div>
+              <label class="form-label" for="lastName">Last Name <span style="color:#5E7B9A;">*</span></label>
+              <input class="form-input" type="text" id="lastName" name="Last Name" placeholder="Smith" required />
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <label class="form-label" for="email">Email Address <span style="color:#5E7B9A;">*</span></label>
+            <input class="form-input" type="email" id="email" name="Email" placeholder="john@example.com" required />
+          </div>
+
+          <div class="mb-5">
+            <label class="form-label" for="phone">Phone Number <span class="text-xs" style="color:#5E7B9A; font-weight:400;">(optional)</span></label>
+            <input class="form-input" type="tel" id="phone" name="Phone" placeholder="(555) 000-0000" />
+          </div>
+
+          <div class="mb-5">
+            <label class="form-label" for="program">Program of Interest <span style="color:#5E7B9A;">*</span></label>
+            <select class="form-input" id="program" name="Program of Interest" required>
+              <option value="">Select a program...</option>
+              <option value="Foundational Mathematics (K-8)">Foundational Mathematics (K–8)</option>
+              <option value="Algebra & Pre-Calculus">Algebra &amp; Pre-Calculus</option>
+              <option value="Calculus & Advanced Topics">Calculus &amp; Advanced Topics</option>
+              <option value="Competition Math">Competition Math</option>
+              <option value="SAT / ACT Test Prep">SAT / ACT Test Prep</option>
+              <option value="Private Tutoring">Private Tutoring</option>
+              <option value="Not Sure - Need Guidance">Not Sure — Need Guidance</option>
+            </select>
+          </div>
+
+          <div class="mb-5">
+            <label class="form-label" for="grade">Student's Current Grade / Level</label>
+            <input class="form-input" type="text" id="grade" name="Grade Level" placeholder="e.g., Grade 9, Freshman in college..." />
+          </div>
+
+          <div class="mb-7">
+            <label class="form-label" for="message">Tell Me About Your Goals <span style="color:#5E7B9A;">*</span></label>
+            <textarea class="form-input" id="message" name="Message" rows="4" placeholder="What are your student's current challenges and goals? Any specific topics, exams, or timelines I should know about?" required style="resize:vertical; min-height:110px;"></textarea>
+          </div>
+
+          <!-- Error message -->
+          <div id="form-error" style="display:none; background:rgba(220,50,50,0.12); border:1px solid rgba(220,50,50,0.30); border-radius:10px; padding:12px 16px; margin-bottom:20px;">
+            <p class="text-sm font-sans" style="color:#F87171;">Please fill in all required fields before submitting.</p>
+          </div>
+
+          <button type="submit" class="btn-primary">
+            <svg width="18" height="18" fill="none" viewBox="0 0 18 18"><path d="M1.5 3.5h15v11h-15v-11zm0 0l7.5 6.5 7.5-6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Send Message
+          </button>
+
+        </form>
+      </div>
+
+      <!-- Direct contact -->
+      <div class="mt-8 text-center fade-up" style="transition-delay:0.14s;">
+        <p class="text-silver font-sans text-sm" style="line-height:1.75;">
+          Prefer to reach out directly?<br/>
+          <a href="mailto:richhollinger@mathledx.com" class="text-white font-sans font-semibold text-base hover:text-silverLight" style="transition:color 0.2s ease;">
+            richhollinger@mathledx.com
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer-bg pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-12" style="border-bottom: 1px solid rgba(184,194,204,0.10);">
+        <div>
+          <div class="inline-block mb-5" style="background:#fff; padding:7px 18px 7px 12px; border-radius:14px; box-shadow:0 3px 12px rgba(0,0,0,0.22);">
+            <img src="brand_assets/MathLedX (2).png" alt="MathLedX" style="height:52px; width:auto;" />
+          </div>
+          <p class="text-silver font-sans text-sm" style="line-height:1.75;">Leading mathematics education through expert instruction, proven methods, and a commitment to every student's success.</p>
+        </div>
+        <div>
+          <h5 class="font-sans font-semibold text-white text-sm mb-4 uppercase tracking-wider">Quick Links</h5>
+          <ul class="flex flex-col gap-2.5">
+            <li><a href="index.html"        class="text-silver hover:text-white font-sans text-sm transition-colors duration-200">Home</a></li>
+            <li><a href="mission.html"      class="text-silver hover:text-white font-sans text-sm transition-colors duration-200">Mission</a></li>
+            <li><a href="curriculum.html"   class="text-silver hover:text-white font-sans text-sm transition-colors duration-200">Curriculum</a></li>
+            <li><a href="work-with-me.html" class="text-silver hover:text-white font-sans text-sm transition-colors duration-200">Work With Me</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-sans font-semibold text-white text-sm mb-4 uppercase tracking-wider">Contact</h5>
+          <ul class="flex flex-col gap-3">
+            <li class="flex items-center gap-2.5">
+              <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M1.5 3.5h13v9h-13v-9zm0 0l6.5 5.5 6.5-5.5" stroke="#5E7B9A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="mailto:richhollinger@mathledx.com" class="text-silver hover:text-white font-sans text-sm transition-colors duration-200">richhollinger@mathledx.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+        <p class="text-silver font-sans text-xs">&copy; 2026 MathLedX. All rights reserved.</p>
+        <div class="flex gap-5">
+          <a href="#" class="text-silver hover:text-white font-sans text-xs transition-colors duration-200">Privacy Policy</a>
+          <a href="#" class="text-silver hover:text-white font-sans text-xs transition-colors duration-200">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ SUCCESS OVERLAY ═══ -->
+  <div id="success-overlay">
+    <img src="brand_assets/MathLedX (3).png" alt="MathLedX" style="height:90px; width:auto; margin-bottom:28px; filter: drop-shadow(0 8px 24px rgba(37,84,191,0.45));" />
+    <h2 class="font-display font-bold text-white mb-4" style="font-size:2.2rem; letter-spacing:-0.03em;">Message Sent!</h2>
+    <p class="text-silver font-sans text-lg mb-8 max-w-md" style="line-height:1.75;">Your email client will open with your message pre-filled. Hit send to reach me at <strong style="color:#fff;">richhollinger@mathledx.com</strong>. I'll reply within 24 hours.</p>
+    <button onclick="document.getElementById('success-overlay').classList.remove('show')"
+            style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:#fff; border-radius:10px; padding:12px 28px; font-family:'Inter',sans-serif; font-size:0.9rem; cursor:pointer; transition:background 0.2s ease;"
+            onmouseover="this.style.background='rgba(255,255,255,0.20)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'">
+      Close
+    </button>
+  </div>
+
+  <script>
+    /* ── Mobile menu ── */
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const bar1 = document.getElementById('bar1');
+    const bar2 = document.getElementById('bar2');
+    const bar3 = document.getElementById('bar3');
+    let open = false;
+    menuBtn.addEventListener('click', () => {
+      open = !open; mobileMenu.classList.toggle('open', open);
+      bar1.style.transform = open ? 'translateY(8px) rotate(45deg)' : '';
+      bar2.style.opacity   = open ? '0' : '1';
+      bar3.style.transform = open ? 'translateY(-8px) rotate(-45deg)' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+      open = false; mobileMenu.classList.remove('open');
+      bar1.style.transform = ''; bar2.style.opacity = '1'; bar3.style.transform = '';
+    }));
+
+    /* ── Scroll fade-in ── */
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.10 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+    window.addEventListener('scroll', () => {
+      document.querySelector('header').style.boxShadow = window.scrollY > 10 ? '0 4px 32px rgba(0,0,0,0.40)' : '0 4px 24px rgba(0,0,0,0.28)';
+    }, { passive: true });
+
+    /* ── Contact form → mailto ── */
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const firstName = document.getElementById('firstName').value.trim();
+      const lastName  = document.getElementById('lastName').value.trim();
+      const email     = document.getElementById('email').value.trim();
+      const phone     = document.getElementById('phone').value.trim();
+      const program   = document.getElementById('program').value;
+      const grade     = document.getElementById('grade').value.trim();
+      const message   = document.getElementById('message').value.trim();
+
+      const errorEl = document.getElementById('form-error');
+
+      if (!firstName || !lastName || !email || !program || !message) {
+        errorEl.style.display = 'block';
+        errorEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        return;
+      }
+      errorEl.style.display = 'none';
+
+      const subject = `MathLedX Inquiry — ${firstName} ${lastName}`;
+      const body = [
+        `Name: ${firstName} ${lastName}`,
+        `Email: ${email}`,
+        phone ? `Phone: ${phone}` : null,
+        `Program of Interest: ${program}`,
+        grade ? `Grade / Level: ${grade}` : null,
+        ``,
+        `Message:`,
+        message,
+      ].filter(l => l !== null).join('\n');
+
+      window.location.href = `mailto:richhollinger@mathledx.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      document.getElementById('success-overlay').classList.add('show');
+    });
+  </script>
+</body>
+</html>
