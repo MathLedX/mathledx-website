@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — MathLedX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+            <path d="M1 13 L5 3 L9 9 L13 3 L17 13" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="logo-wordmark">MathLedX</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="curriculum.html" class="nav-link">Curriculum</a>
+        <a href="math-monsters.html" class="nav-link">Math Monsters <span class="badge-beta">Beta</span></a>
+        <a href="tutoring.html" class="nav-link">Tutoring</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+      </nav>
+
+      <a href="tutoring.html" class="btn-primary btn-sm nav-cta">Book Tutoring</a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="curriculum.html" class="mobile-nav-link">Curriculum</a>
+      <a href="math-monsters.html" class="mobile-nav-link">Math Monsters <span class="badge-beta">Beta</span></a>
+      <a href="tutoring.html" class="mobile-nav-link">Tutoring</a>
+      <a href="blog.html" class="mobile-nav-link active">Blog</a>
+      <a href="tutoring.html" class="btn-primary mobile-cta">Book Tutoring</a>
+    </div>
+  </div>
+
+  <!-- ═══ PAGE HERO ═══ -->
+  <section class="page-hero grain">
+    <div class="page-hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="section-label" style="justify-content:center; margin-bottom:20px;">Insights &amp; Education</div>
+        <h1 class="page-hero-title">The MathLedX Blog</h1>
+        <p class="page-hero-sub">
+          Practical insights, teaching strategies, and math explanations — written for students, parents, and educators.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FEATURED POST ═══ -->
+  <section class="section" style="padding-bottom: 0;">
+    <div class="container">
+      <div class="section-label fade-up" style="margin-bottom: 24px;">Featured</div>
+      <a href="#" class="blog-card blog-card-featured fade-up" style="margin-bottom: 60px;">
+        <div class="blog-thumb">
+          <div class="blog-thumb-math">f(x)</div>
+          <div class="blog-thumb-overlay"></div>
+        </div>
+        <div class="blog-content">
+          <div class="blog-tag">Teaching Strategy</div>
+          <h2 class="blog-title">
+            Why "Just Memorize the Formula" Is Destroying Your Student's Math Future
+          </h2>
+          <p class="blog-excerpt" style="font-size:0.9375rem;">
+            We have a crisis in math education — not a skill gap, but a conceptual gap. Here's why systematic, concept-first instruction is the only approach that produces lasting results.
+          </p>
+          <div class="blog-meta">
+            <span>Rich Hollinger</span>
+            <span class="blog-meta-dot"></span>
+            <span>March 2026</span>
+            <span class="blog-meta-dot"></span>
+            <span>8 min read</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ RECENT POSTS ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label fade-up" style="margin-bottom: 32px;">Recent Posts</div>
+
+      <div class="grid-3">
+
+        <a href="#" class="blog-card fade-up">
+          <div class="blog-thumb">
+            <div class="blog-thumb-math">∫</div>
+            <div class="blog-thumb-overlay"></div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-tag">Calculus</div>
+            <h3 class="blog-title">The Intuition Behind the Derivative — Before You Touch a Formula</h3>
+            <p class="blog-excerpt">Before students touch d/dx notation, they need to understand what "rate of change" actually means in the real world.</p>
+            <div class="blog-meta">
+              <span>March 2026</span>
+              <span class="blog-meta-dot"></span>
+              <span>6 min read</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="blog-card fade-up delay-1">
+          <div class="blog-thumb">
+            <div class="blog-thumb-math">x²</div>
+            <div class="blog-thumb-overlay"></div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-tag">Algebra</div>
+            <h3 class="blog-title">How to Actually Understand the Quadratic Formula (Not Just Use It)</h3>
+            <p class="blog-excerpt">Most students can plug numbers into the quadratic formula. Almost none understand where it comes from. Here's the full derivation, step by step.</p>
+            <div class="blog-meta">
+              <span>February 2026</span>
+              <span class="blog-meta-dot"></span>
+              <span>7 min read</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="blog-card fade-up delay-2">
+          <div class="blog-thumb">
+            <div class="blog-thumb-math">π</div>
+            <div class="blog-thumb-overlay"></div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-tag">Test Prep</div>
+            <h3 class="blog-title">SAT Math: The 5 Concept Areas That Make or Break Your Score</h3>
+            <p class="blog-excerpt">After coaching hundreds of students on SAT prep, I've identified the five math areas where most points are won or lost. Here's exactly what to focus on.</p>
+            <div class="blog-meta">
+              <span>February 2026</span>
+              <span class="blog-meta-dot"></span>
+              <span>9 min read</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="blog-card fade-up">
+          <div class="blog-thumb">
+            <div class="blog-thumb-math">⅓</div>
+            <div class="blog-thumb-overlay"></div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-tag">Foundations</div>
+            <h3 class="blog-title">Fractions Are Not Hard — But This Is How They're Usually Taught Wrong</h3>
+            <p class="blog-excerpt">Students who struggle with fractions in middle school almost always hit a wall in algebra. Here's the conceptual fix that changes everything.</p>
+            <div class="blog-meta">
+              <span>January 2026</span>
+              <span class="blog-meta-dot"></span>
+              <span>5 min read</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="blog-card fade-up delay-1">
+          <div class="blog-thumb">
+            <div class="blog-thumb-math">Σ</div>
+            <div class="blog-thumb-overlay"></div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-tag">Competition Math</div>
+            <h3 class="blog-title">How to Prepare for AMC 10/12 Without Burning Out Your Student</h3>
+            <p class="blog-excerpt">Competition math prep should build curiosity, not grind it away. Here's the approach we use at MathLedX for AMC readiness.</p>
+            <div class="blog-meta">
+              <span>January 2026</span>
+              <span class="blog-meta-dot"></span>
+              <span>10 min read</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="blog-card fade-up delay-2">
+          <div class="blog-thumb">
+            <div class="blog-thumb-math">√</div>
+            <div class="blog-thumb-overlay"></div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-tag">Mindset</div>
+            <h3 class="blog-title">The "I'm Just Not a Math Person" Myth — And How to Break It</h3>
+            <p class="blog-excerpt">After 15 years of teaching, I've never met a student who couldn't learn math. I've only met students who were taught it badly.</p>
+            <div class="blog-meta">
+              <span>December 2025</span>
+              <span class="blog-meta-dot"></span>
+              <span>6 min read</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="section cta-section">
+    <div class="cta-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="cta-content fade-up">
+        <h2 class="cta-title">Ready to stop struggling and start understanding?</h2>
+        <p class="cta-body">The ideas in these posts come from real lessons. Book a session and experience systematic math instruction firsthand.</p>
+        <div class="cta-actions">
+          <a href="tutoring.html" class="btn-primary btn-lg">
+            Book Tutoring
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="curriculum.html" class="btn-outline btn-lg">View Curriculum</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo logo">
+            <div class="logo-icon">
+              <svg width="16" height="12" viewBox="0 0 18 14" fill="none" aria-hidden="true"><path d="M1 13 L5 3 L9 9 L13 3 L17 13" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="logo-wordmark">MathLedX</span>
+          </a>
+          <p>Systematic math education through expert instruction, proven methods, and a commitment to every student's success.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="math-monsters.html">Math Monsters</a></li>
+            <li><a href="tutoring.html">Tutoring</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <li class="footer-contact-item">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1.5 3.5h13v9h-13v-9zm0 0l6.5 5.5 6.5-5.5" stroke="#52525b" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="mailto:richhollinger@mathledx.com">richhollinger@mathledx.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 MathLedX. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

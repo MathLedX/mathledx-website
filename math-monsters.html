@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math Monsters (Beta) — MathLedX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+            <path d="M1 13 L5 3 L9 9 L13 3 L17 13" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="logo-wordmark">MathLedX</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="curriculum.html" class="nav-link">Curriculum</a>
+        <a href="math-monsters.html" class="nav-link active">Math Monsters <span class="badge-beta">Beta</span></a>
+        <a href="tutoring.html" class="nav-link">Tutoring</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+      </nav>
+
+      <a href="tutoring.html" class="btn-primary btn-sm nav-cta">Book Tutoring</a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="curriculum.html" class="mobile-nav-link">Curriculum</a>
+      <a href="math-monsters.html" class="mobile-nav-link active">Math Monsters <span class="badge-beta">Beta</span></a>
+      <a href="tutoring.html" class="mobile-nav-link">Tutoring</a>
+      <a href="blog.html" class="mobile-nav-link">Blog</a>
+      <a href="tutoring.html" class="btn-primary mobile-cta">Book Tutoring</a>
+    </div>
+  </div>
+
+  <!-- ═══ PAGE HERO ═══ -->
+  <section class="page-hero grain" style="padding-bottom: 100px;">
+    <div class="page-hero-glow" aria-hidden="true"></div>
+    <!-- Orange glow for monsters theme -->
+    <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(ellipse at 50% 0%, rgba(251,146,60,0.1) 0%, transparent 70%);pointer-events:none;" aria-hidden="true"></div>
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="beta-banner">
+          <span class="beta-dot"></span>
+          Now in Beta
+        </div>
+        <h1 class="page-hero-title">Math Monsters</h1>
+        <p class="page-hero-sub">
+          An interactive math learning game where students battle monsters by solving real math problems — systematically, level by level.
+        </p>
+        <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-top:36px; flex-wrap:wrap;">
+          <a href="tutoring.html" class="btn-primary btn-lg" style="background: #ea580c; border-color: rgba(234,88,12,0.4); box-shadow: 0 4px 20px rgba(234,88,12,0.3);">
+            Request Early Access
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="curriculum.html" class="btn-outline btn-lg">View Curriculum</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHAT IS IT ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="section-label" style="color: #fb923c;">
+          <span style="background:#fb923c; opacity:0.45; display:block; width:28px; height:1px;"></span>
+          What is it?
+          <span style="background:#fb923c; opacity:0.45; display:block; width:28px; height:1px;"></span>
+        </div>
+        <h2 class="section-title">Practice math by battling monsters</h2>
+        <p class="section-body">
+          Math Monsters turns systematic math practice into an adventure. Each monster represents a math concept. Solve problems correctly to defeat them — get it wrong, and the monster fights back.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card fade-up" style="text-align: center;">
+          <span style="font-size:3rem; display:block; margin-bottom:16px; line-height:1;">🧮</span>
+          <div class="card-label">Engagement</div>
+          <h3 class="card-title">Game-based learning</h3>
+          <p class="card-body">Students are motivated by defeating monsters, leveling up, and unlocking new math worlds — not just drilling worksheets.</p>
+        </div>
+
+        <div class="card fade-up delay-1" style="text-align: center;">
+          <span style="font-size:3rem; display:block; margin-bottom:16px; line-height:1;">📈</span>
+          <div class="card-label">Progression</div>
+          <h3 class="card-title">Systematic levels</h3>
+          <p class="card-body">Every level is mapped to a real curriculum concept. Students can't skip ahead until they've mastered the foundation underneath.</p>
+        </div>
+
+        <div class="card fade-up delay-2" style="text-align: center;">
+          <span style="font-size:3rem; display:block; margin-bottom:16px; line-height:1;">⚡</span>
+          <div class="card-label">Feedback</div>
+          <h3 class="card-title">Instant explanations</h3>
+          <p class="card-body">When a student gets a problem wrong, the monster explains exactly where the thinking went wrong — so the learning happens in real time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MONSTER GALLERY ═══ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="section-label">The Monsters</div>
+        <h2 class="section-title">Meet your opponents</h2>
+        <p class="section-body">Each monster guards a different branch of math. Master the concept to defeat them and move forward.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="monster-card fade-up">
+          <span class="monster-emoji">➕</span>
+          <div class="monster-name">Count Addus</div>
+          <p class="monster-desc">Guardian of arithmetic. Defeat him with addition, subtraction, multiplication, and division.</p>
+        </div>
+        <div class="monster-card fade-up delay-1">
+          <span class="monster-emoji">🔺</span>
+          <div class="monster-name">The Fraction Phantom</div>
+          <p class="monster-desc">A ghost that multiplies into fractions. You must simplify your way through to survive.</p>
+        </div>
+        <div class="monster-card fade-up delay-2">
+          <span class="monster-emoji">📐</span>
+          <div class="monster-name">Algebratron</div>
+          <p class="monster-desc">A robot who speaks only in variables. Solve for x — or face the consequences.</p>
+        </div>
+        <div class="monster-card fade-up">
+          <span class="monster-emoji">🌀</span>
+          <div class="monster-name">The Derivative Drake</div>
+          <p class="monster-desc">A dragon who regenerates unless you find the rate of change. Calculus is your only weapon.</p>
+        </div>
+        <div class="monster-card fade-up delay-1">
+          <span class="monster-emoji">📊</span>
+          <div class="monster-name">Statistica</div>
+          <p class="monster-desc">She hides in probability distributions. Your understanding of statistics is the only flashlight.</p>
+        </div>
+        <div class="monster-card fade-up delay-2">
+          <span class="monster-emoji">🧊</span>
+          <div class="monster-name">Geometry Golem</div>
+          <p class="monster-desc">Made of shapes and angles. Prove your theorems or be frozen in an unsolved proof.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="section cta-section" style="border-top-color: rgba(251,146,60,0.1); border-bottom-color: rgba(251,146,60,0.1);">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 120% at 50% 50%, rgba(251,146,60,0.07) 0%, transparent 70%);pointer-events:none;" aria-hidden="true"></div>
+    <div class="container">
+      <div class="cta-content fade-up" style="position:relative;z-index:2;">
+        <h2 class="cta-title">Get early access to Math Monsters</h2>
+        <p class="cta-body">Math Monsters is currently in private beta. Contact us to get your student into the early access program.</p>
+        <div class="cta-actions">
+          <a href="tutoring.html" class="btn-primary btn-lg" style="background: #ea580c; border-color: rgba(234,88,12,0.4); box-shadow: 0 4px 20px rgba(234,88,12,0.28);">
+            Request Early Access
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo logo">
+            <div class="logo-icon">
+              <svg width="16" height="12" viewBox="0 0 18 14" fill="none" aria-hidden="true"><path d="M1 13 L5 3 L9 9 L13 3 L17 13" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="logo-wordmark">MathLedX</span>
+          </a>
+          <p>Systematic math education through expert instruction, proven methods, and a commitment to every student's success.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="math-monsters.html">Math Monsters</a></li>
+            <li><a href="tutoring.html">Tutoring</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <li class="footer-contact-item">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1.5 3.5h13v9h-13v-9zm0 0l6.5 5.5 6.5-5.5" stroke="#52525b" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="mailto:richhollinger@mathledx.com">richhollinger@mathledx.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 MathLedX. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

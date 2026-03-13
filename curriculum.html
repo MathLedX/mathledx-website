@@ -4,303 +4,152 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Curriculum — MathLedX</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            night: '#0D1B3E', nightLight: '#142252',
-            battleship: '#5E7B9A', silver: '#B8C2CC', silverLight: '#D9E0E6',
-            brand: '#1E4099', brandLight: '#2554BF',
-          },
-          fontFamily: {
-            display: ['"Playfair Display"', 'Georgia', 'serif'],
-            sans:    ['Inter', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    };
-  </script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background-color: #0D1B3E; color: #fff; overflow-x: hidden; }
-
-    .grain::before {
-      content: ''; position: absolute; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      background-size: 256px 256px; pointer-events: none; z-index: 0; border-radius: inherit;
-    }
-
-    .nav-glass {
-      background: rgba(13,27,62,0.90); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(184,194,204,0.10); box-shadow: 0 4px 24px rgba(0,0,0,0.28);
-    }
-    .logo-pill {
-      display: inline-flex; align-items: center; background: #fff;
-      padding: 8px 20px 8px 14px; border-radius: 16px; box-shadow: 0 3px 16px rgba(0,0,0,0.24);
-      text-decoration: none; flex-shrink: 0;
-      transition: box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
-    }
-    .logo-pill:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.34); transform: translateY(-1px); }
-    .logo-pill:focus-visible { outline: 2px solid #5E7B9A; outline-offset: 3px; border-radius: 16px; }
-
-    .section-rule { width: 56px; height: 3px; background: linear-gradient(90deg, #2554BF, #5E7B9A); border-radius: 2px; }
-
-    .card-base {
-      background: rgba(20,34,82,0.70); border: 1px solid rgba(184,194,204,0.12); border-radius: 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.20), 0 8px 32px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.06);
-      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-    .card-base:hover {
-      transform: translateY(-7px); border-color: rgba(37,84,191,0.40);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25), 0 18px 52px rgba(13,27,62,0.45), inset 0 1px 0 rgba(255,255,255,0.08);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #2554BF 0%, #1E4099 100%); color: #fff;
-      border: 1px solid rgba(37,84,191,0.6); border-radius: 10px; padding: 14px 32px;
-      font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.9375rem;
-      letter-spacing: 0.01em; cursor: pointer; text-decoration: none;
-      box-shadow: 0 4px 16px rgba(37,84,191,0.35); display: inline-flex; align-items: center; gap: 8px;
-      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease, background 0.2s ease;
-    }
-    .btn-primary:hover { background: linear-gradient(135deg, #2D5FD0 0%, #254DB0 100%); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,84,191,0.50); }
-    .btn-primary:active { transform: translateY(0); }
-    .btn-primary:focus-visible { outline: 2px solid #5E7B9A; outline-offset: 3px; }
-
-    .btn-outline {
-      background: transparent; color: #D9E0E6; border: 1.5px solid rgba(184,194,204,0.45);
-      border-radius: 10px; padding: 14px 32px; font-family: 'Inter', sans-serif; font-weight: 500;
-      font-size: 0.9375rem; cursor: pointer; text-decoration: none;
-      display: inline-flex; align-items: center; gap: 8px;
-      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-    }
-    .btn-outline:hover { background: rgba(184,194,204,0.08); border-color: rgba(184,194,204,0.70); transform: translateY(-2px); }
-    .btn-outline:focus-visible { outline: 2px solid #5E7B9A; outline-offset: 3px; }
-
-    .nav-link {
-      color: #B8C2CC; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.01em;
-      padding: 6px 4px; border-bottom: 2px solid transparent; text-decoration: none;
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
-    .nav-link:hover, .nav-link.active { color: #fff; border-color: #2554BF; }
-    .nav-link:focus-visible { outline: 2px solid #5E7B9A; outline-offset: 4px; border-radius: 3px; }
-
-    .icon-ring {
-      width: 56px; height: 56px; border-radius: 16px;
-      background: rgba(37,84,191,0.18); border: 1px solid rgba(37,84,191,0.30);
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    }
-
-    .footer-bg { background: #080F22; border-top: 1px solid rgba(184,194,204,0.08); }
-
-    .fade-up {
-      opacity: 0; transform: translateY(28px);
-      transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22,1,0.36,1);
-    }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-    #mobile-menu {
-      background: rgba(13,27,62,0.97); border-bottom: 1px solid rgba(184,194,204,0.10);
-      max-height: 0; overflow: hidden; opacity: 0;
-      transition: max-height 0.35s ease, opacity 0.3s ease;
-    }
-    #mobile-menu.open { max-height: 420px; opacity: 1; }
-
-    .page-hero-bg {
-      background:
-        radial-gradient(ellipse 70% 80% at 50% 0%, rgba(37,84,191,0.28) 0%, transparent 65%),
-        linear-gradient(180deg, #0D1B3E 0%, #101E45 70%, #0D1B3E 100%);
-    }
-
-    .prog-link {
-      color: #B8C2CC; font-size: 0.875rem; font-weight: 500;
-      display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
-      transition: color 0.2s ease, gap 0.2s ease;
-    }
-    .prog-link:hover { color: #fff; gap: 10px; }
-
-    .method-item {
-      display: flex; align-items: flex-start; gap: 16px; padding: 20px;
-      background: rgba(20,34,82,0.50); border: 1px solid rgba(184,194,204,0.09); border-radius: 14px;
-      transition: border-color 0.2s ease;
-    }
-    .method-item:hover { border-color: rgba(37,84,191,0.30); }
-
-    .cta-bg {
-      background:
-        radial-gradient(ellipse 70% 80% at 50% 50%, rgba(37,84,191,0.28) 0%, transparent 70%),
-        linear-gradient(180deg, #101E45 0%, #0D1B3E 100%);
-      border-top: 1px solid rgba(37,84,191,0.18); border-bottom: 1px solid rgba(37,84,191,0.18);
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="antialiased">
+<body>
 
   <!-- ═══ NAV ═══ -->
-  <header class="fixed top-0 left-0 right-0 z-50 nav-glass">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex items-center justify-between" style="height:92px;">
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+            <path d="M1 13 L5 3 L9 9 L13 3 L17 13" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="logo-wordmark">MathLedX</span>
+      </a>
 
-        <a href="index.html" class="logo-pill">
-          <img src="brand_assets/MathLedX (2).png" alt="MathLedX" style="height:60px; width:auto;" />
-        </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="curriculum.html" class="nav-link active">Curriculum</a>
+        <a href="math-monsters.html" class="nav-link">Math Monsters <span class="badge-beta">Beta</span></a>
+        <a href="tutoring.html" class="nav-link">Tutoring</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+      </nav>
 
-        <nav class="hidden md:flex items-center gap-9">
-          <a href="index.html"        class="nav-link">Home</a>
-          <a href="mission.html"      class="nav-link">Mission</a>
-          <a href="curriculum.html"   class="nav-link active">Curriculum</a>
-          <a href="work-with-me.html" class="btn-primary" style="padding:11px 24px; font-size:0.875rem;">Work With Me</a>
-        </nav>
+      <a href="tutoring.html" class="btn-primary btn-sm nav-cta">Book Tutoring</a>
 
-        <button id="menu-btn" aria-label="Toggle menu" class="md:hidden p-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-battleship cursor-pointer">
-          <span class="block w-6 h-0.5 bg-silver rounded mb-1.5" id="bar1"></span>
-          <span class="block w-6 h-0.5 bg-silver rounded mb-1.5" id="bar2"></span>
-          <span class="block w-6 h-0.5 bg-silver rounded" id="bar3"></span>
-        </button>
-      </div>
-    </div>
-    <div id="mobile-menu">
-      <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col gap-4">
-        <a href="index.html"        class="nav-link text-base">Home</a>
-        <a href="mission.html"      class="nav-link text-base">Mission</a>
-        <a href="curriculum.html"   class="nav-link text-base active">Curriculum</a>
-        <a href="work-with-me.html" class="btn-primary mt-2 self-start">Work With Me</a>
-      </div>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
+  <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="curriculum.html" class="mobile-nav-link active">Curriculum</a>
+      <a href="math-monsters.html" class="mobile-nav-link">Math Monsters <span class="badge-beta">Beta</span></a>
+      <a href="tutoring.html" class="mobile-nav-link">Tutoring</a>
+      <a href="blog.html" class="mobile-nav-link">Blog</a>
+      <a href="tutoring.html" class="btn-primary mobile-cta">Book Tutoring</a>
+    </div>
+  </div>
+
   <!-- ═══ PAGE HERO ═══ -->
-  <section class="page-hero-bg grain relative overflow-hidden" style="padding-top:160px; padding-bottom:100px;">
-    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
-
-      <div class="flex justify-center mb-8">
-        <img src="brand_assets/MathLedX (3).png" alt="MathLedX" style="height:110px; width:auto; filter: drop-shadow(0 8px 24px rgba(37,84,191,0.40));" />
+  <section class="page-hero grain">
+    <div class="page-hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="section-label" style="justify-content:center; margin-bottom:20px;">Programs &amp; Courses</div>
+        <h1 class="page-hero-title">Our Curriculum</h1>
+        <p class="page-hero-sub">
+          Comprehensive programs for every level — from foundational arithmetic to advanced competition math.
+        </p>
       </div>
-
-      <div class="flex items-center justify-center gap-3 mb-5">
-        <div class="section-rule"></div>
-        <span class="text-silver font-sans text-sm uppercase tracking-widest">Programs &amp; Courses</span>
-        <div class="section-rule"></div>
-      </div>
-
-      <h1 class="font-display font-bold text-white mb-5"
-          style="font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.08; letter-spacing: -0.03em;">
-        Our Curriculum
-      </h1>
-
-      <p class="font-sans text-silver text-xl max-w-2xl mx-auto" style="line-height:1.75;">
-        Comprehensive programs for every level — from foundational arithmetic to advanced competition math.
-      </p>
     </div>
   </section>
 
   <!-- ═══ PROGRAMS GRID ═══ -->
-  <section style="padding: 96px 0;">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
-      <div class="text-center mb-14 fade-up">
-        <div class="flex items-center justify-center gap-3 mb-4">
-          <div class="section-rule"></div>
-          <span class="text-silver font-sans text-sm uppercase tracking-widest">Our Programs</span>
-          <div class="section-rule"></div>
-        </div>
-        <h2 class="font-display font-bold text-white mb-4" style="font-size:clamp(2rem,4vw,2.8rem); letter-spacing:-0.03em;">
-          Programs Built for Every Learner
-        </h2>
-        <p class="text-silver font-sans max-w-xl mx-auto" style="line-height:1.75;">
-          Whether your student is just beginning or ready to compete at the national level, we have a program designed for their exact needs.
-        </p>
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="section-label">Programs</div>
+        <h2 class="section-title">Built for every learner</h2>
+        <p class="section-body">Whether your student is just beginning or ready to compete nationally, we have a program designed for their exact needs.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid-3">
 
-        <!-- Card 1 -->
-        <div class="card-base p-8 fade-up">
-          <div class="icon-ring mb-5">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M12 3L2 9l10 6 10-6-10-6zM2 15l10 6 10-6M2 12l10 6 10-6" stroke="#5E7B9A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="card fade-up">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M4 5h14M4 9h14M4 13h9M4 17h6" stroke="#1668ff" stroke-width="1.7" stroke-linecap="round"/></svg>
           </div>
-          <div class="text-xs font-sans uppercase tracking-widest mb-2" style="color:#5E7B9A;">Grades K–8</div>
-          <h3 class="font-display font-semibold text-white text-xl mb-3" style="letter-spacing:-0.01em;">Foundational Mathematics</h3>
-          <p class="text-silver font-sans text-sm mb-6" style="line-height:1.75;">Build rock-solid fundamentals in arithmetic, number sense, fractions, and pre-algebra through interactive, concept-driven instruction tailored for young learners.</p>
-          <a href="work-with-me.html" class="prog-link">
+          <div class="card-label">Grades K–8</div>
+          <h3 class="card-title">Foundational Mathematics</h3>
+          <p class="card-body">Rock-solid fundamentals in arithmetic, number sense, fractions, and pre-algebra through concept-driven instruction tailored for young learners.</p>
+          <a href="tutoring.html" class="card-arrow">
             Enroll now
-            <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7.5 3.5l3.5 3.5-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
 
-        <!-- Card 2 -->
-        <div class="card-base p-8 fade-up" style="transition-delay:0.07s;">
-          <div class="icon-ring mb-5">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M4 20V4h16v16H4zM8 12h8M12 8v8" stroke="#5E7B9A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="card fade-up delay-1">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M4 18V4h14v14H4zM8 11h6M11 8v6" stroke="#1668ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div class="text-xs font-sans uppercase tracking-widest mb-2" style="color:#5E7B9A;">Grades 7–10</div>
-          <h3 class="font-display font-semibold text-white text-xl mb-3" style="letter-spacing:-0.01em;">Algebra &amp; Pre-Calculus</h3>
-          <p class="text-silver font-sans text-sm mb-6" style="line-height:1.75;">Master algebraic thinking, functions, polynomial equations, and analytic geometry. Ensures students are fully prepared for higher-level mathematics and standardized tests.</p>
-          <a href="work-with-me.html" class="prog-link">
+          <div class="card-label">Grades 7–10</div>
+          <h3 class="card-title">Algebra &amp; Pre-Calculus</h3>
+          <p class="card-body">Master algebraic thinking, functions, polynomial equations, and analytic geometry. Full preparation for higher-level math and standardized tests.</p>
+          <a href="tutoring.html" class="card-arrow">
             Enroll now
-            <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7.5 3.5l3.5 3.5-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
 
-        <!-- Card 3 -->
-        <div class="card-base p-8 fade-up" style="transition-delay:0.14s;">
-          <div class="icon-ring mb-5">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M2 18s1-3 5-3 5 3 10 3 5-3 5-3M2 12s1-3 5-3 5 3 10 3 5-3 5-3" stroke="#5E7B9A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="card fade-up delay-2">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 14 C5 14 6 8 9 8 C12 8 12 14 15 14 C18 14 18 10 20 10" stroke="#1668ff" stroke-width="1.7" stroke-linecap="round"/></svg>
           </div>
-          <div class="text-xs font-sans uppercase tracking-widest mb-2" style="color:#5E7B9A;">Grades 11–College</div>
-          <h3 class="font-display font-semibold text-white text-xl mb-3" style="letter-spacing:-0.01em;">Calculus &amp; Advanced Topics</h3>
-          <p class="text-silver font-sans text-sm mb-6" style="line-height:1.75;">Rigorous coverage of differential and integral calculus, multivariable calculus, and linear algebra for students pursuing STEM fields at the university level.</p>
-          <a href="work-with-me.html" class="prog-link">
+          <div class="card-label">Grades 11–College</div>
+          <h3 class="card-title">Calculus &amp; Advanced Topics</h3>
+          <p class="card-body">Rigorous coverage of differential and integral calculus, multivariable calculus, and linear algebra for STEM-bound students.</p>
+          <a href="tutoring.html" class="card-arrow">
             Enroll now
-            <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7.5 3.5l3.5 3.5-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
 
-        <!-- Card 4 -->
-        <div class="card-base p-8 fade-up" style="transition-delay:0.21s;">
-          <div class="icon-ring mb-5">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#5E7B9A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="card fade-up">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2.5l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.95L5.4 19.7l1.1-6.2L2 9.1l6.2-.9L11 2.5z" stroke="#1668ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div class="text-xs font-sans uppercase tracking-widest mb-2" style="color:#5E7B9A;">All Levels</div>
-          <h3 class="font-display font-semibold text-white text-xl mb-3" style="letter-spacing:-0.01em;">Competition Math</h3>
-          <p class="text-silver font-sans text-sm mb-6" style="line-height:1.75;">Specialized preparation for AMC, AIME, MATHCOUNTS, and olympiad competitions. Develop creative problem-solving, proof-writing, and mathematical intuition.</p>
-          <a href="work-with-me.html" class="prog-link">
+          <div class="card-label">All Levels</div>
+          <h3 class="card-title">Competition Math</h3>
+          <p class="card-body">Specialized prep for AMC, AIME, MATHCOUNTS, and olympiad competitions. Develop creative problem-solving and proof-writing skills.</p>
+          <a href="tutoring.html" class="card-arrow">
             Enroll now
-            <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7.5 3.5l3.5 3.5-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
 
-        <!-- Card 5 -->
-        <div class="card-base p-8 fade-up" style="transition-delay:0.28s;">
-          <div class="icon-ring mb-5">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#5E7B9A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="card fade-up delay-1">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M17 20v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 20v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#1668ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div class="text-xs font-sans uppercase tracking-widest mb-2" style="color:#5E7B9A;">Grades 9–12</div>
-          <h3 class="font-display font-semibold text-white text-xl mb-3" style="letter-spacing:-0.01em;">SAT / ACT Test Prep</h3>
-          <p class="text-silver font-sans text-sm mb-6" style="line-height:1.75;">Targeted coaching to maximize math section scores. Proven strategies, timed practice, and personalized feedback to get students college-ready and confident on test day.</p>
-          <a href="work-with-me.html" class="prog-link">
+          <div class="card-label">Grades 9–12</div>
+          <h3 class="card-title">SAT / ACT Test Prep</h3>
+          <p class="card-body">Targeted coaching to maximize math section scores. Proven strategies, timed practice, and personalized feedback to get college-ready.</p>
+          <a href="tutoring.html" class="card-arrow">
             Enroll now
-            <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7.5 3.5l3.5 3.5-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
 
-        <!-- Card 6 -->
-        <div class="card-base p-8 fade-up" style="transition-delay:0.35s;">
-          <div class="icon-ring mb-5">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" stroke="#5E7B9A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="card fade-up delay-2">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M20 20v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" stroke="#1668ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div class="text-xs font-sans uppercase tracking-widest mb-2" style="color:#5E7B9A;">Any Level</div>
-          <h3 class="font-display font-semibold text-white text-xl mb-3" style="letter-spacing:-0.01em;">Private Tutoring</h3>
-          <p class="text-silver font-sans text-sm mb-6" style="line-height:1.75;">One-on-one sessions with expert instructors tailored precisely to each student's pace, learning style, and goals. Available in-person and online, on your schedule.</p>
-          <a href="work-with-me.html" class="prog-link">
-            Enroll now
-            <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="card-label">Any Level</div>
+          <h3 class="card-title">Private Tutoring</h3>
+          <p class="card-body">One-on-one sessions with expert instructors tailored precisely to each student's pace, learning style, and goals. Available in-person and online.</p>
+          <a href="tutoring.html" class="card-arrow">
+            Book now
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7.5 3.5l3.5 3.5-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
 
@@ -309,138 +158,108 @@
   </section>
 
   <!-- ═══ THE MATHLEDX METHOD ═══ -->
-  <section style="background: rgba(20,34,82,0.35); border-top: 1px solid rgba(184,194,204,0.07); border-bottom: 1px solid rgba(184,194,204,0.07); padding: 96px 0;">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
-      <div class="text-center mb-14 fade-up">
-        <div class="flex items-center justify-center gap-3 mb-4">
-          <div class="section-rule"></div>
-          <span class="text-silver font-sans text-sm uppercase tracking-widest">How We Teach</span>
-          <div class="section-rule"></div>
-        </div>
-        <h2 class="font-display font-bold text-white mb-4" style="font-size:clamp(2rem,4vw,2.8rem); letter-spacing:-0.03em;">
-          The MathLedX Method
-        </h2>
-        <p class="text-silver font-sans max-w-xl mx-auto" style="line-height:1.75;">
-          Every program is delivered through our proven instructional framework — built to create lasting understanding, not short-term results.
-        </p>
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="section-label">How We Teach</div>
+        <h2 class="section-title">The MathLedX Method</h2>
+        <p class="section-body">Every program is delivered through our proven instructional framework — built to create lasting understanding, not short-term results.</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
-
+      <div class="method-list">
         <div class="method-item fade-up">
-          <div class="icon-ring flex-shrink-0" style="width:46px;height:46px;border-radius:12px;">
-            <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" stroke="#5E7B9A" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="#5E7B9A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="method-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7.5" stroke="#1668ff" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="#1668ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div>
-            <h4 class="font-sans font-semibold text-white text-sm mb-1" style="font-weight:600;">Concept First</h4>
-            <p class="text-silver font-sans text-xs" style="line-height:1.70;">Deep understanding before procedural fluency — so knowledge sticks for life.</p>
+            <div class="method-title">Concept First</div>
+            <p class="method-body">Deep understanding before procedural fluency — so knowledge sticks for life, not just until the test.</p>
           </div>
         </div>
 
-        <div class="method-item fade-up" style="transition-delay:0.10s;">
-          <div class="icon-ring flex-shrink-0" style="width:46px;height:46px;border-radius:12px;">
-            <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M10 4C6.686 4 4 6.686 4 10s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 3v3.5l2.5 1.5" stroke="#5E7B9A" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="method-item fade-up delay-1">
+          <div class="method-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 4C6.69 4 4 6.69 4 10s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 3v3.5l2.5 1.5" stroke="#1668ff" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <div>
-            <h4 class="font-sans font-semibold text-white text-sm mb-1" style="font-weight:600;">Adaptive Pacing</h4>
-            <p class="text-silver font-sans text-xs" style="line-height:1.70;">Progress driven by mastery, never by calendar. No student is left behind or held back.</p>
+            <div class="method-title">Adaptive Pacing</div>
+            <p class="method-body">Progress driven by mastery, never by calendar. No student is left behind or held back from advancing.</p>
           </div>
         </div>
 
-        <div class="method-item fade-up" style="transition-delay:0.20s;">
-          <div class="icon-ring flex-shrink-0" style="width:46px;height:46px;border-radius:12px;">
-            <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M10 3l2.09 4.26L17 8.27l-3.5 3.41.83 4.82L10 14.27l-4.33 2.23.83-4.82L3 8.27l4.91-.71L10 3z" stroke="#5E7B9A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="method-item fade-up delay-2">
+          <div class="method-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 13l3.5-3.5 3 3 4-5 3.5 3.5" stroke="#1668ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div>
-            <h4 class="font-sans font-semibold text-white text-sm mb-1" style="font-weight:600;">Data-Driven Results</h4>
-            <p class="text-silver font-sans text-xs" style="line-height:1.70;">Detailed progress reports keep students and parents informed at every step.</p>
+            <div class="method-title">Data-Driven Results</div>
+            <p class="method-body">Detailed progress reports keep students and parents informed, motivated, and on track at every step.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- ═══ CTA ═══ -->
-  <section class="cta-bg" style="padding: 96px 0;">
-    <div class="max-w-2xl mx-auto px-6 lg:px-8 text-center fade-up">
-      <h2 class="font-display font-bold text-white mb-5" style="font-size:clamp(2rem,4vw,3rem); letter-spacing:-0.03em; line-height:1.12;">
-        Find the Right Program for Your Student
-      </h2>
-      <p class="text-silver font-sans mb-9 text-lg" style="line-height:1.75;">
-        Schedule a free consultation and let us build a personalized plan for your student's success.
-      </p>
-      <a href="work-with-me.html" class="btn-primary">
-        Work With Me
-        <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+  <section class="section cta-section">
+    <div class="cta-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="cta-content fade-up">
+        <h2 class="cta-title">Find the right program for your student</h2>
+        <p class="cta-body">Schedule a free consultation and let us build a personalized learning plan from the ground up.</p>
+        <div class="cta-actions">
+          <a href="tutoring.html" class="btn-primary btn-lg">
+            Book Tutoring
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ═══ FOOTER ═══ -->
-  <footer class="footer-bg pt-14 pb-8">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-12" style="border-bottom: 1px solid rgba(184,194,204,0.10);">
-        <div>
-          <div class="inline-block mb-5" style="background:#fff; padding:7px 18px 7px 12px; border-radius:14px; box-shadow:0 3px 12px rgba(0,0,0,0.22);">
-            <img src="brand_assets/MathLedX (2).png" alt="MathLedX" style="height:52px; width:auto;" />
-          </div>
-          <p class="text-silver font-sans text-sm" style="line-height:1.75;">Leading mathematics education through expert instruction, proven methods, and a commitment to every student's success.</p>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo logo">
+            <div class="logo-icon">
+              <svg width="16" height="12" viewBox="0 0 18 14" fill="none" aria-hidden="true"><path d="M1 13 L5 3 L9 9 L13 3 L17 13" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="logo-wordmark">MathLedX</span>
+          </a>
+          <p>Systematic math education through expert instruction, proven methods, and a commitment to every student's success.</p>
         </div>
         <div>
-          <h5 class="font-sans font-semibold text-white text-sm mb-4 uppercase tracking-wider">Quick Links</h5>
-          <ul class="flex flex-col gap-2.5">
-            <li><a href="index.html"        class="text-silver hover:text-white font-sans text-sm transition-colors duration-200">Home</a></li>
-            <li><a href="mission.html"      class="text-silver hover:text-white font-sans text-sm transition-colors duration-200">Mission</a></li>
-            <li><a href="curriculum.html"   class="text-silver hover:text-white font-sans text-sm transition-colors duration-200">Curriculum</a></li>
-            <li><a href="work-with-me.html" class="text-silver hover:text-white font-sans text-sm transition-colors duration-200">Work With Me</a></li>
+          <div class="footer-col-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="math-monsters.html">Math Monsters</a></li>
+            <li><a href="tutoring.html">Tutoring</a></li>
+            <li><a href="blog.html">Blog</a></li>
           </ul>
         </div>
         <div>
-          <h5 class="font-sans font-semibold text-white text-sm mb-4 uppercase tracking-wider">Contact</h5>
-          <ul class="flex flex-col gap-3">
-            <li class="flex items-center gap-2.5">
-              <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M1.5 3.5h13v9h-13v-9zm0 0l6.5 5.5 6.5-5.5" stroke="#5E7B9A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <a href="mailto:richhollinger@mathledx.com" class="text-silver hover:text-white font-sans text-sm transition-colors duration-200">richhollinger@mathledx.com</a>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <li class="footer-contact-item">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1.5 3.5h13v9h-13v-9zm0 0l6.5 5.5 6.5-5.5" stroke="#52525b" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="mailto:richhollinger@mathledx.com">richhollinger@mathledx.com</a>
             </li>
           </ul>
         </div>
       </div>
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
-        <p class="text-silver font-sans text-xs">&copy; 2026 MathLedX. All rights reserved.</p>
-        <div class="flex gap-5">
-          <a href="#" class="text-silver hover:text-white font-sans text-xs transition-colors duration-200">Privacy Policy</a>
-          <a href="#" class="text-silver hover:text-white font-sans text-xs transition-colors duration-200">Terms of Service</a>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 MathLedX. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const bar1 = document.getElementById('bar1');
-    const bar2 = document.getElementById('bar2');
-    const bar3 = document.getElementById('bar3');
-    let open = false;
-    menuBtn.addEventListener('click', () => {
-      open = !open; mobileMenu.classList.toggle('open', open);
-      bar1.style.transform = open ? 'translateY(8px) rotate(45deg)' : '';
-      bar2.style.opacity   = open ? '0' : '1';
-      bar3.style.transform = open ? 'translateY(-8px) rotate(-45deg)' : '';
-    });
-    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
-      open = false; mobileMenu.classList.remove('open');
-      bar1.style.transform = ''; bar2.style.opacity = '1'; bar3.style.transform = '';
-    }));
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-    }, { threshold: 0.10 });
-    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
-    window.addEventListener('scroll', () => {
-      document.querySelector('header').style.boxShadow = window.scrollY > 10 ? '0 4px 32px rgba(0,0,0,0.40)' : '0 4px 24px rgba(0,0,0,0.28)';
-    }, { passive: true });
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
