@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MathLedX — Learn Math Systematically</title>
+  <title>MathLedX — High School Math Tutoring with Rich Hollinger</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -14,19 +14,13 @@
   <!-- ═══ NAV ═══ -->
   <header class="nav" role="banner">
     <div class="nav-inner">
-      <a href="index.html" class="logo">
-        <div class="logo-icon">
-          <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
-            <path d="M1 13 L5 3 L9 9 L13 3 L17 13" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <span class="logo-wordmark">MathLedX</span>
+      <a href="index.html" class="logo-pill" aria-label="MathLedX home">
+        <img src="images/MathLedX%20(2).png" alt="MathLedX" />
       </a>
 
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="index.html" class="nav-link active">Home</a>
         <a href="curriculum.html" class="nav-link">Curriculum</a>
-        <a href="math-monsters.html" class="nav-link">Math Monsters <span class="badge-beta">Beta</span></a>
         <a href="tutoring.html" class="nav-link">Tutoring</a>
         <a href="blog.html" class="nav-link">Blog</a>
       </nav>
@@ -44,206 +38,158 @@
     <div class="mobile-menu-inner">
       <a href="index.html" class="mobile-nav-link active">Home</a>
       <a href="curriculum.html" class="mobile-nav-link">Curriculum</a>
-      <a href="math-monsters.html" class="mobile-nav-link">Math Monsters <span class="badge-beta">Beta</span></a>
       <a href="tutoring.html" class="mobile-nav-link">Tutoring</a>
       <a href="blog.html" class="mobile-nav-link">Blog</a>
       <a href="tutoring.html" class="btn-primary mobile-cta">Book Tutoring</a>
     </div>
   </div>
 
-  <!-- ═══ HERO ═══ -->
-  <section class="hero grain">
-    <div class="hero-glow-top" aria-hidden="true"></div>
-    <div class="hero-glow-left" aria-hidden="true"></div>
-    <div class="hero-glow-right" aria-hidden="true"></div>
-    <div class="hero-math-symbols" aria-hidden="true">
-      <span style="top:12%;left:4%;">∑</span>
-      <span style="top:22%;right:5%;">∫</span>
-      <span style="bottom:18%;left:22%;">π</span>
-      <span style="bottom:28%;right:18%;">√</span>
-      <span style="top:55%;left:6%;font-size:7rem;">dx</span>
-    </div>
-
-    <div class="hero-inner">
-      <div class="hero-eyebrow">
-        <span class="hero-eyebrow-dot"></span>
-        Systematic Math Education
-      </div>
-
-      <h1 class="hero-title">
-        Learn Math<br>
-        <span class="accent">Systematically</span>
-      </h1>
-
-      <p class="hero-sub">
-        Clear steps. Clean explanations. Math that actually makes sense.
-      </p>
-
-      <div class="hero-actions">
-        <a href="curriculum.html" class="btn-primary btn-lg">
-          Watch Lessons
-          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="tutoring.html" class="btn-outline btn-lg">Book Tutoring</a>
+  <!-- ═══ HERO — split layout ═══ -->
+  <section class="hero-split">
+    <div class="container">
+      <div class="hero-split-inner">
+        <div class="hero-split-text fade-up">
+          <p class="hero-location-tag">San Marino, CA &middot; High School Math &middot; Grades 9&ndash;12</p>
+          <h1 class="hero-title">Most students aren't bad at math. They've just never had it explained in a way that works for them.</h1>
+          <p class="hero-sub">I'm Rich Hollinger — a high school math teacher who builds personalized systems that replace frustration with understanding. One student at a time.</p>
+          <div class="hero-actions">
+            <a href="tutoring.html" class="btn-primary btn-lg">
+              Book a Free Consultation
+              <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#how-it-works" class="btn-outline btn-lg">See How It Works</a>
+          </div>
+        </div>
+        <div class="hero-split-photo fade-up delay-1">
+          <img src="images/Profile.png" alt="Rich Hollinger — math teacher and creator of MathLedX" />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ STATS BAR ═══ -->
-  <div class="stats-bar">
+  <!-- ═══ THE PROBLEM ═══ -->
+  <section class="trust-section">
     <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item fade-up">
-          <div class="stat-number">2,400<span class="unit">+</span></div>
-          <div class="stat-label">Students Served</div>
-        </div>
-        <div class="stat-item fade-up delay-1">
-          <div class="stat-number">94<span class="unit">%</span></div>
-          <div class="stat-label">Score Improvement Rate</div>
-        </div>
-        <div class="stat-item fade-up delay-2">
-          <div class="stat-number">15<span class="unit">+</span></div>
-          <div class="stat-label">Years of Excellence</div>
-        </div>
-        <div class="stat-item fade-up delay-3">
-          <div class="stat-number">98<span class="unit">%</span></div>
-          <div class="stat-label">Parent Satisfaction</div>
+      <div class="trust-inner fade-up">
+        <div class="section-label" style="justify-content:center; margin-bottom:28px;">The Problem</div>
+        <h2 class="section-title" style="margin-bottom:32px;">The system is broken. Not your student.</h2>
+        <p class="trust-text">Most students who struggle in math aren't missing ability. They're missing a system that was ever actually built for how they think.</p>
+        <p class="trust-text">Somewhere along the way, a bad explanation replaced curiosity with shame. A skipped concept became a wall. And the wall became an identity: "I'm just not a math person."</p>
+        <p class="trust-text trust-text-emphasis">That's what I fix.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT RICH ═══ -->
+  <section class="profile-section">
+    <div class="container">
+      <div class="profile-card fade-up">
+        <div class="profile-accent-line"></div>
+        <h2 class="profile-name">Hi, I'm Rich.</h2>
+        <p class="profile-bio">I was the kid in the back of class who didn't need to pay attention. Smart enough to coast. Then college hit — and coasting stopped working.</p>
+        <p class="profile-bio">No study skills. No system. I failed courses. So I went back to fundamentals, built a process, and learned how my brain actually worked. When I did — things didn't just improve. They compounded.</p>
+        <p class="profile-bio">That experience became my teaching philosophy. I spent four years proving it inside San Marino High School — one of the most competitive public campuses in Southern California. I coached a math team to a league championship after a decade-long drought. I created state test prep materials that went school-wide. My principal calls me one of the best on campus.</p>
+        <p class="profile-bio">MathLedX is that same energy — now available one on one.</p>
+        <p class="profile-credentials">B.A. Mathematics &middot; Master's in Math Education &middot; CA Single Subject Credential &middot; San Marino High School</p>
+        <div style="margin-top: 28px;">
+          <a href="tutoring.html" class="btn-primary">
+            Work with me
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M2.5 7.5h10M8 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ═══ WHY MATHLEDX ═══ -->
-  <section class="section">
+  <!-- ═══ HOW I HELP ═══ -->
+  <div class="approach-section" id="how-it-works">
     <div class="container">
       <div class="section-header fade-up">
-        <div class="section-label">Why MathLedX</div>
-        <h2 class="section-title">Math education that actually works</h2>
-        <p class="section-body">
-          No shortcuts. No confusion. Just clear, systematic instruction built to create lasting understanding at every level.
-        </p>
+        <div class="section-label">How I Help</div>
+        <h2 class="section-title">Three things I do differently</h2>
       </div>
 
       <div class="grid-3">
         <div class="card fade-up">
           <div class="card-icon">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M4 18V6h14v12H4zM8 10h6M11 7v6" stroke="#1668ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="8" r="5.5" stroke="#1a56db" stroke-width="1.7"/><path d="M3 19c0-4 3.6-6 8-6s8 2 8 6" stroke="#1a56db" stroke-width="1.7" stroke-linecap="round"/></svg>
           </div>
-          <div class="card-label">Step-by-step</div>
-          <h3 class="card-title">Concept-first instruction</h3>
-          <p class="card-body">Every lesson builds from first principles. You'll understand the why — not just memorize the how.</p>
+          <h3 class="card-title">I diagnose before I teach</h3>
+          <p class="card-body">Every student arrives with a different broken link in their chain. I find it before I start explaining anything.</p>
         </div>
 
         <div class="card fade-up delay-1">
           <div class="card-icon">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M4 11a7 7 0 1 0 14 0 7 7 0 0 0-14 0zm7-4v4l3 2" stroke="#1668ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 3l2.5 5.5 6 .9-4.25 4.2 1 6L11 16.85 5.75 19.6l1-6L2.5 9.4l6-.9L11 3z" stroke="#1a56db" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div class="card-label">Adaptive</div>
-          <h3 class="card-title">Mastery-driven pacing</h3>
-          <p class="card-body">Progress is driven by mastery, not the calendar. No student is left behind or artificially held back.</p>
+          <h3 class="card-title">I build around how you actually think</h3>
+          <p class="card-body">Not one explanation delivered one way. I adapt in real time until the concept clicks — then we build from there.</p>
         </div>
 
         <div class="card fade-up delay-2">
           <div class="card-icon">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 15 C5 15 5 7 8 7 C11 7 11 13 14 13 C17 13 17 9 19 9" stroke="#1668ff" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="8.5" stroke="#1a56db" stroke-width="1.7"/><path d="M7.5 11l2.5 2.5 5-5" stroke="#1a56db" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div class="card-label">Results</div>
-          <h3 class="card-title">Measurable progress</h3>
-          <p class="card-body">Detailed progress reports keep students and families informed at every step of the journey.</p>
+          <h3 class="card-title">I use competition to build confidence</h3>
+          <p class="card-body">Timed challenges, structured retakes, and immediate feedback — the same methods that work inside a high-performing classroom.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- ═══ PROGRAMS ═══ -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-header fade-up">
-        <div class="section-label">Programs</div>
-        <h2 class="section-title">Where would you like to begin?</h2>
-        <p class="section-body">From foundational arithmetic to advanced calculus — we have a program built for your exact goals.</p>
-      </div>
-
-      <div class="grid-3">
-        <a href="curriculum.html" class="card card-link fade-up">
-          <div class="card-icon">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M4 5h14M4 9h14M4 13h9M4 17h6" stroke="#1668ff" stroke-width="1.7" stroke-linecap="round"/></svg>
-          </div>
-          <div class="card-label">Grades K–8</div>
-          <h3 class="card-title">Foundational Mathematics</h3>
-          <p class="card-body">Rock-solid fundamentals in arithmetic, number sense, fractions, and pre-algebra — built for young learners.</p>
-          <span class="card-arrow">
-            Explore program
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7.5 3.5l3.5 3.5-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </a>
-
-        <a href="curriculum.html" class="card card-link fade-up delay-1">
-          <div class="card-icon">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 3l2.5 5.5 6 .9-4.25 4.2 1 6-5.25-2.75L5.75 19.6l1-6L2.5 9.4l6-.9L11 3z" stroke="#1668ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="card-label">Grades 9–12</div>
-          <h3 class="card-title">Algebra & Calculus</h3>
-          <p class="card-body">Functions, polynomial equations, analytic geometry, and calculus — rigorous prep for STEM success.</p>
-          <span class="card-arrow">
-            Explore program
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7.5 3.5l3.5 3.5-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </a>
-
-        <a href="tutoring.html" class="card card-link fade-up delay-2" style="border-color: rgba(22,104,255,0.18); background: rgba(22,104,255,0.04);">
-          <div class="card-icon">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M16 18v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 18v-2a4 4 0 0 0-3-3.87M15 3.13a4 4 0 0 1 0 7.75" stroke="#1668ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="card-label">Any Level</div>
-          <h3 class="card-title">Private Tutoring</h3>
-          <p class="card-body">One-on-one sessions tailored precisely to each student's pace, goals, and learning style — in-person or online.</p>
-          <span class="card-arrow">
-            Book a session
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7.5 3.5l3.5 3.5-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ HOW IT WORKS ═══ -->
+  <!-- ═══ WHO THIS IS FOR ═══ -->
   <section class="section">
     <div class="container">
       <div class="section-header fade-up">
+        <div class="section-label">Good Fit</div>
+        <h2 class="section-title">Who this is for</h2>
+      </div>
+      <ul class="who-list fade-up delay-1">
+        <li class="who-item">The C or B student who is capable of more — and somewhere knows it</li>
+        <li class="who-item">The honors student running on anxiety instead of real understanding</li>
+        <li class="who-item">The student who is one good system away from things clicking</li>
+        <li class="who-item">Parents who want more than homework help — they want real change</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══ WHAT A SESSION LOOKS LIKE ═══ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header fade-up">
         <div class="section-label">The Method</div>
-        <h2 class="section-title">How MathLedX teaches</h2>
-        <p class="section-body">Every program is delivered through our proven instructional framework — built for lasting understanding, not short-term results.</p>
+        <h2 class="section-title">What a session actually looks like</h2>
+        <p class="section-body">Not just "watch me solve it." Every session is built around what the student needs to understand — not just what they need to finish.</p>
       </div>
 
       <div class="method-list">
         <div class="method-item fade-up">
           <div class="method-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7.5" stroke="#1668ff" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="#1668ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 6h12M4 10h8M4 14h6" stroke="#1a56db" stroke-width="1.6" stroke-linecap="round"/></svg>
           </div>
           <div>
-            <div class="method-title">Concept First</div>
-            <p class="method-body">Deep understanding before procedural fluency — so knowledge sticks for life.</p>
+            <div class="method-title">We break the problem down</div>
+            <p class="method-body">Every concept is decomposed into clear, manageable steps — so nothing feels overwhelming or out of reach.</p>
           </div>
         </div>
 
         <div class="method-item fade-up delay-1">
           <div class="method-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12M10 4l6 6-6 6" stroke="#1668ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 4v12M4 10h12" stroke="#1a56db" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="10" r="7.5" stroke="#1a56db" stroke-width="1.5"/></svg>
           </div>
           <div>
-            <div class="method-title">Adaptive Pacing</div>
-            <p class="method-body">Progress driven by mastery, never by calendar. Every student moves at their ideal speed.</p>
+            <div class="method-title">I ask before I tell</div>
+            <p class="method-body">Instead of just explaining, I ask questions that guide students to the answer themselves — building real understanding, not dependence.</p>
           </div>
         </div>
 
         <div class="method-item fade-up delay-2">
           <div class="method-icon">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 14l4-4 3 3 4-5 3 3" stroke="#1668ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 14l4-4 3 3 4-5 3 3" stroke="#1a56db" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div>
-            <div class="method-title">Data-Driven Results</div>
-            <p class="method-body">Detailed progress reports keep students and parents informed and motivated at every step.</p>
+            <div class="method-title">We know where you stand</div>
+            <p class="method-body">Students always know exactly what they understand and what to focus on next — no vague "it'll click eventually."</p>
           </div>
         </div>
       </div>
@@ -255,11 +201,11 @@
     <div class="cta-glow" aria-hidden="true"></div>
     <div class="container">
       <div class="cta-content fade-up">
-        <h2 class="cta-title">Ready to start learning?</h2>
-        <p class="cta-body">Schedule a free consultation and let us build a personalized plan for your student's success.</p>
+        <h2 class="cta-title">Ready to stop guessing and start building?</h2>
+        <p class="cta-body">Book a free consultation. We'll figure out exactly where the system broke down — and build a plan to fix it.</p>
         <div class="cta-actions">
           <a href="tutoring.html" class="btn-primary btn-lg">
-            Book Tutoring
+            Book a Free Consultation
             <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a href="curriculum.html" class="btn-outline btn-lg">View Curriculum</a>
@@ -273,13 +219,10 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="footer-logo logo">
-            <div class="logo-icon">
-              <svg width="16" height="12" viewBox="0 0 18 14" fill="none" aria-hidden="true"><path d="M1 13 L5 3 L9 9 L13 3 L17 13" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <span class="logo-wordmark">MathLedX</span>
+          <a href="index.html" class="logo-pill footer-logo-pill" aria-label="MathLedX home">
+            <img src="images/MathLedX%20(2).png" alt="MathLedX" style="height:28px;" />
           </a>
-          <p>Systematic math education through expert instruction, proven methods, and a commitment to every student's success.</p>
+          <p>Built by a math teacher who had to figure it out the hard way.</p>
         </div>
 
         <div>
@@ -287,7 +230,6 @@
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="curriculum.html">Curriculum</a></li>
-            <li><a href="math-monsters.html">Math Monsters</a></li>
             <li><a href="tutoring.html">Tutoring</a></li>
             <li><a href="blog.html">Blog</a></li>
           </ul>
@@ -297,7 +239,7 @@
           <div class="footer-col-title">Contact</div>
           <ul class="footer-links">
             <li class="footer-contact-item">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1.5 3.5h13v9h-13v-9zm0 0l6.5 5.5 6.5-5.5" stroke="#52525b" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1.5 3.5h13v9h-13v-9zm0 0l6.5 5.5 6.5-5.5" stroke="rgba(255,255,255,0.4)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <a href="mailto:richhollinger@mathledx.com">richhollinger@mathledx.com</a>
             </li>
           </ul>
