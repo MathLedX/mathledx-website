@@ -70,14 +70,19 @@
       color: var(--text, #1a1a2e);
       font-weight: 600;
     }
-<!-- ═══ POST IMAGE ═══ -->
-<div class="post-image-wrap">
-  <img
-    src="images/blog-smart-kids-math.png"
-    alt="Open notebook on a desk lit by a warm lamp — representing a student's study space"
-    class="post-image"
-  />
-</div>
+
+    /* ── Post image ── */
+    .post-image-wrap {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .post-image {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
+
     /* ── Post body ── */
     .post-body {
       padding: 64px 0 80px;
@@ -284,6 +289,15 @@
       </div>
     </div>
   </section>
+
+  <!-- ═══ POST IMAGE ═══ -->
+  <div class="post-image-wrap" style="padding-top: 48px; padding-bottom: 8px;">
+    <img
+      src="images/blog-smart-kids-math.png"
+      alt="Open notebook on a desk lit by a warm lamp — representing a student's study space"
+      class="post-image"
+    />
+  </div>
 
   <!-- ═══ POST BODY ═══ -->
   <article class="post-body">
