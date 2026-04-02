@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Why Smart Kids Struggle in Math (And Why Nobody Catches It) — MathLedX</title>
+  <meta name="description" content="Your kid is smart — so why is math suddenly a problem? The answer isn't carelessness or attitude. It's a hidden gap between pattern recognition and real mathematical understanding." />
+  <meta name="keywords" content="why smart kids struggle in math, math tutoring, pattern recognition, conceptual understanding" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Blog post styles -->
+  <style>
+    /* ── Post header ── */
+    .post-hero {
+      background: var(--bg, #ffffff);
+      border-bottom: 1px solid var(--border, #e5e3de);
+      padding: calc(var(--nav-h, 68px) + 56px) 0 56px;
+    }
+    .post-hero-inner {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+    .post-category {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue, #1a56db);
+      margin-bottom: 20px;
+    }
+    .post-hero h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.9rem, 4vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.18;
+      color: var(--navy, #0f1f3d);
+      margin: 0 0 24px;
+      letter-spacing: -0.02em;
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-subtle, #6b7280);
+    }
+    .post-meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--text-subtle, #6b7280);
+      display: inline-block;
+    }
+    .post-meta strong {
+      color: var(--text, #1a1a2e);
+      font-weight: 600;
+    }
+
+    /* ── Post body ── */
+    .post-body {
+      padding: 64px 0 80px;
+      background: var(--bg, #ffffff);
+    }
+    .post-content {
+      max-width: 740px;
+      margin: 0 auto;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--text, #1a1a2e);
+    }
+    .post-content p {
+      margin: 0 0 1.5em;
+    }
+    .post-content h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy, #0f1f3d);
+      margin: 2.5em 0 0.75em;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    .post-content h2:first-child {
+      margin-top: 0;
+    }
+    .post-content strong {
+      font-weight: 600;
+      color: var(--navy, #0f1f3d);
+    }
+    .post-content em {
+      font-style: italic;
+      color: var(--text, #1a1a2e);
+    }
+
+    /* Pull quote / callout */
+    .post-callout {
+      border-left: 3px solid var(--blue, #1a56db);
+      background: var(--bg-alt, #f8f7f4);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin: 2em 0;
+    }
+    .post-callout p {
+      margin: 0;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--navy, #0f1f3d);
+    }
+
+    /* Highlighted box */
+    .post-highlight {
+      background: var(--blue-light, #eef2ff);
+      border: 1px solid rgba(26, 86, 219, 0.15);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin: 2em 0;
+    }
+    .post-highlight-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue, #1a56db);
+      margin-bottom: 10px;
+    }
+    .post-highlight p {
+      margin: 0;
+      font-size: 1rem;
+      color: var(--navy, #0f1f3d);
+    }
+
+    /* Classroom example box */
+    .post-example {
+      background: var(--bg-alt, #f8f7f4);
+      border: 1px solid var(--border, #e5e3de);
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin: 2em 0;
+    }
+    .post-example-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-subtle, #6b7280);
+      margin-bottom: 12px;
+    }
+    .post-example p {
+      margin: 0 0 0.75em;
+      font-size: 0.9875rem;
+    }
+    .post-example p:last-child {
+      margin: 0;
+    }
+
+    /* Divider */
+    .post-divider {
+      border: none;
+      border-top: 1px solid var(--border, #e5e3de);
+      margin: 2.5em 0;
+    }
+
+    /* ── Email CTA ── */
+    .post-cta {
+      background: var(--bg-alt, #f8f7f4);
+      border-top: 1px solid var(--border, #e5e3de);
+      border-bottom: 1px solid var(--border, #e5e3de);
+      padding: 64px 0;
+    }
+    .post-cta-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .post-cta-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue, #1a56db);
+      margin-bottom: 16px;
+    }
+    .post-cta h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.625rem;
+      font-weight: 700;
+      color: var(--navy, #0f1f3d);
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    .post-cta p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: var(--text-subtle, #6b7280);
+      line-height: 1.6;
+      margin: 0 0 28px;
+    }
+    .post-cta-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 800px) {
+      .post-hero { padding: 48px 0 40px; }
+      .post-content { font-size: 1rem; }
+      .post-content h2 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="logo-pill" aria-label="MathLedX home">
+        <img src="images/MathLedX%20(2).png" alt="MathLedX" />
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="curriculum.html" class="nav-link">Curriculum</a>
+        <a href="tutoring.html" class="nav-link">Tutoring</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+      </nav>
+      <a href="tutoring.html" class="btn-primary btn-sm nav-cta">Book Tutoring</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="curriculum.html" class="mobile-nav-link">Curriculum</a>
+      <a href="tutoring.html" class="mobile-nav-link">Tutoring</a>
+      <a href="blog.html" class="mobile-nav-link active">Blog</a>
+      <a href="tutoring.html" class="btn-primary mobile-cta">Book Tutoring</a>
+    </div>
+  </div>
+
+  <!-- ═══ POST HEADER ═══ -->
+  <section class="post-hero">
+    <div class="container">
+      <div class="post-hero-inner fade-up">
+        <div class="post-category">For Parents</div>
+        <h1>Why Smart Kids Struggle in Math (And Why Nobody Catches It)</h1>
+        <div class="post-meta">
+          <strong>Rich Hollinger</strong>
+          <span class="post-meta-dot"></span>
+          April 2026
+          <span class="post-meta-dot"></span>
+          6 min read
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ POST BODY ═══ -->
+  <article class="post-body">
+    <div class="container">
+      <div class="post-content fade-up">
+
+        <p>Your kid is smart. You know it. Their teachers know it. And somehow, math is becoming a problem. Maybe it started as a B that felt a little low. Then a C on a test that surprised everyone. Now you're hearing words like "not applying themselves" or "careless mistakes" — and something about that explanation has never fully satisfied you.</p>
+
+        <p>You're right to be unsatisfied. Because careless mistakes are rarely about carelessness. And smart kids struggling in math is rarely about ability.</p>
+
+        <p>Here's what's actually happening.</p>
+
+        <h2>The Pattern-Matching Trap</h2>
+
+        <p>Smart kids are exceptional at recognizing patterns. Put a new type of problem in front of them, and within a few examples, they've got it. They see the structure, replicate it, and move on. In a classroom setting, this looks exactly like understanding.</p>
+
+        <p>It isn't.</p>
+
+        <p>Math education distinguishes between two distinct skills: procedural fluency — knowing the steps — and conceptual understanding — knowing why those steps work, and how they connect to everything else a student has learned. Research from the National Council of Teachers of Mathematics has consistently shown that students need both to succeed long-term. Smart kids develop procedural fluency fast. Dangerously fast.</p>
+
+        <p>Here's what it looks like in practice: the teacher introduces a new concept. Your kid gets it by example two. While the teacher walks the rest of the class through examples three, four, and five — answering questions, filling in gaps, making connections — your kid is already copying notes and mentally checked out. They've got the pattern. Why would they need anything else?</p>
+
+        <p>What they miss in those remaining examples is everything. The edge cases. The underlying logic. The moment the teacher says "and this is why this connects to what we did last month." That moment — the one that ties it all together — your kid wasn't listening for.</p>
+
+        <div class="post-callout">
+          <p>The fix is not working harder. It's going back and rebuilding the foundation the right way.</p>
+        </div>
+
+        <h2>Why Nobody Catches It</h2>
+
+        <p>This is the part that matters most.</p>
+
+        <p>The teacher looks out and sees a kid completing every problem. No hand raised, no confused look, work getting done. That kid is fine. There are a dozen other students who need attention right now.</p>
+
+        <p>The parent sees homework completed, grades that are acceptable, a kid who says they understand it.</p>
+
+        <p>And the kid? They genuinely believe they understand it. They got every problem right. What more is there?</p>
+
+        <div class="post-highlight">
+          <div class="post-highlight-label">The Hidden Gap</div>
+          <p>Pattern recognition and mathematical understanding are not the same skill. One gets a student through the homework. The other gets them through the course — and everything that comes after it.</p>
+        </div>
+
+        <p>So the pattern continues. Lesson after lesson, the smart kid skims the surface and moves on. The gaps compound quietly underneath. Nobody sounds the alarm because nothing looks broken.</p>
+
+        <p>Until it does.</p>
+
+        <h2>The Wall</h2>
+
+        <p>It usually hits around Algebra 2. Sometimes earlier, sometimes later — but there is always a wall.</p>
+
+        <p>The wall appears when math stops being a collection of isolated techniques and starts requiring synthesis. Suddenly, a problem isn't asking a student to apply the pattern from Tuesday's lesson. It's asking them to connect Tuesday's lesson to something from October and something from 7th grade — and make a judgment call about which tool to use and why.</p>
+
+        <p>That's when the cramming starts. That's when the test scores drop. That's when your kid — who has always been smart, who has always been fine — looks at an exam and feels, for the first time, genuinely lost.</p>
+
+        <p>And because nobody saw it coming, the instinct is to call it a confidence problem. Or a focus problem. Or a maturity problem.</p>
+
+        <p><strong>It's a foundation problem.</strong></p>
+
+        <h2>The Careless Mistake Myth</h2>
+
+        <p>Here is a concrete example of how this plays out — one I've seen hundreds of times in the classroom.</p>
+
+        <div class="post-example">
+          <div class="post-example-label">Classroom Example — Geometry</div>
+          <p>A student is working with segment relationships — say, proving that DE = ½ EF.</p>
+          <p>A student with real conceptual understanding writes it out step by step: they state what they know, establish the relationship explicitly, substitute values, and work through the algebra. Each line is a logical statement leading to the next. The written work isn't decoration — it's the reasoning made visible.</p>
+          <p>The pattern-matching student skips from the diagram straight to the answer. They saw the relationship. They don't need to write it out. Except they do — because without those intermediate steps, they aren't performing mathematics. They're running mental shortcuts that fall apart the moment the problem gets more complex. And when they get the wrong answer, it looks like a careless mistake.</p>
+          <p>It isn't careless. They just never learned that the written work isn't busywork. The systematic, step-by-step reasoning is the skill. Math done well is a written argument, not a mental calculation.</p>
+        </div>
+
+        <h2>What This Means for Your Kid</h2>
+
+        <p>If any of this sounds familiar, here is what I want you to know:</p>
+
+        <p>Your kid is not lazy. They are not careless. They are not suddenly bad at math. They developed a habit — a very effective one, for a while — of moving fast without building deep. And that habit was rewarded for years before it stopped working.</p>
+
+        <p>The good news is that this is a solvable problem. But the solution isn't more practice problems. It's going back to the places where the foundation got skipped, rebuilding it the right way, and teaching a student how to actually think through math rather than pattern-match through it.</p>
+
+        <p>That process looks different for every student. But it starts with understanding what's actually going on — which is exactly why you read this far.</p>
+
+        <hr class="post-divider" />
+
+        <p style="color: var(--text-subtle, #6b7280); font-size: 0.9375rem;">
+          <strong style="color: var(--navy, #0f1f3d);">Rich Hollinger</strong> is a high school math teacher at San Marino High School and the founder of MathLedX. He holds a B.A. in Mathematics and a Master's in Math Education.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- ═══ POST CTA ═══ -->
+  <section class="post-cta">
+    <div class="container">
+      <div class="post-cta-inner fade-up">
+        <div class="post-cta-label">More Like This</div>
+        <h2>Want the next post in your inbox?</h2>
+        <p>I write about the specific ways the math system fails capable students — and what parents can actually do about it. No jargon. No fluff.</p>
+        <div class="post-cta-actions">
+          <a href="tutoring.html" class="btn-primary btn-lg">
+            Book a Free Consultation
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="blog.html" class="btn-outline btn-lg">Back to Blog</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-pill" style="margin-bottom:4px;" aria-label="MathLedX home">
+            <img src="images/MathLedX%20(2).png" alt="MathLedX" style="height:28px;" />
+          </a>
+          <p>Built by a math teacher who had to figure it out the hard way.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="tutoring.html">Tutoring</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <li class="footer-contact-item">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1.5 3.5h13v9h-13v-9zm0 0l6.5 5.5 6.5-5.5" stroke="rgba(255,255,255,0.4)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="mailto:richhollinger@mathledx.com">richhollinger@mathledx.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 MathLedX. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
