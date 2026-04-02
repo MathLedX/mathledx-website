@@ -1033,3 +1033,24 @@ textarea.form-input { resize: vertical; min-height: 120px; }
   margin-left: auto;
   margin-right: auto;
 }
+/* ── Blog post header image ── */
+.post-image-wrap {
+  width: 100%;
+  max-height: 480px;
+  overflow: hidden;
+  background: #0f1f3d;
+}
+.post-image {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 0.92;
+}
+@media (max-width: 768px) {
+  .post-image,
+  .post-image-wrap {
+    height: 260px;
+  }
+}
