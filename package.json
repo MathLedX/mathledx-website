@@ -1,5 +1,9 @@
 {
+  "scripts": {
+    "publish": "node publish-post.mjs"
+  },
   "dependencies": {
+    "mammoth": "^1.12.0",
     "puppeteer": "^24.39.1"
   }
 }

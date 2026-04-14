@@ -46,6 +46,35 @@
 - **Spacing:** Use intentional, consistent spacing tokens — not random Tailwind steps.
 - **Depth:** Surfaces should have a layering system (base → elevated → floating), not all sit at the same z-plane.
 
+## Publishing
+
+To publish a new blog post from a Word document:
+
+```bash
+node publish-post.mjs "path/to/My Post.docx"
+# or via npm:
+npm run publish "path/to/My Post.docx"
+```
+
+**What the script does:**
+1. Converts the `.docx` to HTML using `mammoth`
+2. Extracts the post title from the first heading (`<h1>` or `<h2>`) in the doc; falls back to the filename
+3. Generates a URL slug from the filename (e.g. `My Post.docx` → `post-my-post.html`)
+4. Wraps the content in a full HTML page matching `post-why-smart-kids-struggle.html` exactly
+5. Saves the file as `post-[slug].html` in the project root
+6. Adds a blog card to `blog.html` in the Recent Posts grid, with today's date
+7. Runs `git add .`, `git commit -m "Add post: [title]"`, and `git push`
+
+**Dry run (skip git steps):**
+```bash
+node publish-post.mjs "My Post.docx" --dry-run
+```
+
+**Notes:**
+- The post's category defaults to "General" — edit the saved HTML to change it
+- Reading time is auto-estimated at ~200 words/minute
+- `blog.html` uses the `<!-- ═══ CTA ═══ -->` comment as the insertion sentinel for the Recent Posts section — do not remove it
+
 ## Hard Rules
 - Do not add sections, features, or content not in the reference
 - Do not "improve" a reference design — match it
