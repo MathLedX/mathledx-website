@@ -8,6 +8,462 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Selection ─────────────────────────────────────────────── */
+    ::selection { background: rgba(26,86,219,0.13); color: #0f1f3d; }
+
+    /* ── SECTION 1: HERO ───────────────────────────────────────── */
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .home-hero {
+      background: #ffffff;
+      padding: 96px 0 80px;
+      text-align: center;
+    }
+    .home-hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .hero-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1a56db;
+      margin-bottom: 24px;
+      animation: heroFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: 0s;
+    }
+    .home-hero h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: #0f1f3d;
+      letter-spacing: -0.03em;
+      line-height: 1.13;
+      margin-bottom: 0;
+      animation: heroFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: 0.12s;
+    }
+    .home-hero-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      color: #6b7280;
+      max-width: 500px;
+      margin: 20px auto 36px;
+      line-height: 1.7;
+      animation: heroFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: 0.24s;
+    }
+    .home-hero-cta {
+      animation: heroFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: 0.38s;
+    }
+    .home-hero-rule {
+      border: none;
+      border-top: 1px solid #e5e3de;
+      max-width: 120px;
+      margin: 48px auto 24px;
+    }
+    .hero-creds {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: #6b7280;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SECTION 2: FEATURED READING ──────────────────────────── */
+    .featured-section {
+      background: #f8f7f4;
+      border-top: 1px solid #e5e3de;
+      padding: 80px 0;
+    }
+    .featured-header {
+      margin-bottom: 40px;
+    }
+    .featured-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #1a56db;
+      margin-bottom: 10px;
+    }
+    .featured-header h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: #0f1f3d;
+      letter-spacing: -0.025em;
+      line-height: 1.14;
+      margin-bottom: 12px;
+    }
+    .featured-header p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: #6b7280;
+      line-height: 1.7;
+      max-width: 520px;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 640px) {
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .blog-card-editorial {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #e5e3de;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .blog-card-editorial:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    }
+    .blog-card-img-wrap {
+      height: 240px;
+      overflow: hidden;
+      border-radius: 12px 12px 0 0;
+      flex-shrink: 0;
+    }
+    .blog-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .blog-card-editorial:hover .blog-card-img-wrap img {
+      transform: scale(1.04);
+    }
+    .blog-card-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #0f1f3d 0%, #1a3a6b 60%, rgba(22,104,255,0.13) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-card-placeholder-sym1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -55%);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 5rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.15);
+      user-select: none;
+      line-height: 1;
+    }
+    .blog-card-placeholder-sym2 {
+      position: absolute;
+      bottom: -10px;
+      right: 30px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 7rem;
+      font-weight: 800;
+      color: rgba(22,104,255,0.20);
+      user-select: none;
+      line-height: 1;
+    }
+    .blog-card-body {
+      padding: 28px 32px 36px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1a56db;
+      margin-bottom: 10px;
+    }
+    .blog-card-body h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f1f3d;
+      line-height: 1.3;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+    .blog-card-excerpt {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9375rem;
+      color: #374151;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .blog-card-meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8125rem;
+      color: #9ca3af;
+    }
+    .blog-card-read {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1a56db;
+    }
+    .blog-card-editorial:hover .blog-card-read {
+      text-decoration: underline;
+    }
+    .more-blog-link {
+      display: block;
+      width: fit-content;
+      margin: 40px auto 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #1a56db;
+      text-decoration: none;
+      position: relative;
+    }
+    .more-blog-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #1a56db;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .more-blog-link:hover::after { transform: scaleX(1); }
+
+    /* ── SECTION 3: ABOUT RICH ─────────────────────────────────── */
+    .about-section {
+      background: #ffffff;
+      border-top: 1px solid #e5e3de;
+      padding: 80px 0;
+    }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 480px 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .about-inner { grid-template-columns: 1fr; gap: 48px; }
+    }
+    .about-photo-wrap {
+      position: relative;
+      z-index: 1;
+    }
+    .about-photo-wrap::before {
+      content: '';
+      position: absolute;
+      width: calc(100% + 24px);
+      height: calc(100% + 24px);
+      top: -12px;
+      left: -12px;
+      z-index: -1;
+      border: 2px solid #e5e3de;
+      border-radius: 20px;
+      pointer-events: none;
+    }
+    .about-photo-wrap img {
+      width: 100%;
+      max-width: 420px;
+      display: block;
+      border-radius: 16px;
+      box-shadow: 0 12px 48px rgba(15,31,61,0.13);
+    }
+    @media (max-width: 767px) {
+      .about-photo-wrap { display: none; }
+    }
+    .about-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1a56db;
+      margin-bottom: 12px;
+    }
+    .about-text h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #0f1f3d;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: #1a1a2e;
+      line-height: 1.8;
+    }
+    .about-text p + p { margin-top: 1em; }
+    .about-creds {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      color: #6b7280;
+      border-top: 1px solid #e5e3de;
+      padding-top: 18px;
+      margin-top: 20px;
+      line-height: 1.8;
+    }
+    .about-cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #1a56db;
+      text-decoration: none;
+    }
+    .about-cta-link:hover { text-decoration: underline; }
+    .about-cta-link .arrow {
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+    .about-cta-link:hover .arrow { transform: translateX(3px); }
+
+    /* ── SECTION 4: STATS BAR ──────────────────────────────────── */
+    .stats-section {
+      background: #0f1f3d;
+      padding: 48px 0;
+    }
+    .stats-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .stat-item {
+      flex: 1;
+      text-align: center;
+      padding: 0 40px;
+      max-width: 280px;
+    }
+    .stat-number-wrap {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+    }
+    .stat-number {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1;
+    }
+    .stat-suffix {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a56db;
+      margin-left: 4px;
+      align-self: flex-start;
+      padding-top: 8px;
+    }
+    .stat-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 6px;
+      max-width: 160px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+    .stat-divider {
+      width: 1px;
+      height: 48px;
+      background: rgba(255,255,255,0.12);
+      flex-shrink: 0;
+    }
+    @media (max-width: 600px) {
+      .stats-inner { flex-direction: column; gap: 32px; }
+      .stat-divider { display: none; }
+    }
+
+    /* ── SECTION 5: FINAL CTA ──────────────────────────────────── */
+    .home-cta-section {
+      background: #f8f7f4;
+      border-top: 1px solid #e5e3de;
+      padding: 88px 0;
+      text-align: center;
+    }
+    .home-cta-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .home-cta-inner h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0f1f3d;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .home-cta-inner p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      color: #6b7280;
+      line-height: 1.65;
+      margin-bottom: 36px;
+    }
+    .home-cta-email {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      color: #9ca3af;
+      margin-top: 20px;
+    }
+    .home-cta-email a {
+      color: #0f1f3d;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .home-cta-email a:hover { text-decoration: underline; }
+
+    /* ── RESPONSIVE ────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .home-hero { padding: 60px 0 52px; }
+      .home-hero h1 { font-size: 1.85rem; }
+    }
+    @media (max-width: 480px) {
+      .home-hero h1 { font-size: 1.6rem; }
+      .hero-creds { flex-direction: column; gap: 8px; align-items: center; }
+    }
+  </style>
 </head>
 <body>
 
@@ -17,16 +473,13 @@
       <a href="index.html" class="logo-pill" aria-label="MathLedX home">
         <img src="images/MathLedX%20(2).png" alt="MathLedX" />
       </a>
-
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="index.html" class="nav-link active">Home</a>
         <a href="curriculum.html" class="nav-link">Curriculum</a>
         <a href="tutoring.html" class="nav-link">Tutoring</a>
         <a href="blog.html" class="nav-link">Blog</a>
       </nav>
-
       <a href="tutoring.html" class="btn-primary btn-sm nav-cta">Book Tutoring</a>
-
       <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
@@ -44,128 +497,134 @@
     </div>
   </div>
 
-  <!-- ═══ HERO — split layout ═══ -->
-  <section class="hero-split">
+  <!-- ═══ SECTION 1 — HERO ═══ -->
+  <section class="home-hero">
+    <div class="home-hero-inner">
+      <p class="hero-eyebrow">High School Math Tutoring &middot; San Marino, CA</p>
+      <h1>Most students aren't bad at math.<br>They've just never had it explained<br>in a way that works for them.</h1>
+      <p class="home-hero-sub">I'm Rich Hollinger — a math teacher at San Marino High School. I find where things broke down and fix it.</p>
+      <div class="home-hero-cta">
+        <a href="tutoring.html" class="btn-primary btn-lg">
+          Book a Free Consultation
+          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <hr class="home-hero-rule" />
+      <div class="hero-creds">
+        <span>4 years &middot; San Marino HS</span>
+        <span>League Champions &middot; Math Team</span>
+        <span>Master's in Math Education</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SECTION 2 — FEATURED READING ═══ -->
+  <section class="featured-section">
     <div class="container">
-      <div class="hero-split-inner">
-        <div class="hero-split-text fade-up">
-          <p class="hero-location-tag">San Marino, CA &middot; High School Math &middot; Grades 9&ndash;12</p>
-          <h1 class="hero-title">Most students aren't bad at math. They've just never had it explained in a way that works for them.</h1>
-          <p class="hero-sub">I'm Rich Hollinger — a high school math teacher at San Marino High School. I figure out where things broke down — and fix it.</p>
-          <div class="hero-actions">
-            <a href="tutoring.html" class="btn-primary btn-lg">
-              Book a Free Consultation
-              <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <a href="#how-it-works" class="btn-outline btn-lg">See How It Works</a>
+      <div class="featured-header fade-up">
+        <p class="featured-label">From the Blog</p>
+        <h2>Start here.</h2>
+        <p>Two posts that explain exactly why capable students lose their footing in math — and what actually fixes it.</p>
+      </div>
+
+      <div class="blog-grid">
+        <a href="post-why-smart-kids-struggle.html" class="blog-card-editorial fade-up">
+          <div class="blog-card-img-wrap">
+            <img src="images/blog-smart-kids-math.png" alt="Why Smart Kids Struggle in Math" />
           </div>
-        </div>
-        <div class="hero-split-photo fade-up delay-1">
-          <img src="images/Profile.png" alt="Rich Hollinger — math teacher and creator of MathLedX" />
-        </div>
+          <div class="blog-card-body">
+            <p class="blog-card-tag">For Parents</p>
+            <h3>Why Smart Kids Struggle in Math (And Why Nobody Catches It)</h3>
+            <p class="blog-card-excerpt">Your kid is smart — so why is math becoming a problem? The answer isn't carelessness. It's a hidden gap that the classroom never catches.</p>
+            <p class="blog-card-meta">Rich Hollinger &nbsp;&middot;&nbsp; April 2026 &nbsp;&middot;&nbsp; 6 min read</p>
+            <span class="blog-card-read">Read the post →</span>
+          </div>
+        </a>
+
+        <a href="post-mathledx-post-2.html" class="blog-card-editorial fade-up delay-1">
+          <div class="blog-card-img-wrap">
+            <div class="blog-card-placeholder">
+              <span class="blog-card-placeholder-sym1">x²</span>
+              <span class="blog-card-placeholder-sym2">∫</span>
+            </div>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-tag">For Parents</p>
+            <h3>You Haven't Earned the Right to Skip Steps Yet</h3>
+            <p class="blog-card-excerpt">Every math parent has heard it: "he just makes careless mistakes." That explanation is wrong — and fixing the wrong problem guarantees the right problem never gets fixed.</p>
+            <p class="blog-card-meta">Rich Hollinger &nbsp;&middot;&nbsp; April 2026 &nbsp;&middot;&nbsp; 6 min read</p>
+            <span class="blog-card-read">Read the post →</span>
+          </div>
+        </a>
       </div>
+
+      <a href="blog.html" class="more-blog-link">More from the blog →</a>
     </div>
   </section>
 
-  <!-- ═══ THE PROBLEM ═══ -->
-  <section class="trust-section">
+  <!-- ═══ SECTION 3 — ABOUT RICH ═══ -->
+  <section class="about-section">
     <div class="container">
-      <div class="trust-inner fade-up">
-        <div class="section-label" style="justify-content:center; margin-bottom:28px;">The Problem</div>
-        <h2 class="section-title" style="margin-bottom:32px;">The system is broken. Not your student.</h2>
-        <p class="trust-text">Most students who struggle in math aren't missing ability. They're missing a system that was ever actually built for how they think.</p>
-        <p class="trust-text">Somewhere along the way, a bad explanation replaced curiosity with shame. A skipped concept became a wall. And the wall became an identity: "I'm just not a math person."</p>
-        <p class="trust-text trust-text-emphasis">That's what I fix.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ ABOUT RICH ═══ -->
-  <section class="profile-section">
-    <div class="container">
-      <div class="profile-split fade-up">
-        <div class="profile-split-photo">
+      <div class="about-inner fade-up">
+        <div class="about-photo-wrap">
           <img src="images/Profile.png" alt="Rich Hollinger — math teacher and founder of MathLedX" />
         </div>
-        <div class="profile-split-text">
-          <div class="profile-accent-line"></div>
-          <h2 class="profile-name">Hi, I'm Rich.</h2>
-          <p class="profile-bio">I was the kid in the back of class who didn't need to pay attention. Smart enough to coast. Then college hit — and coasting stopped working.</p>
-          <p class="profile-bio">No study skills. No system. I failed courses. So I went back to fundamentals, built a process, and learned how my brain actually worked. When I did — things didn't just improve. They compounded.</p>
-          <p class="profile-bio">That experience became my teaching philosophy. Four years at San Marino High School — one of the most competitive public campuses in Southern California — proved it works. I coached a math team to a league championship after a decade-long drought. I built state test prep materials that went school-wide. My principal calls me one of the best on campus.</p>
-          <p class="profile-bio">MathLedX is that same energy — now available one on one.</p>
-          <p class="profile-credentials">B.A. Mathematics &middot; Master's in Math Education &middot; CA Single Subject Credential &middot; San Marino High School</p>
-          <div style="margin-top: 28px;">
-            <a href="tutoring.html" class="btn-primary">
-              Work with me
-              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M2.5 7.5h10M8 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ HOW I HELP ═══ -->
-  <div class="approach-section" id="how-it-works">
-    <div class="container">
-      <h2 class="approach-title fade-up">How I actually work</h2>
-      <div class="approach-list">
-        <div class="approach-item fade-up">
-          <div class="approach-num">01</div>
-          <div>
-            <h3 class="approach-item-title">I diagnose before I teach</h3>
-            <p class="approach-item-body">Before I teach anything, I find the gap. Most tutors start at the homework. I start further back.</p>
-          </div>
-        </div>
-        <div class="approach-item fade-up delay-1">
-          <div class="approach-num">02</div>
-          <div>
-            <h3 class="approach-item-title">I build around how you actually think</h3>
-            <p class="approach-item-body">I don't have one explanation for every student. I have the one that works for yours.</p>
-          </div>
-        </div>
-        <div class="approach-item fade-up delay-2">
-          <div class="approach-num">03</div>
-          <div>
-            <h3 class="approach-item-title">I use competition to build confidence</h3>
-            <p class="approach-item-body">I use the same tools in tutoring that I use in my classroom — competition, retakes, immediate feedback. They work because they're honest.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ WHO THIS IS FOR ═══ -->
-  <section class="section who-section">
-    <div class="container">
-      <div class="who-inner fade-up">
-        <h2 class="who-title">Does this sound like your kid?</h2>
-        <ul class="who-list">
-          <li class="who-item">The C or B student who is capable of more — and somewhere knows it</li>
-          <li class="who-item">The honors student running on anxiety instead of real understanding</li>
-          <li class="who-item">The student who is one good system away from things clicking</li>
-          <li class="who-item">Parents who want more than homework help — they want real change</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ CTA ═══ -->
-  <section class="section cta-section">
-    <div class="cta-glow" aria-hidden="true"></div>
-    <div class="container">
-      <div class="cta-content fade-up">
-        <h2 class="cta-title">If any of this sounds familiar — let's talk.</h2>
-        <p class="cta-body">The first conversation is free. I'll tell you honestly what I think is going on and whether I'm the right fit.</p>
-        <div class="cta-actions">
-          <a href="tutoring.html" class="btn-primary btn-lg">
-            Book a Free Consultation
-            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="about-text">
+          <p class="about-label">About Rich</p>
+          <h2>Hi, I'm Rich.</h2>
+          <p>I was the kid in the back of class who didn't need to pay attention. Smart enough to coast. Then college hit — and coasting stopped working.</p>
+          <p>I failed courses. Built a system. Learned how my brain actually worked. When I did — things didn't just improve. They compounded.</p>
+          <p>Four years at San Marino High School proved it works on other people's kids too. MathLedX is that process — available one on one.</p>
+          <p class="about-creds">B.A. Mathematics &nbsp;&middot;&nbsp; Master's in Math Education<br>CA Single Subject Credential &nbsp;&middot;&nbsp; San Marino HS</p>
+          <a href="tutoring.html" class="about-cta-link">
+            Work with me <span class="arrow">→</span>
           </a>
-          <a href="curriculum.html" class="btn-outline btn-lg">View Curriculum</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ═══ SECTION 4 — STATS BAR ═══ -->
+  <section class="stats-section" id="stats-bar">
+    <div class="container">
+      <div class="stats-inner">
+        <div class="stat-item fade-up">
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="4">0</span>
+            <span class="stat-suffix">years</span>
+          </div>
+          <p class="stat-label">at San Marino High School</p>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item fade-up delay-1">
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="1">0</span>
+            <span class="stat-suffix">championship</span>
+          </div>
+          <p class="stat-label">Math team, after a decade-long drought</p>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item fade-up delay-2">
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="100" data-percent="true">0</span>
+            <span class="stat-suffix"></span>
+          </div>
+          <p class="stat-label">honest — I'll tell you if I'm the wrong fit</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SECTION 5 — FINAL CTA ═══ -->
+  <section class="home-cta-section">
+    <div class="home-cta-inner fade-up">
+      <h2>If any of this sounds familiar — let's talk.</h2>
+      <p>The first conversation is free. I'll tell you honestly what I think is going on and whether I'm the right fit.</p>
+      <a href="tutoring.html" class="btn-primary btn-lg">
+        Book a Free Consultation
+        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <p class="home-cta-email">Or email me directly: <a href="mailto:richhollinger@mathledx.com">richhollinger@mathledx.com</a></p>
     </div>
   </section>
 
@@ -179,7 +638,6 @@
           </a>
           <p>Built by a math teacher who had to figure it out the hard way.</p>
         </div>
-
         <div>
           <div class="footer-col-title">Pages</div>
           <ul class="footer-links">
@@ -189,7 +647,6 @@
             <li><a href="blog.html">Blog</a></li>
           </ul>
         </div>
-
         <div>
           <div class="footer-col-title">Contact</div>
           <ul class="footer-links">
@@ -200,7 +657,6 @@
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p class="footer-copy">&copy; 2026 MathLedX. All rights reserved.</p>
         <div class="footer-legal">
@@ -212,5 +668,41 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    /* ── Stats count-up animation ─────────────────────────────── */
+    function easeOutQuart(t) {
+      return 1 - Math.pow(1 - t, 4);
+    }
+
+    function countUp(el, target, isPercent, duration) {
+      const start = performance.now();
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const value = Math.round(easeOutQuart(progress) * target);
+        el.textContent = isPercent ? value + '%' : String(value);
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    let statsAnimated = false;
+    const statsSection = document.getElementById('stats-bar');
+
+    const statsObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !statsAnimated) {
+          statsAnimated = true;
+          document.querySelectorAll('.stat-number[data-target]').forEach(function(el) {
+            const target = parseInt(el.dataset.target, 10);
+            const isPercent = el.dataset.percent === 'true';
+            countUp(el, target, isPercent, 1200);
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    if (statsSection) statsObserver.observe(statsSection);
+  </script>
 </body>
 </html>
