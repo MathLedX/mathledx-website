@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>A Letter to the Smart Kid in the Back of the Class — MathLedX</title>
+  <meta name="description" content="" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Blog post styles -->
+  <style>
+    /* ── Post header ── */
+    .post-hero {
+      background: var(--bg, #ffffff);
+      border-bottom: 1px solid var(--border, #e5e3de);
+      padding: calc(var(--nav-h, 68px) + 56px) 0 56px;
+    }
+    .post-hero-inner {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+    .post-category {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue, #1a56db);
+      margin-bottom: 20px;
+    }
+    .post-hero h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.9rem, 4vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.18;
+      color: var(--navy, #0f1f3d);
+      margin: 0 0 24px;
+      letter-spacing: -0.02em;
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-subtle, #6b7280);
+    }
+    .post-meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--text-subtle, #6b7280);
+      display: inline-block;
+    }
+    .post-meta strong {
+      color: var(--text, #1a1a2e);
+      font-weight: 600;
+    }
+
+    /* ── Post body ── */
+    .post-body {
+      padding: 64px 0 80px;
+      background: var(--bg, #ffffff);
+    }
+    .post-content {
+      max-width: 740px;
+      margin: 0 auto;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--text, #1a1a2e);
+    }
+    .post-content p {
+      margin: 0 0 1.5em;
+    }
+    .post-content h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy, #0f1f3d);
+      margin: 2.5em 0 0.75em;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    .post-content h2:first-child {
+      margin-top: 0;
+    }
+    .post-content h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy, #0f1f3d);
+      margin: 2em 0 0.5em;
+      line-height: 1.4;
+    }
+    .post-content strong {
+      font-weight: 600;
+      color: var(--navy, #0f1f3d);
+    }
+    .post-content em {
+      font-style: italic;
+      color: var(--text, #1a1a2e);
+    }
+    .post-content ul,
+    .post-content ol {
+      margin: 0 0 1.5em 1.5em;
+      padding: 0;
+    }
+    .post-content li {
+      margin-bottom: 0.5em;
+    }
+
+    /* Divider */
+    .post-divider {
+      border: none;
+      border-top: 1px solid var(--border, #e5e3de);
+      margin: 2.5em 0;
+    }
+
+    /* ── Email CTA ── */
+    .post-cta {
+      background: var(--bg-alt, #f8f7f4);
+      border-top: 1px solid var(--border, #e5e3de);
+      border-bottom: 1px solid var(--border, #e5e3de);
+      padding: 64px 0;
+    }
+    .post-cta-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .post-cta-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue, #1a56db);
+      margin-bottom: 16px;
+    }
+    .post-cta h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.625rem;
+      font-weight: 700;
+      color: var(--navy, #0f1f3d);
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    .post-cta p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: var(--text-subtle, #6b7280);
+      line-height: 1.6;
+      margin: 0 0 28px;
+    }
+    .post-cta-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 800px) {
+      .post-hero { padding: 48px 0 40px; }
+      .post-content { font-size: 1rem; }
+      .post-content h2 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="logo-pill" aria-label="MathLedX home">
+        <img src="images/MathLedX%20(2).png" alt="MathLedX" />
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="curriculum.html" class="nav-link">Curriculum</a>
+        <a href="tutoring.html" class="nav-link">Tutoring</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+      </nav>
+      <a href="tutoring.html" class="btn-primary btn-sm nav-cta">Book Tutoring</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="curriculum.html" class="mobile-nav-link">Curriculum</a>
+      <a href="tutoring.html" class="mobile-nav-link">Tutoring</a>
+      <a href="blog.html" class="mobile-nav-link active">Blog</a>
+      <a href="tutoring.html" class="btn-primary mobile-cta">Book Tutoring</a>
+    </div>
+  </div>
+
+  <!-- ═══ POST HEADER ═══ -->
+  <section class="post-hero">
+    <div class="container">
+      <div class="post-hero-inner fade-up">
+        <div class="post-category">General</div>
+        <h1>A Letter to the Smart Kid in the Back of the Class</h1>
+        <div class="post-meta">
+          <strong>Rich Hollinger</strong>
+          <span class="post-meta-dot"></span>
+          April 2026
+          <span class="post-meta-dot"></span>
+          5 min read
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ POST BODY ═══ -->
+  <article class="post-body">
+    <div class="container">
+      <div class="post-content fade-up">
+
+        <p><strong>MATHLEDX</strong></p><p>Blog Draft — For Students</p><p>CATEGORY: For Students   ·   April 2026   ·   Draft 1</p><p><strong>SEO NOTE: </strong>Target keyword: "smart kid bored in math class" / "coasting in school advice" — Meta description: You’re getting A’s without trying. You’re finishing before everyone else. You think that means you’ve figured it out. You haven’t. Here’s what coasting is actually costing you — from someone who did it for years.</p><p>I see you. Back row, work already done, waiting for the class to catch up. Maybe you’re on your phone. Maybe you’re just sitting there looking vaguely unimpressed. You’ve already figured out the pattern, already got the answer, and you’re doing that thing where you’re physically present and mentally somewhere else entirely. I know exactly what that feels like. I did it for years. And I want to tell you what it cost me — because nobody told me.</p><h2><strong>You’re Allowed to Actually Try</strong></h2><p>I know that sounds strange. Of course you’re allowed to try. But watch what happens in your classroom when someone who is supposed to be smart gets an answer wrong. There’s a moment. A flicker. And smart kids learn very early how to never be in that moment.</p><p>So you stop trying things you might get wrong. You answer the questions you already know. You do the work that’s already within reach. You stay safe inside what you’re certain of — and you call it being smart.</p><p>But that’s not intelligence. That’s risk management. And it’s quietly hollowing out the very ability you’re trying to protect.</p><p><em>Getting the answer wrong is not the opposite of being smart. Refusing to risk being wrong is.</em></p><p>Research on high-achieving students consistently shows that kids praised for being smart — rather than for their effort and process — become more risk-averse over time, not less. They start choosing easier tasks to protect their reputation. They disengage when material gets genuinely hard. Psychologist Carol Dweck at Stanford has spent decades documenting this pattern. The kid who coasts on ability alone hits a wall harder than almost anyone else — because they never built the muscle for struggle.</p><p>I was that kid. And the wall hit me junior year of college when I failed three courses in a single semester. Not because I wasn’t smart enough. Because I had never learned how to try.</p><h2><strong>Being Liked Is Not the Same as Being Followed</strong></h2><p>Here’s the social calculation you might be making, even if you haven’t named it: if you try too hard, if you answer too many questions, if you seem too interested in what’s happening in class, something happens socially. You know what I’m talking about.</p><p>That calculation is real. I’m not going to pretend it isn’t.</p><p>But I want you to think about the difference between being liked and being followed. The kid who is smooth and disengaged and never seems to care about anything — people like being around them. They’re comfortable. Low stakes. But nobody follows them anywhere. Nobody looks to them when something actually matters.</p><p><strong>LIKED VS FOLLOWED</strong></p><p>Being liked means people enjoy your company. Being followed means people trust your judgment, look to you under pressure, and want to know what you think when it counts. One is a social comfort. The other is actual leadership. You cannot build the second one while hiding inside the first.</p><p>The kid who is willing to say forget the social consequences and engage anyway — who asks the question nobody else will ask, who takes the hard problem seriously, who is openly curious even when it’s not cool — that kid becomes someone people follow. Not immediately. But over time, and in ways that matter a lot more than who sat at which table in the cafeteria.</p><h2><strong>What You’re Actually Doing to Yourself</strong></h2><p>You are working hard right now. I want you to understand that. The performance of not caring takes real effort. Finishing your work fast so you can check out, managing your image, staying in the exact lane that keeps you safe socially and academically — that is exhausting. You are spending enormous energy on staying exactly where you are.</p><p>What if you spent that same energy going somewhere?</p><p>When you finish the assigned problems, work the challenge problems at the end of the section. Nobody is making you. Do it because the problem is interesting. If the class feels too slow, ask your teacher if you can independently explore a related topic. They might say no. They might surprise you. Either way you asked, and asking is already further than you were going before.</p><p>Stop performing the back row. It is a costume you have been wearing so long you have forgotten it is a costume.</p><p><em>Sitting in the back and getting an A while pretending you don’t care might get you the attention you think you want. It will slowly erode the confidence and leadership you actually need.</em></p><h2><strong>I Still Fight This</strong></h2><p>I want to be honest with you about something. I am an adult with a mathematics degree and a master’s in math education. I have been a teacher for years. And I still quadruple guess myself before I share an idea. I still write things and then sit on them because I’m afraid of what someone might say. The kid in the back of the class who didn’t want to be caught caring too much — he didn’t disappear. He just got older.</p><p>The difference now is that I know what it costs. Every idea I didn’t share, every thing I didn’t try because I was protecting myself from being wrong — that was potential I left on the table. Not someone else’s potential. Mine.</p><p>You are allowed to be curious. You are allowed to be wrong in front of people. You are allowed to care about what you’re learning and say so out loud. You are allowed to be successful in the full sense of the word — not just in the narrow, safe, back-row version of it.</p><p>The criticism you are afraid of is not worth what you are giving up to avoid it. I promise you that. I just wish someone had told me sooner.</p><p><strong>WANT THE NEXT POST IN YOUR INBOX?</strong></p><p>I write about what it actually takes to go from coasting to capable — for students, parents, and anyone who wants to think differently about learning. Sign up at mathledx.com.</p><p>MathLedX  ·  mathledx.com  ·  © 2026 Rich Hollinger. All rights reserved.</p>
+
+        <hr class="post-divider" />
+
+        <p style="color: var(--text-subtle, #6b7280); font-size: 0.9375rem;">
+          <strong style="color: var(--navy, #0f1f3d);">Rich Hollinger</strong> is a high school math teacher at San Marino High School and the founder of MathLedX. He holds a B.A. in Mathematics and a Master's in Math Education.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- ═══ POST CTA ═══ -->
+  <section class="post-cta">
+    <div class="container">
+      <div class="post-cta-inner fade-up">
+        <div class="post-cta-label">More Like This</div>
+        <h2>Want the next post in your inbox?</h2>
+        <p>I write about the specific ways the math system fails capable students — and what parents can actually do about it. No jargon. No fluff.</p>
+        <div class="post-cta-actions">
+          <a href="tutoring.html" class="btn-primary btn-lg">
+            Book a Free Consultation
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="blog.html" class="btn-outline btn-lg">Back to Blog</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-pill" style="margin-bottom:4px;" aria-label="MathLedX home">
+            <img src="images/MathLedX%20(2).png" alt="MathLedX" style="height:28px;" />
+          </a>
+          <p>Built by a math teacher who had to figure it out the hard way.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="tutoring.html">Tutoring</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <li class="footer-contact-item">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1.5 3.5h13v9h-13v-9zm0 0l6.5 5.5 6.5-5.5" stroke="rgba(255,255,255,0.4)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="mailto:richhollinger@mathledx.com">richhollinger@mathledx.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 MathLedX. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
