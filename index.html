@@ -110,6 +110,39 @@
       .nav-box { min-height: 190px; padding: 36px 20px 40px; }
       .nav-box-title { font-size: 1.5rem; }
     }
+
+    /* ── Minimal about strip ── */
+    .home-about-minimal {
+      padding: 64px 0 72px;
+      border-top: 1px solid rgba(15,31,61,0.08);
+    }
+    .home-about-minimal-inner {
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .home-about-minimal-inner p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #4b5563;
+      margin-bottom: 24px;
+    }
+    .home-about-minimal-cta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #0f1f3d;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      border-bottom: 1px solid rgba(15,31,61,0.25);
+      padding-bottom: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .home-about-minimal-cta:hover {
+      color: #1a56db;
+      border-color: #1a56db;
+    }
   </style>
 </head>
 <body class="home-page">
@@ -120,10 +153,10 @@
         <img src="images/MathLedX%20(2).png" alt="MathLedX" />
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#start-here" class="nav-link active">Start Here</a>
+        <a href="curriculum.html" class="nav-link active">Start Here</a>
         <a href="#about" class="nav-link">About</a>
         <a href="blog.html" class="nav-link">Blog</a>
-        <a href="#video-hub" class="nav-link">Videos</a>
+        <a href="#" class="nav-link">Videos</a>
         <a href="curriculum.html" class="nav-link">Curriculum</a>
         <a href="tutoring.html" class="nav-link">Tutoring</a>
       </nav>
@@ -139,10 +172,10 @@
 
   <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
     <div class="mobile-menu-inner">
-      <a href="#start-here" class="mobile-nav-link active">Start Here</a>
+      <a href="curriculum.html" class="mobile-nav-link active">Start Here</a>
       <a href="#about" class="mobile-nav-link">About</a>
       <a href="blog.html" class="mobile-nav-link">Blog</a>
-      <a href="#video-hub" class="mobile-nav-link">Videos</a>
+      <a href="#" class="mobile-nav-link">Videos</a>
       <a href="tutoring.html" class="mobile-nav-link">Tutoring</a>
       <a href="curriculum.html" class="mobile-nav-link">Curriculum</a>
       <a href="tutoring.html" class="btn-primary mobile-cta">Book Tutoring</a>
@@ -160,14 +193,6 @@
           <p class="home-brand-copy">
             MathLedX is where students and parents come to understand why math gets hard and how to fix it.
           </p>
-          <div class="home-brand-socials" aria-label="MathLedX links">
-            <a href="blog.html" class="home-brand-social">B</a>
-            <a href="curriculum.html" class="home-brand-social">C</a>
-            <a href="#video-hub" class="home-brand-social">V</a>
-            <a href="tutoring.html" class="home-brand-social">T</a>
-            <a href="mailto:richhollinger@mathledx.com" class="home-brand-social">@</a>
-          </div>
-
           <div class="hero-social-row">
             <a href="#" class="hero-social-icon" aria-label="Instagram"><!-- Update to your actual URL when ready -->
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -232,173 +257,12 @@
       </div>
     </section>
 
-    <section class="home-destinations" id="start-here">
+    <section class="home-about-minimal" id="about">
       <div class="container">
-        <div class="home-destination-grid">
-          <a href="curriculum.html" class="home-destination home-destination-start fade-up">
-            <p class="home-destination-eyebrow">Start Here</p>
-            <h2>New to MathLedX? Start with the ideas that explain why students get stuck.</h2>
-            <p>Core explanations, clear frameworks, and the foundation behind how MathLedX teaches.</p>
-            <span class="home-destination-link home-destination-button">Begin</span>
-          </a>
-
-          <a href="blog.html" class="home-destination home-destination-blog fade-up delay-1">
-            <p class="home-destination-eyebrow">Blog</p>
-            <h2>Writing on math struggles, confidence, learning, and what actually helps.</h2>
-            <p>Essays for parents, students, and teachers who want better language for what is going wrong.</p>
-            <span class="home-destination-link home-destination-button">Read</span>
-          </a>
-
-          <a href="#video-hub" class="home-destination home-destination-videos fade-up delay-2">
-            <p class="home-destination-eyebrow">Videos</p>
-            <h2>Explanations, breakdowns, and walkthroughs that make math easier to see.</h2>
-            <p>Visual teaching, worked examples, and a growing media side of the MathLedX brand.</p>
-            <span class="home-destination-link home-destination-button">Watch</span>
-          </a>
-
-          <a href="tutoring.html" class="home-destination home-destination-tutoring fade-up delay-3">
-            <p class="home-destination-eyebrow">Tutoring</p>
-            <h2>One-on-one help for students who need clarity, confidence, and results.</h2>
-            <p>Direct support for students hovering at a B, honors students, and anyone who needs math to feel teachable again.</p>
-            <span class="home-destination-link home-destination-button">Book</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-manifesto">
-      <div class="container">
-        <div class="home-manifesto-inner fade-up">
-          <p class="home-section-eyebrow">What MathLedX believes</p>
-          <h2>Most students who struggle in math are not missing ability.</h2>
-          <p>They are missing explanations that match how they think.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-about-feature" id="about">
-      <div class="container">
-        <div class="home-about-layout">
-          <div class="home-about-photo-column fade-up">
-            <div class="home-about-photo-frame">
-              <img src="images/Profile.png" alt="Rich Hollinger" />
-            </div>
-            <div class="home-about-sidecard">
-              <p class="home-section-eyebrow">Credentials</p>
-              <ul class="home-about-credential-list">
-                <li>San Marino High School teacher</li>
-                <li>B.A. in Mathematics</li>
-                <li>Master's in Math Education</li>
-                <li>California Single Subject Credential</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="home-about-story fade-up delay-1">
-            <p class="home-section-eyebrow">About Rich</p>
-            <h2>Hi, I'm Rich.</h2>
-            <p class="home-about-intro">
-              I'm a high school math teacher and math specialist. I help students rebuild confidence by making math make sense step by step.
-            </p>
-            <p>
-              I know what it feels like to look capable on the outside and still not have a real system underneath. I coasted for a long time, hit the wall hard, and had to learn how I actually think before math started to click in a durable way.
-            </p>
-            <p>
-              MathLedX comes out of that process. It is the combination of classroom teaching, written ideas, visual explanation, and one-on-one support that I wish more students had access to earlier.
-            </p>
-            <p>
-              The goal is not to make math look flashy. The goal is to make it clear, honest, and usable so students can stop guessing and start understanding.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-video-band" id="video-hub">
-      <div class="container">
-        <div class="home-video-band-inner fade-up">
-          <div>
-            <p class="home-section-eyebrow">Video hub</p>
-            <h2>MathLedX is growing into a real teaching media brand.</h2>
-          </div>
-          <p>
-            Videos are where short explanations, worked examples, and visual breakdowns will live. Same voice, same standards, different format.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-featured-grid">
-      <div class="container">
-        <div class="home-featured-header fade-up">
-          <p class="home-section-eyebrow">Featured content</p>
-          <h2>Read the ideas shaping the brand.</h2>
-        </div>
-
-        <div class="home-article-grid">
-          <a href="post-why-smart-kids-struggle.html" class="home-article-card home-article-card-ink fade-up">
-            <div class="home-article-art">
-              <span>smart</span>
-            </div>
-            <div class="home-article-copy">
-              <p class="home-article-tag">Parents</p>
-              <h3>Why Smart Kids Struggle in Math</h3>
-              <p>Why bright students can still quietly unravel in math, and why adults often miss the real issue.</p>
-              <span class="home-article-link">Read the article</span>
-            </div>
-          </a>
-
-          <a href="post-mathledx-post-2.html" class="home-article-card home-article-card-paper fade-up delay-1">
-            <div class="home-article-art">
-              <span>step by step</span>
-            </div>
-            <div class="home-article-copy">
-              <p class="home-article-tag">Learning</p>
-              <h3>You Haven't Earned the Right to Skip Steps Yet</h3>
-              <p>Why skipped steps usually signal unfinished thinking, not harmless speed or confidence.</p>
-              <span class="home-article-link">Read the article</span>
-            </div>
-          </a>
-
-          <a href="blog.html" class="home-article-card home-article-card-electric fade-up delay-2">
-            <div class="home-article-art">
-              <span>not careless</span>
-            </div>
-            <div class="home-article-copy">
-              <p class="home-article-tag">Mindset</p>
-              <h3>Most Math Mistakes Aren't Careless</h3>
-              <p>What looks like sloppiness is often a mismatch between memorized procedure and actual understanding.</p>
-              <span class="home-article-link">Read the article</span>
-            </div>
-          </a>
-
-          <a href="curriculum.html" class="home-article-card home-article-card-warm fade-up delay-3">
-            <div class="home-article-art">
-              <span>understand</span>
-            </div>
-            <div class="home-article-copy">
-              <p class="home-article-tag">Curriculum</p>
-              <h3>Why Understanding Beats Memorizing</h3>
-              <p>Students hold onto math longer when they can see why the structure works, not just repeat a rule.</p>
-              <span class="home-article-link">Read the article</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-final-cta">
-      <div class="container">
-        <div class="home-final-cta-inner fade-up">
-          <p class="home-section-eyebrow">Reach out</p>
-          <h2>If any of this sounds familiar, let's talk.</h2>
-          <p>
-            The first conversation is free. I'll tell you honestly what I think is going on and whether I'm the right fit.
-          </p>
-          <div class="home-final-actions">
-            <a href="tutoring.html" class="btn-primary btn-lg">Book a Free Consultation</a>
-            <a href="mailto:richhollinger@mathledx.com" class="home-email-link">richhollinger@mathledx.com</a>
-          </div>
+        <div class="home-about-minimal-inner fade-up">
+          <p class="home-section-eyebrow">About Rich</p>
+          <p>I'm a high school math teacher and specialist. MathLedX is the combination of classroom teaching, writing, and one-on-one tutoring I wish more students had earlier.</p>
+          <a href="tutoring.html" class="home-about-minimal-cta">Book a free consultation →</a>
         </div>
       </div>
     </section>
@@ -416,10 +280,9 @@
         <div>
           <div class="footer-col-title">Explore</div>
           <ul class="footer-links">
-            <li><a href="#start-here">Start Here</a></li>
+            <li><a href="curriculum.html">Start Here</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="#video-hub">Videos</a></li>
             <li><a href="tutoring.html">Tutoring</a></li>
             <li><a href="curriculum.html">Curriculum</a></li>
           </ul>
