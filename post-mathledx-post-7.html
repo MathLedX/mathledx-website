@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Why Your Kid Got a C and Nobody Can Tell You What It Means — MathLedX</title>
+  <meta name="description" content="" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Blog post styles -->
+  <style>
+    /* ── Post header ── */
+    .post-hero {
+      background: var(--bg, #ffffff);
+      border-bottom: 1px solid var(--border, #e5e3de);
+      padding: calc(var(--nav-h, 68px) + 56px) 0 56px;
+    }
+    .post-hero-inner {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+    .post-category {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue, #1a56db);
+      margin-bottom: 20px;
+    }
+    .post-hero h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.9rem, 4vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.18;
+      color: var(--navy, #0f1f3d);
+      margin: 0 0 24px;
+      letter-spacing: -0.02em;
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-subtle, #6b7280);
+    }
+    .post-meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--text-subtle, #6b7280);
+      display: inline-block;
+    }
+    .post-meta strong {
+      color: var(--text, #1a1a2e);
+      font-weight: 600;
+    }
+
+    /* ── Post body ── */
+    .post-body {
+      padding: 64px 0 80px;
+      background: var(--bg, #ffffff);
+    }
+    .post-content {
+      max-width: 740px;
+      margin: 0 auto;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--text, #1a1a2e);
+    }
+    .post-content p {
+      margin: 0 0 1.5em;
+    }
+    .post-content h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy, #0f1f3d);
+      margin: 2.5em 0 0.75em;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    .post-content h2:first-child {
+      margin-top: 0;
+    }
+    .post-content h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy, #0f1f3d);
+      margin: 2em 0 0.5em;
+      line-height: 1.4;
+    }
+    .post-content strong {
+      font-weight: 600;
+      color: var(--navy, #0f1f3d);
+    }
+    .post-content em {
+      font-style: italic;
+      color: var(--text, #1a1a2e);
+    }
+    .post-content ul,
+    .post-content ol {
+      margin: 0 0 1.5em 1.5em;
+      padding: 0;
+    }
+    .post-content li {
+      margin-bottom: 0.5em;
+    }
+
+    /* Divider */
+    .post-divider {
+      border: none;
+      border-top: 1px solid var(--border, #e5e3de);
+      margin: 2.5em 0;
+    }
+
+    /* ── Email CTA ── */
+    .post-cta {
+      background: var(--bg-alt, #f8f7f4);
+      border-top: 1px solid var(--border, #e5e3de);
+      border-bottom: 1px solid var(--border, #e5e3de);
+      padding: 64px 0;
+    }
+    .post-cta-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .post-cta-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue, #1a56db);
+      margin-bottom: 16px;
+    }
+    .post-cta h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.625rem;
+      font-weight: 700;
+      color: var(--navy, #0f1f3d);
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    .post-cta p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: var(--text-subtle, #6b7280);
+      line-height: 1.6;
+      margin: 0 0 28px;
+    }
+    .post-cta-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 800px) {
+      .post-hero { padding: 48px 0 40px; }
+      .post-content { font-size: 1rem; }
+      .post-content h2 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="logo-pill" aria-label="MathLedX home">
+        <img src="images/MathLedX%20(2).png" alt="MathLedX" />
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="curriculum.html" class="nav-link">Curriculum</a>
+        <a href="tutoring.html" class="nav-link">Tutoring</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+      </nav>
+      <a href="tutoring.html" class="btn-primary btn-sm nav-cta">Book Tutoring</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="curriculum.html" class="mobile-nav-link">Curriculum</a>
+      <a href="tutoring.html" class="mobile-nav-link">Tutoring</a>
+      <a href="blog.html" class="mobile-nav-link active">Blog</a>
+      <a href="tutoring.html" class="btn-primary mobile-cta">Book Tutoring</a>
+    </div>
+  </div>
+
+  <!-- ═══ POST HEADER ═══ -->
+  <section class="post-hero">
+    <div class="container">
+      <div class="post-hero-inner fade-up">
+        <div class="post-category">General</div>
+        <h1>Why Your Kid Got a C and Nobody Can Tell You What It Means</h1>
+        <div class="post-meta">
+          <strong>Rich Hollinger</strong>
+          <span class="post-meta-dot"></span>
+          April 2026
+          <span class="post-meta-dot"></span>
+          5 min read
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ POST BODY ═══ -->
+  <article class="post-body">
+    <div class="container">
+      <div class="post-content fade-up">
+
+        <p><strong>MATHLEDX</strong></p><p>Blog Draft — For Parents &amp; Teachers</p><p>CATEGORY: For Parents &amp; Teachers   ·   April 2026   ·   Draft 1</p><p><strong>SEO NOTE: </strong>Target keyword: "why did my kid get a bad grade" / "my kid works hard but fails math tests" — Meta description: Your kid worked hard, studied, and still got a C. And nobody — not the teacher, not the grade, not the test — can actually tell you what went wrong. Here’s why the grading system is failing your kid even when it looks like it’s working.</p><p>I want to tell you about a student I’ll call Jennifer. She joined my honors geometry class even though, honestly, she probably wasn’t quite ready for it. Her mom wanted her to try. Jennifer wanted to try. So she tried. She worked hard. She showed up. She put in the effort. And the first couple of tests came back with C’s. And Jennifer sat at her desk and cried. Not because she didn’t work. Because she did work — and the grade didn’t care.</p><h2><strong>What a Grade Actually Measures</strong></h2><p>A C in honors geometry tells you one thing: this student answered enough questions correctly to land in the 70s. That’s it. It doesn’t tell you how hard they worked. It doesn’t tell you how much they grew. It doesn’t tell you which specific skills they have and which ones they’re missing. It doesn’t tell you whether they’re in the right class, on the right track, or one good explanation away from clicking.</p><p>It gives you a letter. And you’re supposed to know what to do with that.</p><p>Jennifer’s mom felt like she was underperforming. Jennifer felt like she was underperforming. I stood there as her teacher watching her cry, and I couldn’t give her a clean answer — because the system I was using to assess her didn’t have one to give.</p><p><em>The grade didn’t tell Jennifer what she did wrong, what she did right, or what to do next. It just told her she wasn’t enough. That’s not feedback. That’s a verdict.</em></p><h2><strong>I’m Part of the Problem</strong></h2><p>Here’s something most teachers won’t tell you: I use the broken system too. I throw an A or a B or a C at a student based on how they performed on a test I designed, graded against a scale I inherited, in a format that has barely changed in decades. And most of the time, the grade a student gets is roughly the grade they expected to get, which is roughly the grade their parents expected them to get.</p><p>Nobody designed the A-B-C-D-F system to measure growth. It was designed to rank students against each other and against a standard. And ranking is not the same thing as feedback.</p><p><strong>THE PROBLEM IN PLAIN ENGLISH</strong></p><p>Real feedback tells you exactly where you are, exactly where you went wrong, and exactly what to do next. A letter grade does none of those things. It just tells you where you landed relative to everyone else — which is useful for colleges and useless for learning.</p><h2><strong>What Real Feedback Looks Like</strong></h2><p>Think about powerlifting. A lifter doesn’t walk into the gym and get handed a C on their squat. They know exactly how much they lifted — 225 pounds. They know what they’re aiming for next — 227.5 pounds. The feedback is specific, measurable, and immediately actionable. Two pounds of progress is still progress. You can see it. You can build on it.</p><p>Now imagine if the gym worked like school. You squat for a month and at the end someone hands you a C and says “keep working.” You’d have no idea if you got stronger. No idea where your form broke down. No idea what to focus on next. You’d just feel vaguely inadequate and hope next month is better.</p><p>That’s what Jennifer got. A C and “keep working.”</p><p><em>In the real world, failure feels like information. In school, failure feels like a verdict. That difference is not small — it determines whether a kid gets back up or gives up.</em></p><h2><strong>What a Better System Could Look Like</strong></h2><p>I want to be honest here: I don’t have a clean solution. Overhauling a grading system that every teacher, administrator, and college admissions office has built their entire workflow around is not something one teacher can do alone. It would be a logistical nightmare and I know it.</p><p>But I do know what better feedback looks like in principle. Instead of one test that produces one letter, imagine a system where each skill is assessed separately. Area of a triangle with the height inside. Area of a triangle with the height outside. Area using trigonometry. Each one is either mastered or not yet mastered. The student knows exactly where they are. The parent knows exactly where they are. And the path forward is clear.</p><p>Jennifer might have mastered four out of six skills. That’s not a C. That’s a specific map of what she knows and what she’s still building. There’s a difference between those two things — and it matters enormously for how a student feels about themselves and what they do next.</p><h2><strong>What This Means for Your Kid Right Now</strong></h2><p>While we wait for the system to catch up — and it will be a long wait — here is what I’d ask you to do as a parent:</p><p>Stop asking what grade your kid got. Start asking what they understand and what they don’t. Ask their teacher not just for the score but for the specific skills that need work. Push for actual information, not a letter.</p><p>And if your kid is working hard and still getting grades that don’t reflect that effort — like Jennifer — please know this: the grade is not the final word on what they’re capable of. It’s a flawed measurement taken by a flawed system at one point in time. It is not a verdict on their intelligence, their potential, or their future.</p><p>Jennifer kept showing up. She kept working. And that decision — to keep going anyway — is the most important skill she could possibly be building. It just doesn’t show up on the report card.</p><p><strong>WANT THE NEXT POST IN YOUR INBOX?</strong></p><p>I write about the specific ways the math system fails capable students — and what parents and teachers can actually do about it. Sign up at mathledx.com.</p><p>MathLedX  ·  mathledx.com  ·  © 2026 Rich Hollinger. All rights reserved.</p>
+
+        <hr class="post-divider" />
+
+        <p style="color: var(--text-subtle, #6b7280); font-size: 0.9375rem;">
+          <strong style="color: var(--navy, #0f1f3d);">Rich Hollinger</strong> is a high school math teacher at San Marino High School and the founder of MathLedX. He holds a B.A. in Mathematics and a Master's in Math Education.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- ═══ POST CTA ═══ -->
+  <section class="post-cta">
+    <div class="container">
+      <div class="post-cta-inner fade-up">
+        <div class="post-cta-label">More Like This</div>
+        <h2>Want the next post in your inbox?</h2>
+        <p>I write about the specific ways the math system fails capable students — and what parents can actually do about it. No jargon. No fluff.</p>
+        <div class="post-cta-actions">
+          <a href="tutoring.html" class="btn-primary btn-lg">
+            Book a Free Consultation
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="blog.html" class="btn-outline btn-lg">Back to Blog</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-pill" style="margin-bottom:4px;" aria-label="MathLedX home">
+            <img src="images/MathLedX%20(2).png" alt="MathLedX" style="height:28px;" />
+          </a>
+          <p>Built by a math teacher who had to figure it out the hard way.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="tutoring.html">Tutoring</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <li class="footer-contact-item">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1.5 3.5h13v9h-13v-9zm0 0l6.5 5.5 6.5-5.5" stroke="rgba(255,255,255,0.4)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="mailto:richhollinger@mathledx.com">richhollinger@mathledx.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 MathLedX. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
