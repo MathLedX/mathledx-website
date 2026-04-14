@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MathLedX — Curriculum, Writing, Videos, and Tutoring</title>
+  <title>MathLedX — Math that finally makes sense.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -17,10 +17,12 @@
         <img src="images/MathLedX%20(2).png" alt="MathLedX" />
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="curriculum.html" class="nav-link">Curriculum</a>
-        <a href="tutoring.html" class="nav-link">Tutoring</a>
+        <a href="#start-here" class="nav-link active">Start Here</a>
+        <a href="#about-rich" class="nav-link">About</a>
         <a href="blog.html" class="nav-link">Blog</a>
+        <a href="#video-hub" class="nav-link">Videos</a>
+        <a href="tutoring.html" class="nav-link">Tutoring</a>
+        <a href="curriculum.html" class="nav-link">Curriculum</a>
       </nav>
       <a href="tutoring.html" class="btn-primary btn-sm nav-cta">Book Tutoring</a>
       <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -31,266 +33,237 @@
 
   <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
     <div class="mobile-menu-inner">
-      <a href="index.html" class="mobile-nav-link active">Home</a>
-      <a href="curriculum.html" class="mobile-nav-link">Curriculum</a>
-      <a href="tutoring.html" class="mobile-nav-link">Tutoring</a>
+      <a href="#start-here" class="mobile-nav-link active">Start Here</a>
+      <a href="#about-rich" class="mobile-nav-link">About</a>
       <a href="blog.html" class="mobile-nav-link">Blog</a>
+      <a href="#video-hub" class="mobile-nav-link">Videos</a>
+      <a href="tutoring.html" class="mobile-nav-link">Tutoring</a>
+      <a href="curriculum.html" class="mobile-nav-link">Curriculum</a>
       <a href="tutoring.html" class="btn-primary mobile-cta">Book Tutoring</a>
     </div>
   </div>
 
   <main>
-    <section class="home-hero-editorial">
+    <section class="home-brand-hero">
       <div class="container">
-        <div class="home-hero-grid">
-          <div class="home-hero-copy fade-up">
-            <p class="home-kicker">MathLedX is a math education brand built by a classroom teacher.</p>
-            <h1 class="home-display">Curriculum, essays, videos, and tutoring for students who need math to finally make sense.</h1>
-            <p class="home-hero-lede">
-              Rich Hollinger teaches at San Marino High School and built MathLedX to feel bigger than a tutoring offer:
-              part teaching practice, part publication, part learning platform, and part one-on-one support.
-            </p>
-            <div class="home-hero-actions">
-              <a href="#home-pillars" class="btn-primary btn-lg">Explore MathLedX</a>
-              <a href="tutoring.html" class="btn-outline btn-lg">Book Tutoring</a>
-            </div>
-            <div class="home-hero-notes">
-              <span>Based in San Marino, California</span>
-              <span>Built by Rich Hollinger</span>
-              <span>For students, parents, and teachers</span>
-            </div>
+        <div class="home-brand-inner fade-up">
+          <p class="home-brand-kicker">Teacher-led math education for students, parents, and families</p>
+          <div class="home-brand-logo-wrap">
+            <img src="images/MathLedX%20(2).png" alt="MathLedX" class="home-brand-logo" />
           </div>
-
-          <aside class="home-hero-sidebar fade-up delay-1" aria-label="MathLedX snapshot">
-            <div class="home-editorial-card home-editorial-card-primary">
-              <p class="home-card-label">What lives here</p>
-              <div class="home-mini-list">
-                <div class="home-mini-item">
-                  <span class="home-mini-index">01</span>
-                  <div>
-                    <strong>Curriculum</strong>
-                    <p>Structured explanations and math that holds up under pressure.</p>
-                  </div>
-                </div>
-                <div class="home-mini-item">
-                  <span class="home-mini-index">02</span>
-                  <div>
-                    <strong>Blog</strong>
-                    <p>Honest writing about how students learn, stall, and recover.</p>
-                  </div>
-                </div>
-                <div class="home-mini-item">
-                  <span class="home-mini-index">03</span>
-                  <div>
-                    <strong>Videos</strong>
-                    <p>Short visual breakdowns designed to make hard ideas feel teachable.</p>
-                  </div>
-                </div>
-                <div class="home-mini-item">
-                  <span class="home-mini-index">04</span>
-                  <div>
-                    <strong>Tutoring</strong>
-                    <p>One-on-one work when a student needs clarity, structure, and momentum.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="home-editorial-card home-editorial-card-portrait">
-              <div class="home-portrait-meta">
-                <p class="home-card-label">Behind the brand</p>
-                <p class="home-portrait-title">Rich Hollinger</p>
-                <p class="home-portrait-body">Teacher, writer, and founder. MathLedX is built from classroom experience, not marketing templates.</p>
-              </div>
-              <img src="images/Profile.png" alt="Rich Hollinger, founder of MathLedX" />
-            </div>
-          </aside>
+          <h1 class="home-brand-title">Math that finally makes sense.</h1>
+          <p class="home-brand-copy">
+            MathLedX is where students and parents come to understand why math gets hard,
+            what confidence actually depends on, and how to fix the problem step by step.
+          </p>
+          <div class="home-brand-actions">
+            <a href="#start-here" class="btn-primary btn-lg">Start Here</a>
+            <a href="tutoring.html" class="btn-outline btn-lg">Book Tutoring</a>
+          </div>
+          <div class="home-brand-directory" aria-label="MathLedX content areas">
+            <span>Curriculum</span>
+            <span>Blog</span>
+            <span>Videos</span>
+            <span>Tutoring</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="home-pillars-section" id="home-pillars">
+    <section class="home-destinations" id="start-here">
       <div class="container">
-        <div class="home-section-split fade-up">
-          <div>
-            <p class="home-section-label">The MathLedX world</p>
-            <h2 class="home-section-title">Four destinations, one point of view.</h2>
-          </div>
-          <p class="home-section-copy">
-            The homepage should feel like a front door, not a dead end. These are the four main ways people enter MathLedX right now.
-          </p>
-        </div>
-
-        <div class="home-pillars-grid">
-          <a href="curriculum.html" class="home-pillar home-pillar-curriculum fade-up">
-            <span class="home-pillar-index">01</span>
-            <p class="home-pillar-label">Curriculum</p>
-            <h3>Work through the actual ideas, not just the assignments.</h3>
-            <p class="home-pillar-body">Notes, structure, and math explanations designed to build understanding that lasts past the test.</p>
-            <span class="home-pillar-link">Explore curriculum</span>
+        <div class="home-destination-grid">
+          <a href="curriculum.html" class="home-destination home-destination-start fade-up">
+            <span class="home-destination-mark">01</span>
+            <p class="home-destination-eyebrow">Start Here</p>
+            <h2>New to MathLedX? Start with the ideas that explain why students get stuck.</h2>
+            <p>Core explanations, clear frameworks, and the foundation behind how MathLedX teaches.</p>
+            <span class="home-destination-link">Open start here</span>
           </a>
 
-          <a href="blog.html" class="home-pillar home-pillar-blog fade-up delay-1">
-            <span class="home-pillar-index">02</span>
-            <p class="home-pillar-label">Blog</p>
-            <h3>Read the essays shaping the MathLedX philosophy.</h3>
-            <p class="home-pillar-body">Writing for parents, students, and teachers about confidence, rigor, grading, and what really changes outcomes.</p>
-            <span class="home-pillar-link">Visit the blog</span>
+          <a href="blog.html" class="home-destination home-destination-blog fade-up delay-1">
+            <span class="home-destination-mark">02</span>
+            <p class="home-destination-eyebrow">Blog</p>
+            <h2>Writing on math struggles, confidence, learning, and what actually helps.</h2>
+            <p>Essays for parents, students, and teachers who want better language for what is going wrong.</p>
+            <span class="home-destination-link">Read the blog</span>
           </a>
 
-          <a href="#videos-hub" class="home-pillar home-pillar-videos fade-up delay-2">
-            <span class="home-pillar-index">03</span>
-            <p class="home-pillar-label">Videos</p>
-            <h3>See MathLedX becoming a visual teaching library.</h3>
-            <p class="home-pillar-body">Short explainers, worked examples, and camera-facing teaching that carry the same voice as the writing and lessons.</p>
-            <span class="home-pillar-link">View the video vision</span>
+          <a href="#video-hub" class="home-destination home-destination-videos fade-up delay-2">
+            <span class="home-destination-mark">03</span>
+            <p class="home-destination-eyebrow">Videos</p>
+            <h2>Explanations, breakdowns, and walkthroughs that make math easier to see.</h2>
+            <p>Visual teaching, worked examples, and a growing media side of the MathLedX brand.</p>
+            <span class="home-destination-link">See the video hub</span>
           </a>
 
-          <a href="tutoring.html" class="home-pillar home-pillar-tutoring fade-up delay-3">
-            <span class="home-pillar-index">04</span>
-            <p class="home-pillar-label">Tutoring</p>
-            <h3>Work one on one when a student needs focused help.</h3>
-            <p class="home-pillar-body">Diagnostic, personal, and direct. Rich finds what is actually broken and helps students rebuild from there.</p>
-            <span class="home-pillar-link">Book tutoring</span>
+          <a href="tutoring.html" class="home-destination home-destination-tutoring fade-up delay-3">
+            <span class="home-destination-mark">04</span>
+            <p class="home-destination-eyebrow">Tutoring</p>
+            <h2>One-on-one help for students who need clarity, confidence, and results.</h2>
+            <p>Direct support for students hovering at a B, honors students, and anyone who needs math to feel teachable again.</p>
+            <span class="home-destination-link">Book tutoring</span>
           </a>
-        </div>
-
-        <div class="home-videos-note fade-up" id="videos-hub">
-          <div>
-            <p class="home-card-label">Video desk</p>
-            <h3>The video library is the next wing of MathLedX.</h3>
-          </div>
-          <p>
-            Expect lesson breakdowns, problem walkthroughs, and short education pieces that translate the same teaching voice into a visual format.
-            The brand is growing in public, and videos are part of that growth.
-          </p>
         </div>
       </div>
     </section>
 
-    <section class="home-featured-posts">
+    <section class="home-manifesto">
       <div class="container">
-        <div class="home-section-split fade-up">
-          <div>
-            <p class="home-section-label">Featured writing</p>
-            <h2 class="home-section-title">Start with the pieces that define the voice.</h2>
-          </div>
-          <p class="home-section-copy">
-            These posts are the clearest entry point into how MathLedX thinks about smart kids, stalled learning, and what real math progress looks like.
-          </p>
+        <div class="home-manifesto-inner fade-up">
+          <p class="home-section-eyebrow">What MathLedX believes</p>
+          <h2>Most students who struggle in math are not missing ability.</h2>
+          <p>They are missing explanations that match how they think.</p>
         </div>
-
-        <div class="home-posts-layout">
-          <a href="post-why-smart-kids-struggle.html" class="home-post-feature fade-up">
-            <div class="home-post-feature-image">
-              <img src="images/blog-smart-kids-math2.png" alt="Why Smart Kids Struggle in Math" />
-            </div>
-            <div class="home-post-feature-copy">
-              <p class="home-post-tag">Featured essay</p>
-              <h3>Why Smart Kids Struggle in Math (And Why Nobody Catches It)</h3>
-              <p>Your kid can be bright, capable, and still quietly falling apart in math. This piece explains why that gap goes unseen and what actually fixes it.</p>
-              <span class="home-post-read">Read the essay</span>
-            </div>
-          </a>
-
-          <div class="home-post-stack">
-            <a href="post-mathledx-post-2.html" class="home-post-card fade-up delay-1">
-              <div class="home-post-art home-post-art-blue">
-                <span>x + 1</span>
-              </div>
-              <div class="home-post-card-copy">
-                <p class="home-post-tag">For parents</p>
-                <h3>You Haven't Earned the Right to Skip Steps Yet</h3>
-                <p>Why “careless mistakes” is often the wrong diagnosis, and why skipping steps usually points to unfinished understanding.</p>
-              </div>
-            </a>
-
-            <a href="post-mathledx-post-6.html" class="home-post-card fade-up delay-2">
-              <div class="home-post-art home-post-art-paper">
-                <span>Back row</span>
-              </div>
-              <div class="home-post-card-copy">
-                <p class="home-post-tag">For students</p>
-                <h3>A Letter to the Smart Kid in the Back of the Class</h3>
-                <p>An honest note about coasting, identity, and the cost of building your intelligence around never looking wrong.</p>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <a href="blog.html" class="home-more-link fade-up">Browse all writing</a>
       </div>
     </section>
 
-    <section class="home-about-rich">
+    <section class="home-about-feature" id="about-rich">
       <div class="container">
-        <div class="home-about-grid">
-          <div class="home-about-image-wrap fade-up">
-            <div class="home-about-image-card">
+        <div class="home-about-layout">
+          <div class="home-about-photo-column fade-up">
+            <div class="home-about-photo-frame">
               <img src="images/Profile.png" alt="Rich Hollinger" />
             </div>
-            <div class="home-about-quote">
-              <p>"Most students are not bad at math. They are operating on a cracked foundation nobody took time to name."</p>
+            <div class="home-about-sidecard">
+              <p class="home-section-eyebrow">Credentials</p>
+              <ul class="home-about-credential-list">
+                <li>San Marino High School teacher</li>
+                <li>B.A. in Mathematics</li>
+                <li>Master's in Math Education</li>
+                <li>California Single Subject Credential</li>
+              </ul>
             </div>
           </div>
 
-          <div class="home-about-copy fade-up delay-1">
-            <p class="home-section-label">About Rich</p>
-            <h2 class="home-section-title">MathLedX is personal because the work is personal.</h2>
-            <p>
-              Rich Hollinger teaches math at San Marino High School and built MathLedX out of a frustration with how often capable students get misread.
-              They are called careless, unmotivated, or not math people when the real problem is usually more specific and more fixable than that.
+          <div class="home-about-story fade-up delay-1">
+            <p class="home-section-eyebrow">About Rich</p>
+            <h2>Hi, I'm Rich.</h2>
+            <p class="home-about-intro">
+              I'm a high school math teacher and math specialist. I help students rebuild confidence by making math make sense step by step.
             </p>
             <p>
-              The project brings together classroom teaching, published ideas, future video lessons, and tutoring under one name so families can see the whole philosophy, not just the booking link.
+              I know what it feels like to look capable on the outside and still not have a real system underneath. I coasted for a long time, hit the wall hard, and had to learn how I actually think before math started to click in a durable way.
             </p>
-            <div class="home-about-credentials">
-              <span>B.A. in Mathematics</span>
-              <span>Master's in Math Education</span>
-              <span>California Single Subject Credential</span>
-              <span>San Marino High School teacher</span>
-            </div>
+            <p>
+              MathLedX comes out of that process. It is the combination of classroom teaching, written ideas, visual explanation, and one-on-one support that I wish more students had access to earlier.
+            </p>
+            <p>
+              The goal is not to make math look flashy. The goal is to make it clear, honest, and usable so students can stop guessing and start understanding.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="home-tutoring-cta" id="tutoring-cta">
+    <section class="home-video-band" id="video-hub">
       <div class="container">
-        <div class="home-tutoring-shell fade-up">
-          <div class="home-tutoring-copy">
-            <p class="home-card-label">Tutoring</p>
-            <h2>When the problem is specific, the support should be specific too.</h2>
-            <p>
-              Tutoring is still a major part of MathLedX. If your student is stuck, anxious, underperforming, or quietly lost, Rich can help identify the real issue and build a plan that makes sense.
-            </p>
+        <div class="home-video-band-inner fade-up">
+          <div>
+            <p class="home-section-eyebrow">Video hub</p>
+            <h2>MathLedX is growing into a real teaching media brand.</h2>
           </div>
-          <div class="home-tutoring-actions">
+          <p>
+            Videos are where short explanations, worked examples, and visual breakdowns will live. Same voice, same standards, different format.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-featured-grid">
+      <div class="container">
+        <div class="home-featured-header fade-up">
+          <p class="home-section-eyebrow">Featured content</p>
+          <h2>Read the ideas shaping the brand.</h2>
+        </div>
+
+        <div class="home-article-grid">
+          <a href="post-why-smart-kids-struggle.html" class="home-article-card home-article-card-ink fade-up">
+            <div class="home-article-art">
+              <span>smart</span>
+            </div>
+            <div class="home-article-copy">
+              <p class="home-article-tag">Parents</p>
+              <h3>Why Smart Kids Struggle in Math</h3>
+              <p>Why bright students can still quietly unravel in math, and why adults often miss the real issue.</p>
+              <span class="home-article-link">Read the article</span>
+            </div>
+          </a>
+
+          <a href="post-mathledx-post-2.html" class="home-article-card home-article-card-paper fade-up delay-1">
+            <div class="home-article-art">
+              <span>step by step</span>
+            </div>
+            <div class="home-article-copy">
+              <p class="home-article-tag">Learning</p>
+              <h3>You Haven't Earned the Right to Skip Steps Yet</h3>
+              <p>Why skipped steps usually signal unfinished thinking, not harmless speed or confidence.</p>
+              <span class="home-article-link">Read the article</span>
+            </div>
+          </a>
+
+          <a href="blog.html" class="home-article-card home-article-card-electric fade-up delay-2">
+            <div class="home-article-art">
+              <span>not careless</span>
+            </div>
+            <div class="home-article-copy">
+              <p class="home-article-tag">Mindset</p>
+              <h3>Most Math Mistakes Aren't Careless</h3>
+              <p>What looks like sloppiness is often a mismatch between memorized procedure and actual understanding.</p>
+              <span class="home-article-link">Read the article</span>
+            </div>
+          </a>
+
+          <a href="curriculum.html" class="home-article-card home-article-card-warm fade-up delay-3">
+            <div class="home-article-art">
+              <span>understand</span>
+            </div>
+            <div class="home-article-copy">
+              <p class="home-article-tag">Curriculum</p>
+              <h3>Why Understanding Beats Memorizing</h3>
+              <p>Students hold onto math longer when they can see why the structure works, not just repeat a rule.</p>
+              <span class="home-article-link">Read the article</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-final-cta">
+      <div class="container">
+        <div class="home-final-cta-inner fade-up">
+          <p class="home-section-eyebrow">Reach out</p>
+          <h2>If any of this sounds familiar, let's talk.</h2>
+          <p>
+            The first conversation is free. I'll tell you honestly what I think is going on and whether I'm the right fit.
+          </p>
+          <div class="home-final-actions">
             <a href="tutoring.html" class="btn-primary btn-lg">Book a Free Consultation</a>
-            <a href="mailto:richhollinger@mathledx.com" class="btn-outline btn-lg">Email Rich</a>
-            <p class="home-tutoring-note">No pressure. The first conversation is a real conversation.</p>
+            <a href="mailto:richhollinger@mathledx.com" class="home-email-link">richhollinger@mathledx.com</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer" role="contentinfo">
+  <footer class="footer footer-home" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo-pill footer-logo-pill" aria-label="MathLedX home">
-            <img src="images/MathLedX%20(2).png" alt="MathLedX" style="height:28px;" />
+            <img src="images/MathLedX%20(2).png" alt="MathLedX" style="height:30px;" />
           </a>
-          <p>Curriculum, writing, videos, and tutoring built by a teacher who had to figure it out the hard way.</p>
+          <p>Teacher-led math education through curriculum, writing, videos, and tutoring.</p>
         </div>
         <div>
-          <div class="footer-col-title">Pages</div>
+          <div class="footer-col-title">Explore</div>
           <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="curriculum.html">Curriculum</a></li>
-            <li><a href="tutoring.html">Tutoring</a></li>
+            <li><a href="#start-here">Start Here</a></li>
+            <li><a href="#about-rich">About</a></li>
             <li><a href="blog.html">Blog</a></li>
+            <li><a href="#video-hub">Videos</a></li>
+            <li><a href="tutoring.html">Tutoring</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
           </ul>
         </div>
         <div>
