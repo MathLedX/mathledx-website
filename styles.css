@@ -957,41 +957,54 @@ textarea.form-input { resize: vertical; min-height: 120px; }
 .logo-pill img { height: 44px; width: auto; display: block; }
 
 /* ── Multi-paragraph profile bio spacing ─────────────────────── */
-.profile-bio + .profile-bio { margin-top: 12px; }
+.profile-bio + .profile-bio { margin-top: 16px; }
 
-/* ── Profile section ──────────────────────────────────────────── */
+/* ── Profile section — asymmetric split ──────────────────────── */
 .profile-section {
-  padding: 88px 0;
+  padding: 80px 0;
   background: var(--bg-alt);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
-
-.profile-card {
-  max-width: 800px;
-  margin: 0 auto;
+.profile-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
 }
-
+@media (min-width: 768px) {
+  .profile-split { grid-template-columns: 5fr 7fr; gap: 80px; }
+}
+.profile-split-photo { order: -1; }
+@media (min-width: 768px) { .profile-split-photo { order: 0; } }
+.profile-split-photo img {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  display: block;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.11), 0 1px 4px rgba(0,0,0,0.06);
+}
+@media (min-width: 768px) { .profile-split-photo img { max-width: 100%; margin: 0; } }
 .profile-name {
   font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
-  font-size: clamp(1.875rem, 4vw, 2.75rem);
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
   font-weight: 800;
   color: var(--navy);
   letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 16px;
+  line-height: 1.08;
+  margin-bottom: 20px;
 }
 .profile-bio {
-  font-size: 1.0625rem;
-  color: var(--text-muted);
+  font-size: 1.125rem;
+  color: #374151;
   line-height: 1.85;
-  max-width: 620px;
 }
 .profile-accent-line {
-  width: 40px; height: 3px;
+  width: 36px; height: 3px;
   background: var(--blue);
   border-radius: 2px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 .profile-credentials {
   margin-top: 24px;
@@ -1001,17 +1014,57 @@ textarea.form-input { resize: vertical; min-height: 120px; }
   line-height: 1.7;
 }
 
-/* ── The MathLedX Approach ────────────────────────────────────── */
+/* ── How I Actually Work — editorial numbered list ────────────── */
 .approach-section {
   background: var(--bg);
   border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 88px 0;
+  padding: 80px 0;
+}
+.approach-title {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-size: clamp(1.875rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.025em;
+  line-height: 1.14;
+  margin-bottom: 48px;
+}
+.approach-list { display: flex; flex-direction: column; }
+.approach-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 28px;
+  padding: 36px 0;
+  border-top: 1px solid var(--border);
+  align-items: start;
+}
+.approach-item:last-child { border-bottom: 1px solid var(--border); }
+.approach-num {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.06em;
+  padding-top: 5px;
+}
+.approach-item-title {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-size: clamp(1.125rem, 2vw, 1.3rem);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.approach-item-body {
+  font-size: 1.0625rem;
+  color: #4b5563;
+  line-height: 1.75;
 }
 
 /* ── Trust / Problem Statement ───────────────────────────────── */
 .trust-section {
-  padding: 88px 0;
+  padding: 72px 0;
   background: var(--bg-alt);
   border-bottom: 1px solid var(--border);
 }
@@ -1034,37 +1087,53 @@ textarea.form-input { resize: vertical; min-height: 120px; }
   margin-bottom: 0;
 }
 
-/* ── Who This Is For ─────────────────────────────────────────── */
+/* ── Who This Is For — 2-col layout, plain divider list ─────── */
+.who-section { background: var(--bg-alt); }
+.who-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+@media (min-width: 768px) {
+  .who-inner { grid-template-columns: 2fr 3fr; gap: 80px; align-items: center; }
+}
+.who-title {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
 .who-list {
-  max-width: 600px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  max-width: none;
+  margin: 0;
 }
 .who-item {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 20px 24px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 0;
+  border-top: 1px solid var(--border);
   font-size: 1.0625rem;
   color: var(--text);
   line-height: 1.55;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  background: none;
+  border-radius: 0;
+  transition: none;
 }
-.who-item:hover {
-  border-color: rgba(26,86,219,0.22);
-  background: var(--blue-light);
-}
+.who-item:last-child { border-bottom: 1px solid var(--border); }
+.who-item:hover { background: none; }
 .who-item::before {
   content: '';
-  width: 7px; height: 7px;
+  width: 6px; height: 6px;
   border-radius: 50%;
   background: var(--blue);
   flex-shrink: 0;
+  margin-top: 8px;
 }
 
 /* ── Wave divider (hidden on light theme) ─────────────────────── */
