@@ -3,471 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MathLedX — High School Math Tutoring with Rich Hollinger</title>
+  <title>MathLedX — Curriculum, Writing, Videos, and Tutoring</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* ── Selection ─────────────────────────────────────────────── */
-    ::selection { background: rgba(26,86,219,0.13); color: #0f1f3d; }
-
-    /* ── SECTION 1: HERO ───────────────────────────────────────── */
-    @keyframes heroFadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .home-hero {
-      background: #ffffff;
-      padding: 96px 0 80px;
-      text-align: center;
-    }
-    .home-hero-inner {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .hero-eyebrow {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #1a56db;
-      margin-bottom: 24px;
-      animation: heroFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
-      animation-delay: 0s;
-    }
-    .home-hero h1 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      font-weight: 800;
-      color: #0f1f3d;
-      letter-spacing: -0.03em;
-      line-height: 1.13;
-      margin-bottom: 0;
-      animation: heroFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
-      animation-delay: 0.12s;
-    }
-    .home-hero-sub {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.1rem;
-      color: #6b7280;
-      max-width: 500px;
-      margin: 20px auto 36px;
-      line-height: 1.7;
-      animation: heroFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
-      animation-delay: 0.24s;
-    }
-    .home-hero-cta {
-      animation: heroFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
-      animation-delay: 0.38s;
-    }
-    .home-hero-rule {
-      border: none;
-      border-top: 1px solid #e5e3de;
-      max-width: 120px;
-      margin: 48px auto 24px;
-    }
-    .hero-creds {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 32px;
-      flex-wrap: wrap;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
-      color: #6b7280;
-      letter-spacing: 0.04em;
-    }
-
-    /* ── SECTION 2: FEATURED READING ──────────────────────────── */
-    .featured-section {
-      background: #f8f7f4;
-      border-top: 1px solid #e5e3de;
-      padding: 80px 0;
-    }
-    .featured-header {
-      margin-bottom: 40px;
-    }
-    .featured-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #1a56db;
-      margin-bottom: 10px;
-    }
-    .featured-header h2 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-      font-weight: 800;
-      color: #0f1f3d;
-      letter-spacing: -0.025em;
-      line-height: 1.14;
-      margin-bottom: 12px;
-    }
-    .featured-header p {
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      color: #6b7280;
-      line-height: 1.7;
-      max-width: 520px;
-    }
-    .blog-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-    @media (min-width: 640px) {
-      .blog-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    .blog-card-editorial {
-      background: #ffffff;
-      border-radius: 12px;
-      border: 1px solid #e5e3de;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                  box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    .blog-card-editorial:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-    }
-    .blog-card-img-wrap {
-      height: 240px;
-      overflow: hidden;
-      border-radius: 12px 12px 0 0;
-      flex-shrink: 0;
-    }
-    .blog-card-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-    .blog-card-editorial:hover .blog-card-img-wrap img {
-      transform: scale(1.04);
-    }
-    .blog-card-placeholder {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #0f1f3d 0%, #1a3a6b 60%, rgba(22,104,255,0.13) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    .blog-card-placeholder-sym1 {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -55%);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 5rem;
-      font-weight: 800;
-      color: rgba(255,255,255,0.15);
-      user-select: none;
-      line-height: 1;
-    }
-    .blog-card-placeholder-sym2 {
-      position: absolute;
-      bottom: -10px;
-      right: 30px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 7rem;
-      font-weight: 800;
-      color: rgba(22,104,255,0.20);
-      user-select: none;
-      line-height: 1;
-    }
-    .blog-card-body {
-      padding: 28px 32px 36px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .blog-card-tag {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.6875rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #1a56db;
-      margin-bottom: 10px;
-    }
-    .blog-card-body h3 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #0f1f3d;
-      line-height: 1.3;
-      margin-bottom: 14px;
-      letter-spacing: -0.01em;
-    }
-    .blog-card-excerpt {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9375rem;
-      color: #374151;
-      line-height: 1.7;
-      margin-bottom: 20px;
-      flex: 1;
-    }
-    .blog-card-meta {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8125rem;
-      color: #9ca3af;
-    }
-    .blog-card-read {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #1a56db;
-    }
-    .blog-card-editorial:hover .blog-card-read {
-      text-decoration: underline;
-    }
-    .more-blog-link {
-      display: block;
-      width: fit-content;
-      margin: 40px auto 0;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: #1a56db;
-      text-decoration: none;
-      position: relative;
-    }
-    .more-blog-link::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: #1a56db;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    .more-blog-link:hover::after { transform: scaleX(1); }
-
-    /* ── SECTION 3: ABOUT RICH ─────────────────────────────────── */
-    .about-section {
-      background: #ffffff;
-      border-top: 1px solid #e5e3de;
-      padding: 80px 0;
-    }
-    .about-inner {
-      display: grid;
-      grid-template-columns: 480px 1fr;
-      gap: 72px;
-      align-items: center;
-    }
-    @media (max-width: 900px) {
-      .about-inner { grid-template-columns: 1fr; gap: 48px; }
-    }
-    .about-photo-wrap {
-      position: relative;
-      z-index: 1;
-    }
-    .about-photo-wrap::before {
-      content: '';
-      position: absolute;
-      width: calc(100% + 24px);
-      height: calc(100% + 24px);
-      top: -12px;
-      left: -12px;
-      z-index: -1;
-      border: 2px solid #e5e3de;
-      border-radius: 20px;
-      pointer-events: none;
-    }
-    .about-photo-wrap img {
-      width: 100%;
-      max-width: 420px;
-      display: block;
-      border-radius: 16px;
-      box-shadow: 0 12px 48px rgba(15,31,61,0.13);
-    }
-    @media (max-width: 767px) {
-      .about-photo-wrap { display: none; }
-    }
-    .about-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #1a56db;
-      margin-bottom: 12px;
-    }
-    .about-text h2 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1.85rem;
-      font-weight: 800;
-      color: #0f1f3d;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-    .about-text p {
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      color: #1a1a2e;
-      line-height: 1.8;
-    }
-    .about-text p + p { margin-top: 1em; }
-    .about-creds {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.875rem;
-      color: #6b7280;
-      border-top: 1px solid #e5e3de;
-      padding-top: 18px;
-      margin-top: 20px;
-      line-height: 1.8;
-    }
-    .about-cta-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: #1a56db;
-      text-decoration: none;
-    }
-    .about-cta-link:hover { text-decoration: underline; }
-    .about-cta-link .arrow {
-      display: inline-block;
-      transition: transform 0.2s ease;
-    }
-    .about-cta-link:hover .arrow { transform: translateX(3px); }
-
-    /* ── SECTION 4: STATS BAR ──────────────────────────────────── */
-    .stats-section {
-      background: #0f1f3d;
-      padding: 48px 0;
-    }
-    .stats-inner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .stat-item {
-      flex: 1;
-      text-align: center;
-      padding: 0 40px;
-      max-width: 280px;
-    }
-    .stat-number-wrap {
-      display: flex;
-      align-items: baseline;
-      justify-content: center;
-    }
-    .stat-number {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 3rem;
-      font-weight: 800;
-      color: #ffffff;
-      line-height: 1;
-    }
-    .stat-suffix {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #1a56db;
-      margin-left: 4px;
-      align-self: flex-start;
-      padding-top: 8px;
-    }
-    .stat-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.55);
-      margin-top: 6px;
-      max-width: 160px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.5;
-    }
-    .stat-divider {
-      width: 1px;
-      height: 48px;
-      background: rgba(255,255,255,0.12);
-      flex-shrink: 0;
-    }
-    @media (max-width: 600px) {
-      .stats-inner { flex-direction: column; gap: 32px; }
-      .stat-divider { display: none; }
-    }
-
-    /* ── SECTION 5: FINAL CTA ──────────────────────────────────── */
-    .home-cta-section {
-      background: #f8f7f4;
-      border-top: 1px solid #e5e3de;
-      padding: 88px 0;
-      text-align: center;
-    }
-    .home-cta-inner {
-      max-width: 560px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .home-cta-inner h2 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 2rem;
-      font-weight: 800;
-      color: #0f1f3d;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
-    .home-cta-inner p {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.05rem;
-      color: #6b7280;
-      line-height: 1.65;
-      margin-bottom: 36px;
-    }
-    .home-cta-email {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.875rem;
-      color: #9ca3af;
-      margin-top: 20px;
-    }
-    .home-cta-email a {
-      color: #0f1f3d;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .home-cta-email a:hover { text-decoration: underline; }
-
-    /* ── RESPONSIVE ────────────────────────────────────────────── */
-    @media (max-width: 768px) {
-      .home-hero { padding: 60px 0 52px; }
-      .home-hero h1 { font-size: 1.85rem; }
-    }
-    @media (max-width: 480px) {
-      .home-hero h1 { font-size: 1.6rem; }
-      .hero-creds { flex-direction: column; gap: 8px; align-items: center; }
-    }
-  </style>
 </head>
-<body>
+<body class="home-page">
 
-  <!-- ═══ NAV ═══ -->
   <header class="nav" role="banner">
     <div class="nav-inner">
       <a href="index.html" class="logo-pill" aria-label="MathLedX home">
@@ -486,7 +29,6 @@
     </div>
   </header>
 
-  <!-- ═══ MOBILE MENU ═══ -->
   <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
     <div class="mobile-menu-inner">
       <a href="index.html" class="mobile-nav-link active">Home</a>
@@ -497,138 +39,242 @@
     </div>
   </div>
 
-  <!-- ═══ SECTION 1 — HERO ═══ -->
-  <section class="home-hero">
-    <div class="home-hero-inner">
-      <p class="hero-eyebrow">High School Math Tutoring &middot; San Marino, CA</p>
-      <h1>Most students aren't bad at math.<br>They've just never had it explained<br>in a way that works for them.</h1>
-      <p class="home-hero-sub">I'm Rich Hollinger — a math teacher at San Marino High School. I find where things broke down and fix it.</p>
-      <div class="home-hero-cta">
-        <a href="tutoring.html" class="btn-primary btn-lg">
-          Book a Free Consultation
-          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-      <hr class="home-hero-rule" />
-      <div class="hero-creds">
-        <span>4 years &middot; San Marino HS</span>
-        <span>League Champions &middot; Math Team</span>
-        <span>Master's in Math Education</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ SECTION 2 — FEATURED READING ═══ -->
-  <section class="featured-section">
-    <div class="container">
-      <div class="featured-header fade-up">
-        <p class="featured-label">From the Blog</p>
-        <h2>Start here.</h2>
-        <p>Two posts that explain exactly why capable students lose their footing in math — and what actually fixes it.</p>
-      </div>
-
-      <div class="blog-grid">
-        <a href="post-why-smart-kids-struggle.html" class="blog-card-editorial fade-up">
-          <div class="blog-card-img-wrap">
-            <img src="images/blog-smart-kids-math.png" alt="Why Smart Kids Struggle in Math" />
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-tag">For Parents</p>
-            <h3>Why Smart Kids Struggle in Math (And Why Nobody Catches It)</h3>
-            <p class="blog-card-excerpt">Your kid is smart — so why is math becoming a problem? The answer isn't carelessness. It's a hidden gap that the classroom never catches.</p>
-            <p class="blog-card-meta">Rich Hollinger &nbsp;&middot;&nbsp; April 2026 &nbsp;&middot;&nbsp; 6 min read</p>
-            <span class="blog-card-read">Read the post →</span>
-          </div>
-        </a>
-
-        <a href="post-mathledx-post-2.html" class="blog-card-editorial fade-up delay-1">
-          <div class="blog-card-img-wrap">
-            <div class="blog-card-placeholder">
-              <span class="blog-card-placeholder-sym1">x²</span>
-              <span class="blog-card-placeholder-sym2">∫</span>
+  <main>
+    <section class="home-hero-editorial">
+      <div class="container">
+        <div class="home-hero-grid">
+          <div class="home-hero-copy fade-up">
+            <p class="home-kicker">MathLedX is a math education brand built by a classroom teacher.</p>
+            <h1 class="home-display">Curriculum, essays, videos, and tutoring for students who need math to finally make sense.</h1>
+            <p class="home-hero-lede">
+              Rich Hollinger teaches at San Marino High School and built MathLedX to feel bigger than a tutoring offer:
+              part teaching practice, part publication, part learning platform, and part one-on-one support.
+            </p>
+            <div class="home-hero-actions">
+              <a href="#home-pillars" class="btn-primary btn-lg">Explore MathLedX</a>
+              <a href="tutoring.html" class="btn-outline btn-lg">Book Tutoring</a>
+            </div>
+            <div class="home-hero-notes">
+              <span>Based in San Marino, California</span>
+              <span>Built by Rich Hollinger</span>
+              <span>For students, parents, and teachers</span>
             </div>
           </div>
-          <div class="blog-card-body">
-            <p class="blog-card-tag">For Parents</p>
-            <h3>You Haven't Earned the Right to Skip Steps Yet</h3>
-            <p class="blog-card-excerpt">Every math parent has heard it: "he just makes careless mistakes." That explanation is wrong — and fixing the wrong problem guarantees the right problem never gets fixed.</p>
-            <p class="blog-card-meta">Rich Hollinger &nbsp;&middot;&nbsp; April 2026 &nbsp;&middot;&nbsp; 6 min read</p>
-            <span class="blog-card-read">Read the post →</span>
-          </div>
-        </a>
-      </div>
 
-      <a href="blog.html" class="more-blog-link">More from the blog →</a>
-    </div>
-  </section>
+          <aside class="home-hero-sidebar fade-up delay-1" aria-label="MathLedX snapshot">
+            <div class="home-editorial-card home-editorial-card-primary">
+              <p class="home-card-label">What lives here</p>
+              <div class="home-mini-list">
+                <div class="home-mini-item">
+                  <span class="home-mini-index">01</span>
+                  <div>
+                    <strong>Curriculum</strong>
+                    <p>Structured explanations and math that holds up under pressure.</p>
+                  </div>
+                </div>
+                <div class="home-mini-item">
+                  <span class="home-mini-index">02</span>
+                  <div>
+                    <strong>Blog</strong>
+                    <p>Honest writing about how students learn, stall, and recover.</p>
+                  </div>
+                </div>
+                <div class="home-mini-item">
+                  <span class="home-mini-index">03</span>
+                  <div>
+                    <strong>Videos</strong>
+                    <p>Short visual breakdowns designed to make hard ideas feel teachable.</p>
+                  </div>
+                </div>
+                <div class="home-mini-item">
+                  <span class="home-mini-index">04</span>
+                  <div>
+                    <strong>Tutoring</strong>
+                    <p>One-on-one work when a student needs clarity, structure, and momentum.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-  <!-- ═══ SECTION 3 — ABOUT RICH ═══ -->
-  <section class="about-section">
-    <div class="container">
-      <div class="about-inner fade-up">
-        <div class="about-photo-wrap">
-          <img src="images/Profile.png" alt="Rich Hollinger — math teacher and founder of MathLedX" />
+            <div class="home-editorial-card home-editorial-card-portrait">
+              <div class="home-portrait-meta">
+                <p class="home-card-label">Behind the brand</p>
+                <p class="home-portrait-title">Rich Hollinger</p>
+                <p class="home-portrait-body">Teacher, writer, and founder. MathLedX is built from classroom experience, not marketing templates.</p>
+              </div>
+              <img src="images/Profile.png" alt="Rich Hollinger, founder of MathLedX" />
+            </div>
+          </aside>
         </div>
-        <div class="about-text">
-          <p class="about-label">About Rich</p>
-          <h2>Hi, I'm Rich.</h2>
-          <p>I was the kid in the back of class who didn't need to pay attention. Smart enough to coast. Then college hit — and coasting stopped working.</p>
-          <p>I failed courses. Built a system. Learned how my brain actually worked. When I did — things didn't just improve. They compounded.</p>
-          <p>Four years at San Marino High School proved it works on other people's kids too. MathLedX is that process — available one on one.</p>
-          <p class="about-creds">B.A. Mathematics &nbsp;&middot;&nbsp; Master's in Math Education<br>CA Single Subject Credential &nbsp;&middot;&nbsp; San Marino HS</p>
-          <a href="tutoring.html" class="about-cta-link">
-            Work with me <span class="arrow">→</span>
+      </div>
+    </section>
+
+    <section class="home-pillars-section" id="home-pillars">
+      <div class="container">
+        <div class="home-section-split fade-up">
+          <div>
+            <p class="home-section-label">The MathLedX world</p>
+            <h2 class="home-section-title">Four destinations, one point of view.</h2>
+          </div>
+          <p class="home-section-copy">
+            The homepage should feel like a front door, not a dead end. These are the four main ways people enter MathLedX right now.
+          </p>
+        </div>
+
+        <div class="home-pillars-grid">
+          <a href="curriculum.html" class="home-pillar home-pillar-curriculum fade-up">
+            <span class="home-pillar-index">01</span>
+            <p class="home-pillar-label">Curriculum</p>
+            <h3>Work through the actual ideas, not just the assignments.</h3>
+            <p class="home-pillar-body">Notes, structure, and math explanations designed to build understanding that lasts past the test.</p>
+            <span class="home-pillar-link">Explore curriculum</span>
+          </a>
+
+          <a href="blog.html" class="home-pillar home-pillar-blog fade-up delay-1">
+            <span class="home-pillar-index">02</span>
+            <p class="home-pillar-label">Blog</p>
+            <h3>Read the essays shaping the MathLedX philosophy.</h3>
+            <p class="home-pillar-body">Writing for parents, students, and teachers about confidence, rigor, grading, and what really changes outcomes.</p>
+            <span class="home-pillar-link">Visit the blog</span>
+          </a>
+
+          <a href="#videos-hub" class="home-pillar home-pillar-videos fade-up delay-2">
+            <span class="home-pillar-index">03</span>
+            <p class="home-pillar-label">Videos</p>
+            <h3>See MathLedX becoming a visual teaching library.</h3>
+            <p class="home-pillar-body">Short explainers, worked examples, and camera-facing teaching that carry the same voice as the writing and lessons.</p>
+            <span class="home-pillar-link">View the video vision</span>
+          </a>
+
+          <a href="tutoring.html" class="home-pillar home-pillar-tutoring fade-up delay-3">
+            <span class="home-pillar-index">04</span>
+            <p class="home-pillar-label">Tutoring</p>
+            <h3>Work one on one when a student needs focused help.</h3>
+            <p class="home-pillar-body">Diagnostic, personal, and direct. Rich finds what is actually broken and helps students rebuild from there.</p>
+            <span class="home-pillar-link">Book tutoring</span>
           </a>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ═══ SECTION 4 — STATS BAR ═══ -->
-  <section class="stats-section" id="stats-bar">
-    <div class="container">
-      <div class="stats-inner">
-        <div class="stat-item fade-up">
-          <div class="stat-number-wrap">
-            <span class="stat-number" data-target="4">0</span>
-            <span class="stat-suffix">years</span>
+        <div class="home-videos-note fade-up" id="videos-hub">
+          <div>
+            <p class="home-card-label">Video desk</p>
+            <h3>The video library is the next wing of MathLedX.</h3>
           </div>
-          <p class="stat-label">at San Marino High School</p>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item fade-up delay-1">
-          <div class="stat-number-wrap">
-            <span class="stat-number" data-target="1">0</span>
-            <span class="stat-suffix">championship</span>
-          </div>
-          <p class="stat-label">Math team, after a decade-long drought</p>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item fade-up delay-2">
-          <div class="stat-number-wrap">
-            <span class="stat-number" data-target="100" data-percent="true">0</span>
-            <span class="stat-suffix"></span>
-          </div>
-          <p class="stat-label">honest — I'll tell you if I'm the wrong fit</p>
+          <p>
+            Expect lesson breakdowns, problem walkthroughs, and short education pieces that translate the same teaching voice into a visual format.
+            The brand is growing in public, and videos are part of that growth.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══ SECTION 5 — FINAL CTA ═══ -->
-  <section class="home-cta-section">
-    <div class="home-cta-inner fade-up">
-      <h2>If any of this sounds familiar — let's talk.</h2>
-      <p>The first conversation is free. I'll tell you honestly what I think is going on and whether I'm the right fit.</p>
-      <a href="tutoring.html" class="btn-primary btn-lg">
-        Book a Free Consultation
-        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <p class="home-cta-email">Or email me directly: <a href="mailto:richhollinger@mathledx.com">richhollinger@mathledx.com</a></p>
-    </div>
-  </section>
+    <section class="home-featured-posts">
+      <div class="container">
+        <div class="home-section-split fade-up">
+          <div>
+            <p class="home-section-label">Featured writing</p>
+            <h2 class="home-section-title">Start with the pieces that define the voice.</h2>
+          </div>
+          <p class="home-section-copy">
+            These posts are the clearest entry point into how MathLedX thinks about smart kids, stalled learning, and what real math progress looks like.
+          </p>
+        </div>
 
-  <!-- ═══ FOOTER ═══ -->
+        <div class="home-posts-layout">
+          <a href="post-why-smart-kids-struggle.html" class="home-post-feature fade-up">
+            <div class="home-post-feature-image">
+              <img src="images/blog-smart-kids-math2.png" alt="Why Smart Kids Struggle in Math" />
+            </div>
+            <div class="home-post-feature-copy">
+              <p class="home-post-tag">Featured essay</p>
+              <h3>Why Smart Kids Struggle in Math (And Why Nobody Catches It)</h3>
+              <p>Your kid can be bright, capable, and still quietly falling apart in math. This piece explains why that gap goes unseen and what actually fixes it.</p>
+              <span class="home-post-read">Read the essay</span>
+            </div>
+          </a>
+
+          <div class="home-post-stack">
+            <a href="post-mathledx-post-2.html" class="home-post-card fade-up delay-1">
+              <div class="home-post-art home-post-art-blue">
+                <span>x + 1</span>
+              </div>
+              <div class="home-post-card-copy">
+                <p class="home-post-tag">For parents</p>
+                <h3>You Haven't Earned the Right to Skip Steps Yet</h3>
+                <p>Why “careless mistakes” is often the wrong diagnosis, and why skipping steps usually points to unfinished understanding.</p>
+              </div>
+            </a>
+
+            <a href="post-mathledx-post-6.html" class="home-post-card fade-up delay-2">
+              <div class="home-post-art home-post-art-paper">
+                <span>Back row</span>
+              </div>
+              <div class="home-post-card-copy">
+                <p class="home-post-tag">For students</p>
+                <h3>A Letter to the Smart Kid in the Back of the Class</h3>
+                <p>An honest note about coasting, identity, and the cost of building your intelligence around never looking wrong.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a href="blog.html" class="home-more-link fade-up">Browse all writing</a>
+      </div>
+    </section>
+
+    <section class="home-about-rich">
+      <div class="container">
+        <div class="home-about-grid">
+          <div class="home-about-image-wrap fade-up">
+            <div class="home-about-image-card">
+              <img src="images/Profile.png" alt="Rich Hollinger" />
+            </div>
+            <div class="home-about-quote">
+              <p>"Most students are not bad at math. They are operating on a cracked foundation nobody took time to name."</p>
+            </div>
+          </div>
+
+          <div class="home-about-copy fade-up delay-1">
+            <p class="home-section-label">About Rich</p>
+            <h2 class="home-section-title">MathLedX is personal because the work is personal.</h2>
+            <p>
+              Rich Hollinger teaches math at San Marino High School and built MathLedX out of a frustration with how often capable students get misread.
+              They are called careless, unmotivated, or not math people when the real problem is usually more specific and more fixable than that.
+            </p>
+            <p>
+              The project brings together classroom teaching, published ideas, future video lessons, and tutoring under one name so families can see the whole philosophy, not just the booking link.
+            </p>
+            <div class="home-about-credentials">
+              <span>B.A. in Mathematics</span>
+              <span>Master's in Math Education</span>
+              <span>California Single Subject Credential</span>
+              <span>San Marino High School teacher</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-tutoring-cta" id="tutoring-cta">
+      <div class="container">
+        <div class="home-tutoring-shell fade-up">
+          <div class="home-tutoring-copy">
+            <p class="home-card-label">Tutoring</p>
+            <h2>When the problem is specific, the support should be specific too.</h2>
+            <p>
+              Tutoring is still a major part of MathLedX. If your student is stuck, anxious, underperforming, or quietly lost, Rich can help identify the real issue and build a plan that makes sense.
+            </p>
+          </div>
+          <div class="home-tutoring-actions">
+            <a href="tutoring.html" class="btn-primary btn-lg">Book a Free Consultation</a>
+            <a href="mailto:richhollinger@mathledx.com" class="btn-outline btn-lg">Email Rich</a>
+            <p class="home-tutoring-note">No pressure. The first conversation is a real conversation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
@@ -636,7 +282,7 @@
           <a href="index.html" class="logo-pill footer-logo-pill" aria-label="MathLedX home">
             <img src="images/MathLedX%20(2).png" alt="MathLedX" style="height:28px;" />
           </a>
-          <p>Built by a math teacher who had to figure it out the hard way.</p>
+          <p>Curriculum, writing, videos, and tutoring built by a teacher who had to figure it out the hard way.</p>
         </div>
         <div>
           <div class="footer-col-title">Pages</div>
@@ -668,41 +314,5 @@
   </footer>
 
   <script src="main.js"></script>
-  <script>
-    /* ── Stats count-up animation ─────────────────────────────── */
-    function easeOutQuart(t) {
-      return 1 - Math.pow(1 - t, 4);
-    }
-
-    function countUp(el, target, isPercent, duration) {
-      const start = performance.now();
-      function tick(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const value = Math.round(easeOutQuart(progress) * target);
-        el.textContent = isPercent ? value + '%' : String(value);
-        if (progress < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-    }
-
-    let statsAnimated = false;
-    const statsSection = document.getElementById('stats-bar');
-
-    const statsObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting && !statsAnimated) {
-          statsAnimated = true;
-          document.querySelectorAll('.stat-number[data-target]').forEach(function(el) {
-            const target = parseInt(el.dataset.target, 10);
-            const isPercent = el.dataset.percent === 'true';
-            countUp(el, target, isPercent, 1200);
-          });
-        }
-      });
-    }, { threshold: 0.3 });
-
-    if (statsSection) statsObserver.observe(statsSection);
-  </script>
 </body>
 </html>
