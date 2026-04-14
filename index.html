@@ -8,6 +8,109 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Hero social icons row ── */
+    .hero-social-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 28px;
+    }
+    .hero-social-icon {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      border: 1px solid rgba(15,31,61,0.2);
+      background: rgba(15,31,61,0.04);
+      display: flex; align-items: center; justify-content: center;
+      color: #6b7280;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .hero-social-icon:hover {
+      background: #0f1f3d;
+      color: #ffffff;
+      border-color: #0f1f3d;
+    }
+    .hero-social-icon svg {
+      width: 18px; height: 18px;
+    }
+
+    /* ── Nav boxes section ── */
+    .nav-boxes-section {
+      width: 100%;
+    }
+    .nav-boxes-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .nav-box {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 52px 24px 56px;
+      min-height: 260px;
+      text-decoration: none;
+      overflow: hidden;
+      transition: filter 0.22s ease;
+    }
+    .nav-box:hover { filter: brightness(1.09); }
+    .nav-box-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.7rem, 2.5vw, 2.25rem);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .nav-box-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.5;
+      max-width: 180px;
+    }
+    .nav-box-arrow {
+      position: absolute;
+      bottom: 18px; right: 22px;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.3);
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+    .nav-box:hover .nav-box-arrow {
+      transform: translateX(4px);
+      color: rgba(255,255,255,0.75);
+    }
+    .nav-box-soon {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+    .nav-box-blog  { background: #0f1f3d; }
+    .nav-box-tutor { background: #1a56db; }
+    .nav-box-video { background: #1e6fa5; cursor: default; }
+    .nav-box-about { background: #0d6b72; }
+
+    @media (max-width: 640px) {
+      .nav-boxes-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .nav-box { min-height: 190px; padding: 36px 20px 40px; }
+      .nav-box-title { font-size: 1.5rem; }
+    }
+  </style>
 </head>
 <body class="home-page">
 
@@ -18,7 +121,7 @@
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#start-here" class="nav-link active">Start Here</a>
-        <a href="#about-rich" class="nav-link">About</a>
+        <a href="#about" class="nav-link">About</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="#video-hub" class="nav-link">Videos</a>
         <a href="curriculum.html" class="nav-link">Curriculum</a>
@@ -37,7 +140,7 @@
   <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
     <div class="mobile-menu-inner">
       <a href="#start-here" class="mobile-nav-link active">Start Here</a>
-      <a href="#about-rich" class="mobile-nav-link">About</a>
+      <a href="#about" class="mobile-nav-link">About</a>
       <a href="blog.html" class="mobile-nav-link">Blog</a>
       <a href="#video-hub" class="mobile-nav-link">Videos</a>
       <a href="tutoring.html" class="mobile-nav-link">Tutoring</a>
@@ -64,7 +167,68 @@
             <a href="tutoring.html" class="home-brand-social">T</a>
             <a href="mailto:richhollinger@mathledx.com" class="home-brand-social">@</a>
           </div>
+
+          <div class="hero-social-row">
+            <a href="#" class="hero-social-icon" aria-label="Instagram"><!-- Update to your actual URL when ready -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="#" class="hero-social-icon" aria-label="YouTube"><!-- Update to your actual URL when ready -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="5" width="20" height="14" rx="3"/>
+                <polygon points="10,9 16,12 10,15" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="mailto:richhollinger@mathledx.com" class="hero-social-icon" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <polyline points="2,4 12,13 22,4"/>
+              </svg>
+            </a>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <section class="nav-boxes-section">
+      <div class="nav-boxes-grid">
+
+        <a href="blog.html" class="nav-box nav-box-blog">
+          <div class="nav-box-inner">
+            <div class="nav-box-title">Blog</div>
+            <div class="nav-box-desc">Why math breaks down — and how to fix it</div>
+          </div>
+          <span class="nav-box-arrow">→</span>
+        </a>
+
+        <a href="tutoring.html" class="nav-box nav-box-tutor">
+          <div class="nav-box-inner">
+            <div class="nav-box-title">Tutoring</div>
+            <div class="nav-box-desc">One on one with Rich. First session free.</div>
+          </div>
+          <span class="nav-box-arrow">→</span>
+        </a>
+
+        <div class="nav-box nav-box-video">
+          <span class="nav-box-soon">Coming Soon</span>
+          <div class="nav-box-inner">
+            <div class="nav-box-title">Videos</div>
+            <div class="nav-box-desc">Short lessons. Concept first.</div>
+          </div>
+          <span class="nav-box-arrow">→</span>
+        </div>
+
+        <a href="#about" class="nav-box nav-box-about">
+          <div class="nav-box-inner">
+            <div class="nav-box-title">About</div>
+            <div class="nav-box-desc">Who Rich is and why he built this</div>
+          </div>
+          <span class="nav-box-arrow">→</span>
+        </a>
+
       </div>
     </section>
 
@@ -112,7 +276,7 @@
       </div>
     </section>
 
-    <section class="home-about-feature" id="about-rich">
+    <section class="home-about-feature" id="about">
       <div class="container">
         <div class="home-about-layout">
           <div class="home-about-photo-column fade-up">
@@ -253,7 +417,7 @@
           <div class="footer-col-title">Explore</div>
           <ul class="footer-links">
             <li><a href="#start-here">Start Here</a></li>
-            <li><a href="#about-rich">About</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="#video-hub">Videos</a></li>
             <li><a href="tutoring.html">Tutoring</a></li>
