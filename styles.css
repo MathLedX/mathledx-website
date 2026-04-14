@@ -308,7 +308,7 @@ ul { list-style: none; }
    HERO — SPLIT LAYOUT (homepage)
    ================================================================ */
 .hero-split {
-  background: var(--bg) url('images/Wave.png') center bottom / cover no-repeat;
+  background: var(--bg) url('images/wave.jpg') center center / 100% 100% no-repeat;
   padding-top: calc(var(--nav-h) + 80px);
   padding-bottom: 100px;
   border-bottom: 1px solid var(--border);
