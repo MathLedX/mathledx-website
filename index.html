@@ -13,7 +13,7 @@
 
   <header class="nav" role="banner">
     <div class="nav-inner">
-      <a href="index.html" class="logo-pill" aria-label="MathLedX home">
+      <a href="index.html" class="logo-pill home-nav-logo" aria-label="MathLedX home">
         <img src="images/MathLedX%20(2).png" alt="MathLedX" />
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
@@ -21,10 +21,13 @@
         <a href="#about-rich" class="nav-link">About</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="#video-hub" class="nav-link">Videos</a>
-        <a href="tutoring.html" class="nav-link">Tutoring</a>
         <a href="curriculum.html" class="nav-link">Curriculum</a>
+        <a href="tutoring.html" class="nav-link">Tutoring</a>
       </nav>
-      <a href="tutoring.html" class="btn-primary btn-sm nav-cta">Book Tutoring</a>
+      <a href="#site-search" class="home-nav-search" aria-label="Search MathLedX">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="4.75" stroke="currentColor" stroke-width="1.4"/><path d="M10.5 10.5l3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </a>
+      <a href="tutoring.html" class="btn-primary btn-sm nav-cta home-nav-cta">Book Tutoring</a>
       <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
@@ -47,24 +50,19 @@
     <section class="home-brand-hero">
       <div class="container">
         <div class="home-brand-inner fade-up">
-          <p class="home-brand-kicker">Teacher-led math education for students, parents, and families</p>
+          <p class="home-brand-kicker">Teacher-led math education for students and parents</p>
           <div class="home-brand-logo-wrap">
             <img src="images/MathLedX%20(2).png" alt="MathLedX" class="home-brand-logo" />
           </div>
-          <h1 class="home-brand-title">Math that finally makes sense.</h1>
           <p class="home-brand-copy">
-            MathLedX is where students and parents come to understand why math gets hard,
-            what confidence actually depends on, and how to fix the problem step by step.
+            MathLedX is where students and parents come to understand why math gets hard and how to fix it.
           </p>
-          <div class="home-brand-actions">
-            <a href="#start-here" class="btn-primary btn-lg">Start Here</a>
-            <a href="tutoring.html" class="btn-outline btn-lg">Book Tutoring</a>
-          </div>
-          <div class="home-brand-directory" aria-label="MathLedX content areas">
-            <span>Curriculum</span>
-            <span>Blog</span>
-            <span>Videos</span>
-            <span>Tutoring</span>
+          <div class="home-brand-socials" aria-label="MathLedX links">
+            <a href="blog.html" class="home-brand-social">B</a>
+            <a href="curriculum.html" class="home-brand-social">C</a>
+            <a href="#video-hub" class="home-brand-social">V</a>
+            <a href="tutoring.html" class="home-brand-social">T</a>
+            <a href="mailto:richhollinger@mathledx.com" class="home-brand-social">@</a>
           </div>
         </div>
       </div>
@@ -74,35 +72,31 @@
       <div class="container">
         <div class="home-destination-grid">
           <a href="curriculum.html" class="home-destination home-destination-start fade-up">
-            <span class="home-destination-mark">01</span>
             <p class="home-destination-eyebrow">Start Here</p>
             <h2>New to MathLedX? Start with the ideas that explain why students get stuck.</h2>
             <p>Core explanations, clear frameworks, and the foundation behind how MathLedX teaches.</p>
-            <span class="home-destination-link">Open start here</span>
+            <span class="home-destination-link home-destination-button">Begin</span>
           </a>
 
           <a href="blog.html" class="home-destination home-destination-blog fade-up delay-1">
-            <span class="home-destination-mark">02</span>
             <p class="home-destination-eyebrow">Blog</p>
             <h2>Writing on math struggles, confidence, learning, and what actually helps.</h2>
             <p>Essays for parents, students, and teachers who want better language for what is going wrong.</p>
-            <span class="home-destination-link">Read the blog</span>
+            <span class="home-destination-link home-destination-button">Read</span>
           </a>
 
           <a href="#video-hub" class="home-destination home-destination-videos fade-up delay-2">
-            <span class="home-destination-mark">03</span>
             <p class="home-destination-eyebrow">Videos</p>
             <h2>Explanations, breakdowns, and walkthroughs that make math easier to see.</h2>
             <p>Visual teaching, worked examples, and a growing media side of the MathLedX brand.</p>
-            <span class="home-destination-link">See the video hub</span>
+            <span class="home-destination-link home-destination-button">Watch</span>
           </a>
 
           <a href="tutoring.html" class="home-destination home-destination-tutoring fade-up delay-3">
-            <span class="home-destination-mark">04</span>
             <p class="home-destination-eyebrow">Tutoring</p>
             <h2>One-on-one help for students who need clarity, confidence, and results.</h2>
             <p>Direct support for students hovering at a B, honors students, and anyone who needs math to feel teachable again.</p>
-            <span class="home-destination-link">Book tutoring</span>
+            <span class="home-destination-link home-destination-button">Book</span>
           </a>
         </div>
       </div>
