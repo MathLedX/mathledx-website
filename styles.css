@@ -307,12 +307,63 @@ ul { list-style: none; }
 /* ================================================================
    HERO — SPLIT LAYOUT (homepage)
    ================================================================ */
+
+/*
+  Background image sits on its own layer so we can apply filter
+  (desaturate + slight blur) without affecting text or portrait.
+  ::before = background image layer
+  ::after  = gradient overlay (left-side readability + bottom fade)
+*/
 .hero-split {
-  background: var(--bg) url('images/wave.jpg') center center / 100% 100% no-repeat;
+  position: relative;
   padding-top: calc(var(--nav-h) + 80px);
   padding-bottom: 100px;
   border-bottom: 1px solid var(--border);
+  overflow: hidden;
 }
+
+/* Background image layer — desaturated and slightly softened */
+.hero-split::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('images/wave.jpg') center center / 100% 100% no-repeat;
+  filter: saturate(0.6) brightness(1.08);
+  z-index: 0;
+}
+
+/* Gradient overlay layer:
+   - Left: soft white-to-light-blue for text legibility
+   - Right: fades to transparent so portrait breathes
+   - Bottom: fades to site bg (#ffffff) for smooth section transition
+*/
+.hero-split::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to right,
+      rgba(240, 245, 255, 0.82) 0%,
+      rgba(235, 242, 255, 0.60) 45%,
+      rgba(245, 248, 255, 0.18) 75%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 60%,
+      rgba(255, 255, 255, 0.75) 85%,
+      #ffffff 100%
+    );
+  z-index: 1;
+}
+
+/* All hero content sits above the pseudo-element layers */
+.hero-split > * {
+  position: relative;
+  z-index: 2;
+}
+
 .hero-split-inner {
   display: grid;
   grid-template-columns: 1fr;
@@ -371,7 +422,9 @@ ul { list-style: none; }
 }
 .hero-sub {
   font-size: clamp(1rem, 1.8vw, 1.125rem);
-  color: var(--text-muted);
+  /* Darker than --text-muted (#6b7280) for legibility over the background */
+  color: #3d4452;
+  font-weight: 500;
   line-height: 1.75;
   margin-bottom: 40px;
   max-width: 520px;
