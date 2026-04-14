@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>I Failed Three Math Classes in One Semester. Here's What It Taught Me. — MathLedX</title>
+  <meta name="description" content="" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Blog post styles -->
+  <style>
+    /* ── Post header ── */
+    .post-hero {
+      background: var(--bg, #ffffff);
+      border-bottom: 1px solid var(--border, #e5e3de);
+      padding: calc(var(--nav-h, 68px) + 56px) 0 56px;
+    }
+    .post-hero-inner {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+    .post-category {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue, #1a56db);
+      margin-bottom: 20px;
+    }
+    .post-hero h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.9rem, 4vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.18;
+      color: var(--navy, #0f1f3d);
+      margin: 0 0 24px;
+      letter-spacing: -0.02em;
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-subtle, #6b7280);
+    }
+    .post-meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--text-subtle, #6b7280);
+      display: inline-block;
+    }
+    .post-meta strong {
+      color: var(--text, #1a1a2e);
+      font-weight: 600;
+    }
+
+    /* ── Post body ── */
+    .post-body {
+      padding: 64px 0 80px;
+      background: var(--bg, #ffffff);
+    }
+    .post-content {
+      max-width: 740px;
+      margin: 0 auto;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--text, #1a1a2e);
+    }
+    .post-content p {
+      margin: 0 0 1.5em;
+    }
+    .post-content h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy, #0f1f3d);
+      margin: 2.5em 0 0.75em;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    .post-content h2:first-child {
+      margin-top: 0;
+    }
+    .post-content h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy, #0f1f3d);
+      margin: 2em 0 0.5em;
+      line-height: 1.4;
+    }
+    .post-content strong {
+      font-weight: 600;
+      color: var(--navy, #0f1f3d);
+    }
+    .post-content em {
+      font-style: italic;
+      color: var(--text, #1a1a2e);
+    }
+    .post-content ul,
+    .post-content ol {
+      margin: 0 0 1.5em 1.5em;
+      padding: 0;
+    }
+    .post-content li {
+      margin-bottom: 0.5em;
+    }
+
+    /* Divider */
+    .post-divider {
+      border: none;
+      border-top: 1px solid var(--border, #e5e3de);
+      margin: 2.5em 0;
+    }
+
+    /* ── Email CTA ── */
+    .post-cta {
+      background: var(--bg-alt, #f8f7f4);
+      border-top: 1px solid var(--border, #e5e3de);
+      border-bottom: 1px solid var(--border, #e5e3de);
+      padding: 64px 0;
+    }
+    .post-cta-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .post-cta-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue, #1a56db);
+      margin-bottom: 16px;
+    }
+    .post-cta h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.625rem;
+      font-weight: 700;
+      color: var(--navy, #0f1f3d);
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    .post-cta p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: var(--text-subtle, #6b7280);
+      line-height: 1.6;
+      margin: 0 0 28px;
+    }
+    .post-cta-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 800px) {
+      .post-hero { padding: 48px 0 40px; }
+      .post-content { font-size: 1rem; }
+      .post-content h2 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="logo-pill" aria-label="MathLedX home">
+        <img src="images/MathLedX%20(2).png" alt="MathLedX" />
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="curriculum.html" class="nav-link">Curriculum</a>
+        <a href="tutoring.html" class="nav-link">Tutoring</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+      </nav>
+      <a href="tutoring.html" class="btn-primary btn-sm nav-cta">Book Tutoring</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="curriculum.html" class="mobile-nav-link">Curriculum</a>
+      <a href="tutoring.html" class="mobile-nav-link">Tutoring</a>
+      <a href="blog.html" class="mobile-nav-link active">Blog</a>
+      <a href="tutoring.html" class="btn-primary mobile-cta">Book Tutoring</a>
+    </div>
+  </div>
+
+  <!-- ═══ POST HEADER ═══ -->
+  <section class="post-hero">
+    <div class="container">
+      <div class="post-hero-inner fade-up">
+        <div class="post-category">General</div>
+        <h1>I Failed Three Math Classes in One Semester. Here's What It Taught Me.</h1>
+        <div class="post-meta">
+          <strong>Rich Hollinger</strong>
+          <span class="post-meta-dot"></span>
+          April 2026
+          <span class="post-meta-dot"></span>
+          6 min read
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ POST BODY ═══ -->
+  <article class="post-body">
+    <div class="container">
+      <div class="post-content fade-up">
+
+        <p><strong>MATHLEDX</strong></p><p>Blog Draft — Origin Story / About</p><p>CATEGORY: Rich's Story   ·   April 2026   ·   Draft 1</p><p><strong>SEO NOTE: </strong>Target keyword: "math tutor who struggled in math" / "why I became a math teacher" — Meta description: I was a college math major who stopped going to class, failed three courses in a semester, and figured out the hard way that everything I thought I knew about learning math was wrong. This is that story.</p><p>I want to tell you something most tutors won't. I was not a math prodigy. I was not the kid who loved equations and lived for extra credit. I was the kid in the back of the class who had already figured out the pattern, stopped paying attention, and coasted through on raw ability. That worked for a long time. And then, spectacularly, it didn't.</p><h2><strong>The Kid Who Never Had to Try</strong></h2><p>Math came easily to me growing up. Not because I was disciplined or worked hard at it, but because I was good at recognizing patterns quickly. I could tune out the teacher, pick up the method from the first two examples, and finish my work before most of my classmates had written their name on the paper.</p><p>Nobody flagged this as a problem. Why would they? The work was getting done. The grades were fine. From the outside, I looked like a student who had it together.</p><p>What was actually happening was that I was building a habit that would eventually collapse under its own weight. I was learning how to perform math without ever learning how to understand it. There's a difference. For a long time, I didn't know that difference existed.</p><p><em>I wasn't learning math. I was learning how to look like I was learning math. Those are not the same thing.</em></p><h2><strong>The Long Coast</strong></h2><p>When I got to college I drifted through a few major ideas before landing on math. History didn't stick — I couldn't stand the research papers. Physical education was complicated by my basketball practice schedule. Math fit the time constraints and I figured I was decent at it, so I committed.</p><p>Calculus 1 was hard but I had a great teacher and the structure of daily practice kept me showing up. A in the class. Calculus 2 got harder and my attendance got worse. Once practice moved to Monday and Wednesday only, I stopped making the drive on the other days. B in the class.</p><p>Calculus 3 I took over five weeks in the summer. That was a mistake. Five weeks of four to six hours of math a day, working at the same time, pattern-matching my way through material that genuinely required sustained focus. I ditched a few classes. The catch-up game was brutal. C. I got through.</p><p>Then I transferred to a university and coasted through two more courses on the back of instructors who graded generously and a differential equations teacher who only cared about computations, not proofs. I was fine with that arrangement.</p><p>I thought I was doing well. I was actually running out of road.</p><h2><strong>The Wall</strong></h2><p>Junior year. Abstract algebra, linear algebra, and mathematical analysis. Three proof-based courses in the same semester.</p><p>The numbers were gone. All of them. What replaced them was logic, structure, formal argumentation — mathematics at a level that required you to actually understand what you were doing and explain why it was true. No patterns to shortcut. No formula to memorize. No way to fake it.</p><p>I sat in those classes like a person who had wandered into the wrong building. I had taken regular math in high school, not honors. I had never been taught how to write a proof, how to construct a logical argument from definitions, how to think mathematically instead of just compute. The homework was impossible without looking up answers online.</p><p><strong>THE REAL COST OF COASTING</strong></p><p>I had spent years building the appearance of mathematical ability without building the foundation underneath it. When the courses finally required the foundation, there was nothing there.</p><p>Then my girlfriend broke up with me.</p><p>I stopped going to my 8 o'clock class. Then I was so exhausted and demoralized that I'd skip the 10 o'clock. By the time 1 o'clock came around I figured I'd already lost the day, so I'd skip that too. Each missed class made the next one harder to attend. The snowball rolled. I went to the gym instead, where at least I knew I was capable of something.</p><p>I failed all three courses.</p><h2><strong>The Thing That Changed Everything</strong></h2><p>At some point the math was simple: if I didn't pass these courses, I wouldn't graduate. If I didn't graduate, I wouldn't get the teaching job I had wanted since I was a kid. The gym wasn't going to fix that.</p><p>So I sat down and thought about what math actually was. Not the homework. Not the grade. The thing itself.</p><p>And I realized something that sounds obvious in retrospect: math proofs are just essays. You learn vocabulary — definitions, axioms, theorems. You understand what those words mean precisely. Then you arrange them in a logical sequence to demonstrate something true. That's it. That's a proof. That's also a five-paragraph essay.</p><p><em>I had been trying to pattern-match my way through a subject that required me to build a vocabulary and construct an argument. The moment I understood that, everything changed.</em></p><p>I started treating math like a language. I memorized definitions obsessively. Not because I fully understood the problems yet, but because I figured if I knew enough words I could start assembling something coherent and correct myself as I went. It worked. Slowly, then all at once. The something's I was putting together started making sense. I started explaining ideas in ways that surprised me and the students around me.</p><p>I retook those courses. Passed them. Some with A's.</p><p>Then I finished my bachelor's degree in mathematics. Then a master's in math education. Then I got hired at one of the highest-performing school districts in Southern California, where I have spent four years proving every single day that this approach — build the vocabulary, understand the structure, trust the process — works for students who look exactly like I did.</p><h2><strong>Why This Matters for Your Kid</strong></h2><p>I didn't start MathLedX because I was always great at math. I started it because I know exactly what it feels like to be capable, to be coasting, and to hit a wall so hard it knocks you off your feet.</p><p>I know what it looks like when a smart kid stops going to class. I know what shame feels like when a subject you thought was yours suddenly isn't. And I know — from the inside — what it takes to go back, rebuild, and come out the other side with something real.</p><p>That's not a credential you get from a university. That's the one that actually matters.</p><p>If your kid is somewhere in that story right now, I'd like to talk.</p><p><strong>WANT THE NEXT POST IN YOUR INBOX?</strong></p><p>I write about the specific ways the math system fails capable students — and what parents can do about it. Sign up at mathledx.com.</p><p>MathLedX  ·  mathledx.com  ·  © 2026 Rich Hollinger. All rights reserved.</p>
+
+        <hr class="post-divider" />
+
+        <p style="color: var(--text-subtle, #6b7280); font-size: 0.9375rem;">
+          <strong style="color: var(--navy, #0f1f3d);">Rich Hollinger</strong> is a high school math teacher at San Marino High School and the founder of MathLedX. He holds a B.A. in Mathematics and a Master's in Math Education.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- ═══ POST CTA ═══ -->
+  <section class="post-cta">
+    <div class="container">
+      <div class="post-cta-inner fade-up">
+        <div class="post-cta-label">More Like This</div>
+        <h2>Want the next post in your inbox?</h2>
+        <p>I write about the specific ways the math system fails capable students — and what parents can actually do about it. No jargon. No fluff.</p>
+        <div class="post-cta-actions">
+          <a href="tutoring.html" class="btn-primary btn-lg">
+            Book a Free Consultation
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="blog.html" class="btn-outline btn-lg">Back to Blog</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-pill" style="margin-bottom:4px;" aria-label="MathLedX home">
+            <img src="images/MathLedX%20(2).png" alt="MathLedX" style="height:28px;" />
+          </a>
+          <p>Built by a math teacher who had to figure it out the hard way.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="tutoring.html">Tutoring</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <li class="footer-contact-item">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1.5 3.5h13v9h-13v-9zm0 0l6.5 5.5 6.5-5.5" stroke="rgba(255,255,255,0.4)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="mailto:richhollinger@mathledx.com">richhollinger@mathledx.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 MathLedX. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
