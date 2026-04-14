@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>The Best Thing You Can Do for Your Kid's Math Success Isn't What You Think — MathLedX</title>
+  <meta name="description" content="" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Blog post styles -->
+  <style>
+    /* ── Post header ── */
+    .post-hero {
+      background: var(--bg, #ffffff);
+      border-bottom: 1px solid var(--border, #e5e3de);
+      padding: calc(var(--nav-h, 68px) + 56px) 0 56px;
+    }
+    .post-hero-inner {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+    .post-category {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue, #1a56db);
+      margin-bottom: 20px;
+    }
+    .post-hero h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.9rem, 4vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.18;
+      color: var(--navy, #0f1f3d);
+      margin: 0 0 24px;
+      letter-spacing: -0.02em;
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-subtle, #6b7280);
+    }
+    .post-meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--text-subtle, #6b7280);
+      display: inline-block;
+    }
+    .post-meta strong {
+      color: var(--text, #1a1a2e);
+      font-weight: 600;
+    }
+
+    /* ── Post body ── */
+    .post-body {
+      padding: 64px 0 80px;
+      background: var(--bg, #ffffff);
+    }
+    .post-content {
+      max-width: 740px;
+      margin: 0 auto;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--text, #1a1a2e);
+    }
+    .post-content p {
+      margin: 0 0 1.5em;
+    }
+    .post-content h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy, #0f1f3d);
+      margin: 2.5em 0 0.75em;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    .post-content h2:first-child {
+      margin-top: 0;
+    }
+    .post-content h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy, #0f1f3d);
+      margin: 2em 0 0.5em;
+      line-height: 1.4;
+    }
+    .post-content strong {
+      font-weight: 600;
+      color: var(--navy, #0f1f3d);
+    }
+    .post-content em {
+      font-style: italic;
+      color: var(--text, #1a1a2e);
+    }
+    .post-content ul,
+    .post-content ol {
+      margin: 0 0 1.5em 1.5em;
+      padding: 0;
+    }
+    .post-content li {
+      margin-bottom: 0.5em;
+    }
+
+    /* Divider */
+    .post-divider {
+      border: none;
+      border-top: 1px solid var(--border, #e5e3de);
+      margin: 2.5em 0;
+    }
+
+    /* ── Email CTA ── */
+    .post-cta {
+      background: var(--bg-alt, #f8f7f4);
+      border-top: 1px solid var(--border, #e5e3de);
+      border-bottom: 1px solid var(--border, #e5e3de);
+      padding: 64px 0;
+    }
+    .post-cta-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .post-cta-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue, #1a56db);
+      margin-bottom: 16px;
+    }
+    .post-cta h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.625rem;
+      font-weight: 700;
+      color: var(--navy, #0f1f3d);
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    .post-cta p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: var(--text-subtle, #6b7280);
+      line-height: 1.6;
+      margin: 0 0 28px;
+    }
+    .post-cta-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 800px) {
+      .post-hero { padding: 48px 0 40px; }
+      .post-content { font-size: 1rem; }
+      .post-content h2 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="logo-pill" aria-label="MathLedX home">
+        <img src="images/MathLedX%20(2).png" alt="MathLedX" />
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="curriculum.html" class="nav-link">Curriculum</a>
+        <a href="tutoring.html" class="nav-link">Tutoring</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+      </nav>
+      <a href="tutoring.html" class="btn-primary btn-sm nav-cta">Book Tutoring</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="curriculum.html" class="mobile-nav-link">Curriculum</a>
+      <a href="tutoring.html" class="mobile-nav-link">Tutoring</a>
+      <a href="blog.html" class="mobile-nav-link active">Blog</a>
+      <a href="tutoring.html" class="btn-primary mobile-cta">Book Tutoring</a>
+    </div>
+  </div>
+
+  <!-- ═══ POST HEADER ═══ -->
+  <section class="post-hero">
+    <div class="container">
+      <div class="post-hero-inner fade-up">
+        <div class="post-category">General</div>
+        <h1>The Best Thing You Can Do for Your Kid's Math Success Isn't What You Think</h1>
+        <div class="post-meta">
+          <strong>Rich Hollinger</strong>
+          <span class="post-meta-dot"></span>
+          April 2026
+          <span class="post-meta-dot"></span>
+          7 min read
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ POST BODY ═══ -->
+  <article class="post-body">
+    <div class="container">
+      <div class="post-content fade-up">
+
+        <p><strong>MATHLEDX</strong></p><p>Blog Draft — For Parents</p><p>CATEGORY: For Parents   ·   April 2026   ·   Draft 1</p><p><strong>SEO NOTE: </strong>Target keyword: "how parents can help kids with math" / "building math confidence in kids" — Meta description: It isn’t hiring a tutor or enforcing homework time. The single most powerful thing a parent can do for a struggling math student happens long before the grades slip — and most parents are doing the opposite.</p><p>If you are a parent reading this because your kid is struggling in math, I want to ask you something before we go any further. When math comes up at your house — at the dinner table, in the car, during homework — what feeling does it carry? Is it a subject your family approaches with curiosity? Or has it quietly become a source of pressure, frustration, and dread? Because the answer to that question matters more than the tutor, the program, or the grade.</p><h2><strong>What Parents Get Wrong About Helping</strong></h2><p>The instinct most parents have when a kid starts struggling in math is to add pressure. Higher stakes. More accountability. A tutor. Consequences for bad grades. None of these things are wrong exactly — but they all treat math as a performance problem. And for most struggling students, math is not a performance problem. It’s a relationship problem.</p><p>The relationship a student has with math — whether they see it as something they can figure out or something that has already defeated them — determines almost everything about how they engage with it. A kid who believes math isn’t for them will find a way to confirm that belief no matter how many tutors you hire. A kid who believes they can figure it out, given the right approach and enough patience, will keep trying when things get hard.</p><p>That belief doesn’t come from a classroom. It comes from home.</p><p><em>Pressure produces compliance. Curiosity produces learning. They are not the same thing, and you cannot buy one when you’ve already installed the other.</em></p><h2><strong>The Two Parents I Grew Up With</strong></h2><p>I want to tell you about my own parents, because I think it illustrates this better than any research study could.</p><p>My dad was the enforcer. If I got a C, I was in trouble. He hired tutors, enforced study time, and made it very clear that underperforming in school was not acceptable in our house. He cared deeply about my success and showed it the way a lot of parents show it — through high standards and real consequences.</p><p>My mom did something different. She took me on walks and played mental math games with me. Times tables, quick calculations, little competitions. She talked to me about how she used math in her real estate business — calculating margins, evaluating deals, understanding percentages. She told me about my grandfather, an engineer who worked on spacecraft and calculated the fuel required to reach the moon. She talked about her own failures in math alongside her successes. She made it feel like a living, breathing thing that real people used to do real things — not a gate you either passed through or didn’t.</p><p>My dad got compliance. My mom got curiosity. And here’s the part I want to be careful about: I needed both.</p><p>Without my dad’s boundaries I don’t finish college. The material gets hard, the motivation dips, and without real consequences there’s nothing keeping me in the chair. Foundations and basics aren’t always interesting. Sometimes you just have to show up anyway. My dad made sure I knew that.</p><p>But without my mom I don’t care enough to try in the first place. The compliance my dad produced would have stayed exactly that — compliance. Showing up, going through the motions, and walking away the moment the requirement was lifted.</p><p><strong>THE RATIO THAT CHANGES EVERYTHING</strong></p><p>Relationship researcher John Gottman found that healthy relationships require roughly five positive interactions for every negative one — what he called the Gottman Ratio. I believe the same is true for a student’s relationship with math. Five wins for every failure. Five moments of curiosity for every hard consequence. My mom gave me the five. My dad gave me the boundary. The end result was someone who now uses the systems and problem-solving learned through math for everything in life.</p><p>She never once told me she cared how I did in my math classes. She just made math feel like something worth caring about. And that made all the difference when the hard days came — because they always come.</p><h2><strong>The Damage Parents Don’t Know They’re Doing</strong></h2><p>In my classroom I hear a version of the same thing constantly. Students say their parents hated math, were never good at math, and don’t really expect their kids to be good at it either. Sometimes this is said with a shrug, like it’s just a family trait — we’re not math people.</p><p>That phrase — we’re not math people — is one of the most damaging things a parent can pass down. Not because it’s said with any cruelty, but because the kid absorbs it as permission to stop trying. If the family doesn’t do math, then struggling in math isn’t a problem to solve. It’s just who we are.</p><p>Research from Stanford psychologist Carol Dweck has shown that students who believe their abilities are fixed — that they either have it or they don’t — give up faster, avoid challenge, and perform worse over time than students who believe ability can grow through effort. Parents who casually dismiss their own math ability are, without realizing it, handing their kids a fixed mindset about the subject.</p><p><em>You don’t have to be good at math to raise a kid who is. But you do have to stop telling them it’s not for your family.</em></p><h2><strong>What You Can Actually Do Tonight</strong></h2><p>I’m not asking you to become a math tutor. That’s not your job and it’s not what your kid needs from you.</p><p>Here’s what they actually need:</p><p>Tell them a story about a time you figured something hard out. It doesn’t have to be math. It just has to be real. A time you were lost and found your way. A time you failed and came back. Kids who see their parents as people who have navigated difficulty — not people who are simply right and competent — develop a more honest and resilient relationship with their own struggle.</p><p>Ask them what they’re working on without asking how they did. Curiosity without judgment is one of the rarest things a struggling student gets from an adult. Most of the questions they field are evaluative. How did the test go. What did you get. Did you do your homework. Try asking what’s interesting about what they’re learning right now, even if the answer is nothing. The question itself sends a signal.</p><p>Stop saying you were never a math person. Even as a joke. Especially as a joke.</p><p>And if your family has a story like mine — a grandparent who built things, a parent who ran a business, anyone who used numbers to navigate the real world — tell it. Math is not just a stepping stone to college. It is a language that describes how the world actually works. The sooner a kid understands that, the sooner they have a reason to care.</p><h2><strong>The Grade Is a Symptom</strong></h2><p>When a capable kid starts slipping in math, the grade is not the problem. The grade is a signal. And the signal is almost always pointing to something underneath — a confidence gap, a curiosity gap, a relationship with the subject that has curdled into shame or indifference.</p><p>You can fix a grade with a tutor. You fix the thing underneath with something quieter and more patient. With walks. With stories. With the way you talk about hard things at your dinner table.</p><p>That’s where it starts. And it’s completely within your reach.</p><p><strong>WANT THE NEXT POST IN YOUR INBOX?</strong></p><p>I write about the specific ways the math system fails capable students — and what parents can actually do about it. No jargon. No fluff. Sign up at mathledx.com.</p><p>MathLedX  ·  mathledx.com  ·  © 2026 Rich Hollinger. All rights reserved.</p>
+
+        <hr class="post-divider" />
+
+        <p style="color: var(--text-subtle, #6b7280); font-size: 0.9375rem;">
+          <strong style="color: var(--navy, #0f1f3d);">Rich Hollinger</strong> is a high school math teacher at San Marino High School and the founder of MathLedX. He holds a B.A. in Mathematics and a Master's in Math Education.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- ═══ POST CTA ═══ -->
+  <section class="post-cta">
+    <div class="container">
+      <div class="post-cta-inner fade-up">
+        <div class="post-cta-label">More Like This</div>
+        <h2>Want the next post in your inbox?</h2>
+        <p>I write about the specific ways the math system fails capable students — and what parents can actually do about it. No jargon. No fluff.</p>
+        <div class="post-cta-actions">
+          <a href="tutoring.html" class="btn-primary btn-lg">
+            Book a Free Consultation
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="blog.html" class="btn-outline btn-lg">Back to Blog</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-pill" style="margin-bottom:4px;" aria-label="MathLedX home">
+            <img src="images/MathLedX%20(2).png" alt="MathLedX" style="height:28px;" />
+          </a>
+          <p>Built by a math teacher who had to figure it out the hard way.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="tutoring.html">Tutoring</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <li class="footer-contact-item">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1.5 3.5h13v9h-13v-9zm0 0l6.5 5.5 6.5-5.5" stroke="rgba(255,255,255,0.4)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="mailto:richhollinger@mathledx.com">richhollinger@mathledx.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 MathLedX. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
