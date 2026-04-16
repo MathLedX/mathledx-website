@@ -955,6 +955,7 @@ textarea.form-input { resize: vertical; min-height: 120px; }
 .logo-pill:hover { opacity: 0.8; transform: translateY(-1px); }
 .logo-pill:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; border-radius: 6px; }
 .logo-pill img { height: 44px; width: auto; display: block; }
+.home-nav-logo-img { height: 44px; width: 44px; border-radius: 50%; object-fit: cover; display: block; }
 
 /* ── Multi-paragraph profile bio spacing ─────────────────────── */
 .profile-bio + .profile-bio { margin-top: 16px; }
@@ -1311,7 +1312,6 @@ textarea.form-input { resize: vertical; min-height: 120px; }
     gap: 18px;
   }
 
-  .home-page .home-nav-logo,
   .home-page .home-nav-cta {
     display: none;
   }
