@@ -1050,52 +1050,29 @@ textarea.form-input { resize: vertical; min-height: 120px; }
   overflow: hidden;
 }
 
-.home-page .nav {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(18px) saturate(160%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
-  border-bottom: 1px solid rgba(15,31,61,0.07);
-}
-
-.home-page .nav.scrolled {
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 1px 0 rgba(15,31,61,0.05), 0 4px 24px rgba(0,0,0,0.07);
-}
-
-.home-page .nav-link {
-  color: rgba(15,31,61,0.75);
-}
-.home-page .nav-link:hover {
-  color: #0f1f3d;
-  background: rgba(15,31,61,0.06);
-}
-.home-page .nav-link.active {
-  color: #0f1f3d;
-}
-
 .home-nav-search {
   display: none;
   align-items: center;
   justify-content: center;
   width: 30px;
   height: 30px;
-  color: rgba(15,31,61,0.65);
+  color: rgba(255,255,255,0.65);
   text-decoration: none;
   border-radius: 999px;
   transition: color 0.2s ease, background 0.2s ease;
 }
 
 .home-nav-search:hover {
-  color: #0f1f3d;
-  background: rgba(15,31,61,0.06);
+  color: #ffffff;
+  background: rgba(255,255,255,0.1);
 }
 
 .home-brand-hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 62vh;
   display: flex;
   align-items: center;
-  padding: calc(var(--nav-h) + 40px) 0 60px;
+  padding: calc(var(--nav-h) + 48px) 0 56px;
   background: url('images/wave.jpg') center 40% / cover no-repeat;
   color: #1a2332;
 }
@@ -1105,9 +1082,7 @@ textarea.form-input { resize: vertical; min-height: 120px; }
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: rgba(235, 243, 250, 0.52);
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
+  background: rgba(220, 235, 248, 0.38);
 }
 
 .home-brand-inner {
@@ -1143,16 +1118,16 @@ textarea.form-input { resize: vertical; min-height: 120px; }
 }
 
 .home-brand-logo {
-  width: min(180px, 36vw);
+  width: min(160px, 34vw);
   height: auto;
 }
 
 .home-brand-copy {
   max-width: 42ch;
   margin: 0 auto 14px;
-  font-size: 1rem;
+  font-size: 1.0625rem;
   line-height: 1.7;
-  color: rgba(15,31,61,0.82);
+  color: rgba(15,31,61,0.88);
 }
 
 .home-brand-socials {
@@ -1779,7 +1754,7 @@ textarea.form-input { resize: vertical; min-height: 120px; }
 
 @media (max-width: 767px) {
   .home-brand-hero {
-    min-height: 100svh;
+    min-height: 55svh;
     padding: calc(var(--nav-h) + 32px) 0 48px;
   }
 
