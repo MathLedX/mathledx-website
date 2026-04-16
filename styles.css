@@ -1082,8 +1082,8 @@ textarea.form-input { resize: vertical; min-height: 120px; }
 
 .home-brand-hero {
   position: relative;
-  min-height: 460px;
-  padding: calc(var(--nav-h) + 56px) 0 156px;
+  min-height: auto;
+  padding: calc(var(--nav-h) + 20px) 0 32px;
   background:
     linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 100%),
     linear-gradient(180deg, #303744 0%, #3a414e 100%);
@@ -1122,10 +1122,9 @@ textarea.form-input { resize: vertical; min-height: 120px; }
   max-width: 760px;
   margin: 0 auto;
   text-align: center;
-  min-height: 280px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 
 .home-brand-kicker,
@@ -1140,25 +1139,25 @@ textarea.form-input { resize: vertical; min-height: 120px; }
 
 .home-brand-kicker {
   color: rgba(255,255,255,0.7);
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 
 .home-brand-logo-wrap {
   display: flex;
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
 }
 
 .home-brand-logo {
-  width: min(420px, 78vw);
+  width: min(96px, 22vw);
   height: auto;
 }
 
 .home-brand-copy {
-  max-width: 34ch;
-  margin: 0 auto 24px;
-  font-size: 0.9rem;
-  line-height: 1.75;
+  max-width: 38ch;
+  margin: 0 auto 14px;
+  font-size: 0.875rem;
+  line-height: 1.65;
   color: rgba(255,255,255,0.82);
 }
 
@@ -1787,7 +1786,7 @@ textarea.form-input { resize: vertical; min-height: 120px; }
 @media (max-width: 767px) {
   .home-brand-hero {
     min-height: auto;
-    padding: calc(var(--nav-h) + 42px) 0 118px;
+    padding: calc(var(--nav-h) + 14px) 0 24px;
   }
 
   .home-brand-inner {
