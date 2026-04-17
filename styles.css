@@ -1070,13 +1070,9 @@ textarea.form-input { resize: vertical; min-height: 120px; }
 
 .home-brand-hero {
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: calc(var(--nav-h) + 48px) 0 0;
-  background: url('images/wave.jpg') center 40% / cover no-repeat;
+  height: 100vh;
+  overflow: hidden;
+  background: url('images/wave.jpg') center 50% / cover no-repeat;
   color: #1a2332;
 }
 
@@ -1089,14 +1085,18 @@ textarea.form-input { resize: vertical; min-height: 120px; }
 }
 
 .home-brand-inner {
-  position: relative;
+  position: absolute;
   z-index: 1;
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--nav-h) + 16px) 24px 0;
 }
 
 .home-brand-kicker,
@@ -1121,7 +1121,7 @@ textarea.form-input { resize: vertical; min-height: 120px; }
 }
 
 .home-brand-logo {
-  width: min(160px, 34vw);
+  width: min(280px, 50vw);
   height: auto;
 }
 
