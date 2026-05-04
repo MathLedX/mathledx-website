@@ -1,50 +1,96 @@
 /* MathLedX — Shared JS */
 
-/* ── Mobile menu ── */
-const menuToggle = document.getElementById('menu-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
+(function () {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const body = document.body;
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const nav = document.querySelector('.nav');
 
-if (menuToggle && mobileMenu) {
-  menuToggle.addEventListener('click', () => {
-    const isOpen = menuToggle.classList.toggle('open');
-    mobileMenu.classList.toggle('open', isOpen);
-    menuToggle.setAttribute('aria-expanded', isOpen);
-  });
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      menuToggle.classList.remove('open');
-      mobileMenu.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+  function trackEvent(eventName, payload) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: eventName,
+      ...payload,
+      ts: Date.now(),
     });
-  });
-}
+  }
 
-/* ── Nav scroll shadow ── */
-const nav = document.querySelector('.nav');
-if (nav) {
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-}
+  function setMenuState(isOpen) {
+    if (!menuToggle || !mobileMenu) return;
+    menuToggle.classList.toggle('open', isOpen);
+    mobileMenu.classList.toggle('open', isOpen);
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    body.classList.toggle('menu-open', isOpen);
 
-/* ── Fade-up on scroll ── */
-const fadeEls = document.querySelectorAll('.fade-up');
-if (fadeEls.length) {
-  // Large rootMargin ensures elements trigger as soon as they exist in the
-  // extended virtual viewport — works correctly for both scrolling and
-  // full-page screenshot captures.
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
+    if (isOpen) {
+      trackEvent('menu_opened', { location: window.location.pathname });
+      const firstLink = mobileMenu.querySelector('a, button');
+      if (firstLink) firstLink.focus();
+    } else {
+      menuToggle.focus();
+    }
+  }
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = !menuToggle.classList.contains('open');
+      setMenuState(isOpen);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setMenuState(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menuToggle.classList.contains('open')) {
+        setMenuState(false);
       }
     });
-  }, { threshold: 0, rootMargin: '0px 0px 200px 0px' });
-  fadeEls.forEach(el => obs.observe(el));
+  }
 
-  // Ensure all elements become visible (fallback for full-page captures)
-  setTimeout(() => {
-    fadeEls.forEach(el => el.classList.add('visible'));
-  }, 100);
-}
+  if (nav) {
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  const fadeEls = document.querySelectorAll('.fade-up');
+  if (fadeEls.length) {
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      fadeEls.forEach((el) => el.classList.add('visible'));
+    } else {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: '0px 0px 120px 0px' });
+
+      fadeEls.forEach((el) => obs.observe(el));
+      setTimeout(() => fadeEls.forEach((el) => el.classList.add('visible')), 250);
+    }
+  }
+
+  document.querySelectorAll('[data-track]').forEach((el) => {
+    el.addEventListener('click', () => {
+      trackEvent('cta_click', {
+        id: el.getAttribute('data-track'),
+        label: el.textContent.trim().slice(0, 80),
+        location: window.location.pathname,
+      });
+    });
+  });
+
+  const trackedForms = document.querySelectorAll('form[data-track-form]');
+  trackedForms.forEach((form) => {
+    form.addEventListener('submit', () => {
+      trackEvent('form_submit', {
+        id: form.getAttribute('data-track-form'),
+        location: window.location.pathname,
+      });
+    });
+  });
+})();

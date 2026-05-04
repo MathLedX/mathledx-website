@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog — MathLedX</title>
+  <title>MathLedX Blog - Insights for students and parents</title>
+  <meta name="description" content="Read MathLedX insights on student confidence, parent support, and practical strategies to improve math performance." />
+  <link rel="canonical" href="https://mathledx.com/blog.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MathLedX Blog - Insights for students and parents" />
+  <meta property="og:description" content="Honest math education insights for families, students, and teachers." />
+  <meta property="og:url" content="https://mathledx.com/blog.html" />
+  <meta property="og:image" content="https://mathledx.com/images/blog-smart-kids-math2.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MathLedX Blog - Insights for students and parents" />
+  <meta name="twitter:description" content="Honest math education insights for families, students, and teachers." />
+  <meta name="twitter:image" content="https://mathledx.com/images/blog-smart-kids-math2.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -11,22 +22,19 @@
 </head>
 <body>
 
-  <!-- ═══ NAV ═══ -->
   <header class="nav" role="banner">
     <div class="nav-inner">
       <a href="index.html" class="logo-pill" aria-label="MathLedX home">
-        <img src="images/MathLedX%20Logo%20Transparent%20Background.png" alt="MathLedX" />
+        <img src="images/MathLedX%20Logo%20Transparent%20Background.png" alt="MathLedX" loading="eager" />
       </a>
-
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="curriculum.html" class="nav-link">Curriculum</a>
-        <a href="tutoring.html" class="nav-link">Tutoring</a>
+        <a href="curriculum.html" class="nav-link">Programs</a>
+        <a href="mission.html" class="nav-link">Mission</a>
         <a href="blog.html" class="nav-link active">Blog</a>
+        <a href="tutoring.html" class="nav-link">Book</a>
       </nav>
-
-      <a href="tutoring.html" class="btn-primary btn-sm nav-cta">Book Tutoring</a>
-
+      <a href="tutoring.html" class="btn-primary btn-sm nav-cta" data-track="blog_nav_book">Book Consultation</a>
       <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
@@ -36,216 +44,84 @@
   <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
     <div class="mobile-menu-inner">
       <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="curriculum.html" class="mobile-nav-link">Curriculum</a>
-      <a href="tutoring.html" class="mobile-nav-link">Tutoring</a>
+      <a href="curriculum.html" class="mobile-nav-link">Programs</a>
+      <a href="mission.html" class="mobile-nav-link">Mission</a>
       <a href="blog.html" class="mobile-nav-link active">Blog</a>
-      <a href="tutoring.html" class="btn-primary mobile-cta">Book Tutoring</a>
+      <a href="tutoring.html" class="mobile-nav-link">Book</a>
+      <a href="tutoring.html" class="btn-primary mobile-cta" data-track="blog_mobile_book">Book Consultation</a>
     </div>
   </div>
 
-  <!-- ═══ PAGE HERO ═══ -->
-  <section class="page-hero">
-    <div class="container">
-      <div class="page-hero-inner">
-        <div class="section-label" style="justify-content:center; margin-bottom:20px;">Insights &amp; Education</div>
-        <h1 class="page-hero-title">The MathLedX Blog</h1>
-        <p class="page-hero-sub">
-          Honest takes on math education — for students, parents, and anyone who ever thought they weren't a math person.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ FEATURED POST ═══ -->
-  <section class="section" style="padding-bottom: 0;">
-    <div class="container">
-      <div class="section-label fade-up" style="margin-bottom: 24px;">Featured</div>
-      <a href="post-why-smart-kids-struggle.html" class="blog-card blog-card-featured fade-up" style="margin-bottom: 60px;">
-        <div class="blog-thumb" style="background-image: url('images/blog-smart-kids-math2.png'); background-size: cover; background-position: center;">
-        </div>
-        <div class="blog-content">
-          <div class="blog-tag">For Parents</div>
-          <h2 class="blog-title">
-            Why Smart Kids Struggle in Math (And Why Nobody Catches It)
-          </h2>
-          <p class="blog-excerpt" style="font-size:0.9375rem;">
-            Your kid is smart — so why is math suddenly a problem? The answer isn't carelessness or attitude. It's a hidden gap between pattern recognition and real mathematical understanding.
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-inner">
+          <div class="section-label" style="justify-content:center; margin-bottom:20px;">Insights &amp; Education</div>
+          <h1 class="page-hero-title">The MathLedX Blog</h1>
+          <p class="page-hero-sub">
+            Honest takes on math education for students and parents who want real understanding, not surface-level fixes.
           </p>
-          <div class="blog-meta">
-            <span>Rich Hollinger</span>
-            <span class="blog-meta-dot"></span>
-            <span>April 2026</span>
-            <span class="blog-meta-dot"></span>
-            <span>6 min read</span>
-          </div>
-        </div>
-      </a>
-    </div>
-  </section>
-
-
-  
-  <!-- ═══ RECENT POSTS ═══ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-label fade-up" style="margin-bottom: 24px;">Recent Posts</div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;">
-
-      <a href="post-mathledx-post-2.html" class="blog-card fade-up">
-        <div class="blog-thumb">
-          <div class="blog-thumb-math">∑</div>
-          <div class="blog-thumb-overlay"></div>
-        </div>
-        <div class="blog-content">
-          <div class="blog-tag">General</div>
-          <h2 class="blog-title">You Haven't Earned the Right to Skip Steps Yet</h2>
-          <div class="blog-meta">
-            <span>Rich Hollinger</span>
-            <span class="blog-meta-dot"></span>
-            <span>April 2026</span>
-            <span class="blog-meta-dot"></span>
-            <span>6 min read</span>
-          </div>
-        </div>
-      </a>
-      </div>
-      
-      <a href="post-mathledx-post-3.html" class="blog-card fade-up">
-        <div class="blog-thumb">
-          <div class="blog-thumb-math">∑</div>
-          <div class="blog-thumb-overlay"></div>
-        </div>
-        <div class="blog-content">
-          <div class="blog-tag">General</div>
-          <h2 class="blog-title">I Failed Three Math Classes in One Semester. Here's What It Taught Me.</h2>
-          <div class="blog-meta">
-            <span>Rich Hollinger</span>
-            <span class="blog-meta-dot"></span>
-            <span>April 2026</span>
-            <span class="blog-meta-dot"></span>
-            <span>6 min read</span>
-          </div>
-        </div>
-      </a>
-      
-      <a href="post-mathledx-post-4.html" class="blog-card fade-up">
-        <div class="blog-thumb">
-          <div class="blog-thumb-math">∑</div>
-          <div class="blog-thumb-overlay"></div>
-        </div>
-        <div class="blog-content">
-          <div class="blog-tag">General</div>
-          <h2 class="blog-title">The Best Thing You Can Do for Your Kid's Math Success Isn't What You Think</h2>
-          <div class="blog-meta">
-            <span>Rich Hollinger</span>
-            <span class="blog-meta-dot"></span>
-            <span>April 2026</span>
-            <span class="blog-meta-dot"></span>
-            <span>7 min read</span>
-          </div>
-        </div>
-      </a>
-      
-      <a href="post-mathledx-post-5.html" class="blog-card fade-up">
-        <div class="blog-thumb">
-          <div class="blog-thumb-math">∑</div>
-          <div class="blog-thumb-overlay"></div>
-        </div>
-        <div class="blog-content">
-          <div class="blog-tag">General</div>
-          <h2 class="blog-title">The Simplest Thing a Math Teacher Can Do — And Most Don’t</h2>
-          <div class="blog-meta">
-            <span>Rich Hollinger</span>
-            <span class="blog-meta-dot"></span>
-            <span>April 2026</span>
-            <span class="blog-meta-dot"></span>
-            <span>5 min read</span>
-          </div>
-        </div>
-      </a>
-      
-      <a href="post-mathledx-post-6.html" class="blog-card fade-up">
-        <div class="blog-thumb">
-          <div class="blog-thumb-math">∑</div>
-          <div class="blog-thumb-overlay"></div>
-        </div>
-        <div class="blog-content">
-          <div class="blog-tag">General</div>
-          <h2 class="blog-title">A Letter to the Smart Kid in the Back of the Class</h2>
-          <div class="blog-meta">
-            <span>Rich Hollinger</span>
-            <span class="blog-meta-dot"></span>
-            <span>April 2026</span>
-            <span class="blog-meta-dot"></span>
-            <span>5 min read</span>
-          </div>
-        </div>
-      </a>
-      
-      <a href="post-mathledx-post-7.html" class="blog-card fade-up">
-        <div class="blog-thumb">
-          <div class="blog-thumb-math">∑</div>
-          <div class="blog-thumb-overlay"></div>
-        </div>
-        <div class="blog-content">
-          <div class="blog-tag">General</div>
-          <h2 class="blog-title">Why Your Kid Got a C and Nobody Can Tell You What It Means</h2>
-          <div class="blog-meta">
-            <span>Rich Hollinger</span>
-            <span class="blog-meta-dot"></span>
-            <span>April 2026</span>
-            <span class="blog-meta-dot"></span>
-            <span>5 min read</span>
-          </div>
-        </div>
-      </a>
-      
-      <a href="post-mathledx-post-8.html" class="blog-card fade-up">
-        <div class="blog-thumb">
-          <div class="blog-thumb-math">∑</div>
-          <div class="blog-thumb-overlay"></div>
-        </div>
-        <div class="blog-content">
-          <div class="blog-tag">General</div>
-          <h2 class="blog-title">You Can’t Force a Kid to Care — But You Can Do This Instead</h2>
-          <div class="blog-meta">
-            <span>Rich Hollinger</span>
-            <span class="blog-meta-dot"></span>
-            <span>April 2026</span>
-            <span class="blog-meta-dot"></span>
-            <span>6 min read</span>
-          </div>
-        </div>
-      </a>
-      <!-- POSTS_END -->
-    </div>
-  </section>
-
-  <!-- ═══ CTA ═══ -->
-  <section class="section cta-section">
-    <div class="cta-glow" aria-hidden="true"></div>
-    <div class="container">
-      <div class="cta-content fade-up">
-        <h2 class="cta-title">Ready to stop struggling and start understanding?</h2>
-        <p class="cta-body">The ideas in these posts come from real lessons. Book a session and experience systematic math instruction firsthand.</p>
-        <div class="cta-actions">
-          <a href="tutoring.html" class="btn-primary btn-lg">
-            Book Tutoring
-            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h11M9.5 4l4.5 4.5L9.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="curriculum.html" class="btn-outline btn-lg">View Curriculum</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══ FOOTER ═══ -->
+    <section class="section" style="padding-bottom: 0;">
+      <div class="container">
+        <div class="section-label fade-up" style="margin-bottom: 24px;">Featured</div>
+        <a href="post-why-smart-kids-struggle.html" class="blog-card blog-card-featured fade-up" style="margin-bottom: 60px;" data-track="blog_featured_post">
+          <div class="blog-thumb" style="background-image: url('images/blog-smart-kids-math2.png'); background-size: cover; background-position: center;"></div>
+          <div class="blog-content">
+            <div class="blog-tag">For Parents</div>
+            <h2 class="blog-title">Why Smart Kids Struggle in Math (And Why Nobody Catches It)</h2>
+            <p class="blog-excerpt" style="font-size:0.9375rem;">Your kid is smart, so why is math suddenly a problem? This post explains the hidden gap between pattern recognition and deep understanding.</p>
+            <div class="blog-meta">
+              <span>Rich Hollinger</span>
+              <span class="blog-meta-dot"></span>
+              <span>April 2026</span>
+              <span class="blog-meta-dot"></span>
+              <span>6 min read</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-label fade-up" style="margin-bottom: 24px;">Recent Posts</div>
+        <div class="blog-grid-fix">
+          <a href="post-mathledx-post-2.html" class="blog-card fade-up" data-track="blog_post_2"><div class="blog-thumb"><div class="blog-thumb-math">∑</div><div class="blog-thumb-overlay"></div></div><div class="blog-content"><div class="blog-tag">General</div><h2 class="blog-title">You Haven't Earned the Right to Skip Steps Yet</h2><div class="blog-meta"><span>Rich Hollinger</span><span class="blog-meta-dot"></span><span>April 2026</span><span class="blog-meta-dot"></span><span>6 min read</span></div></div></a>
+          <a href="post-mathledx-post-3.html" class="blog-card fade-up" data-track="blog_post_3"><div class="blog-thumb"><div class="blog-thumb-math">∑</div><div class="blog-thumb-overlay"></div></div><div class="blog-content"><div class="blog-tag">General</div><h2 class="blog-title">I Failed Three Math Classes in One Semester. Here's What It Taught Me.</h2><div class="blog-meta"><span>Rich Hollinger</span><span class="blog-meta-dot"></span><span>April 2026</span><span class="blog-meta-dot"></span><span>6 min read</span></div></div></a>
+          <a href="post-mathledx-post-4.html" class="blog-card fade-up" data-track="blog_post_4"><div class="blog-thumb"><div class="blog-thumb-math">∑</div><div class="blog-thumb-overlay"></div></div><div class="blog-content"><div class="blog-tag">General</div><h2 class="blog-title">The Best Thing You Can Do for Your Kid's Math Success Isn't What You Think</h2><div class="blog-meta"><span>Rich Hollinger</span><span class="blog-meta-dot"></span><span>April 2026</span><span class="blog-meta-dot"></span><span>7 min read</span></div></div></a>
+          <a href="post-mathledx-post-5.html" class="blog-card fade-up" data-track="blog_post_5"><div class="blog-thumb"><div class="blog-thumb-math">∑</div><div class="blog-thumb-overlay"></div></div><div class="blog-content"><div class="blog-tag">General</div><h2 class="blog-title">The Simplest Thing a Math Teacher Can Do - And Most Don't</h2><div class="blog-meta"><span>Rich Hollinger</span><span class="blog-meta-dot"></span><span>April 2026</span><span class="blog-meta-dot"></span><span>5 min read</span></div></div></a>
+          <a href="post-mathledx-post-6.html" class="blog-card fade-up" data-track="blog_post_6"><div class="blog-thumb"><div class="blog-thumb-math">∑</div><div class="blog-thumb-overlay"></div></div><div class="blog-content"><div class="blog-tag">General</div><h2 class="blog-title">A Letter to the Smart Kid in the Back of the Class</h2><div class="blog-meta"><span>Rich Hollinger</span><span class="blog-meta-dot"></span><span>April 2026</span><span class="blog-meta-dot"></span><span>5 min read</span></div></div></a>
+          <a href="post-mathledx-post-7.html" class="blog-card fade-up" data-track="blog_post_7"><div class="blog-thumb"><div class="blog-thumb-math">∑</div><div class="blog-thumb-overlay"></div></div><div class="blog-content"><div class="blog-tag">General</div><h2 class="blog-title">Why Your Kid Got a C and Nobody Can Tell You What It Means</h2><div class="blog-meta"><span>Rich Hollinger</span><span class="blog-meta-dot"></span><span>April 2026</span><span class="blog-meta-dot"></span><span>5 min read</span></div></div></a>
+          <a href="post-mathledx-post-8.html" class="blog-card fade-up" data-track="blog_post_8"><div class="blog-thumb"><div class="blog-thumb-math">∑</div><div class="blog-thumb-overlay"></div></div><div class="blog-content"><div class="blog-tag">General</div><h2 class="blog-title">You Can't Force a Kid to Care - But You Can Do This Instead</h2><div class="blog-meta"><span>Rich Hollinger</span><span class="blog-meta-dot"></span><span>April 2026</span><span class="blog-meta-dot"></span><span>6 min read</span></div></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="cta-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="cta-content fade-up">
+          <h2 class="cta-title">Need help applying this to your student?</h2>
+          <p class="cta-body">Book a free consultation and get a concrete plan for what to focus on first.</p>
+          <div class="cta-actions">
+            <a href="tutoring.html" class="btn-primary btn-lg" data-track="blog_cta_book">Book Free Consultation</a>
+            <a href="curriculum.html" class="btn-outline btn-lg" data-track="blog_cta_curriculum">View Programs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo-pill" style="margin-bottom:4px;" aria-label="MathLedX home">
-            <img src="images/MathLedX%20Logo%20Transparent%20Background.png" alt="MathLedX" style="height:28px;" />
+            <img src="images/MathLedX%20Logo%20Transparent%20Background.png" alt="MathLedX" style="height:28px;" loading="lazy" />
           </a>
           <p>Built by a math teacher who had to figure it out the hard way.</p>
         </div>
@@ -253,9 +129,9 @@
           <div class="footer-col-title">Pages</div>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="curriculum.html">Curriculum</a></li>
-            <li><a href="tutoring.html">Tutoring</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="curriculum.html">Programs</a></li>
+            <li><a href="mission.html">Mission</a></li>
+            <li><a href="tutoring.html">Book</a></li>
           </ul>
         </div>
         <div>
@@ -271,8 +147,8 @@
       <div class="footer-bottom">
         <p class="footer-copy">&copy; 2026 MathLedX. All rights reserved.</p>
         <div class="footer-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
         </div>
       </div>
     </div>

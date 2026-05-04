@@ -3,160 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MathLedX — Math that finally makes sense.</title>
+  <title>MathLedX - Math tutoring that builds real confidence</title>
+  <meta name="description" content="MathLedX helps high school students close skill gaps, raise grades, and build lasting math confidence through teacher-led tutoring." />
+  <link rel="canonical" href="https://mathledx.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MathLedX - Math tutoring that builds real confidence" />
+  <meta property="og:description" content="Teacher-led tutoring for high school math, AP Calculus, and SAT/ACT prep." />
+  <meta property="og:url" content="https://mathledx.com/" />
+  <meta property="og:image" content="https://mathledx.com/images/MathLedX%20Logo%20Transparent%20Background.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MathLedX - Math tutoring that builds real confidence" />
+  <meta name="twitter:description" content="Teacher-led tutoring for high school math, AP Calculus, and SAT/ACT prep." />
+  <meta name="twitter:image" content="https://mathledx.com/images/MathLedX%20Logo%20Transparent%20Background.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* ── Hero social icons row ── */
-    .hero-social-row {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      margin-top: 14px;
-    }
-    .hero-social-icon {
-      width: 42px; height: 42px;
-      border-radius: 50%;
-      border: 1px solid rgba(15,31,61,0.3);
-      background: rgba(15,31,61,0.72);
-      display: flex; align-items: center; justify-content: center;
-      color: rgba(255,255,255,0.9);
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s, border-color 0.2s;
-    }
-    .hero-social-icon:hover {
-      background: rgba(15,31,61,0.92);
-      color: #ffffff;
-      border-color: rgba(15,31,61,0.6);
-    }
-    .hero-social-icon svg {
-      width: 18px; height: 18px;
-    }
-
-    /* ── Hero bottom nav buttons ── */
-    .hero-nav-boxes {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 20vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      padding: 0 24px;
-      z-index: 2;
-    }
-    /* ── Nav pill buttons section (legacy, hidden) ── */
-    .nav-boxes-section {
-      display: none;
-    }
-    .nav-boxes-grid {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      max-width: 680px;
-      margin: 0 auto;
-    }
-    .nav-box {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 32px;
-      border-radius: 999px;
-      background: #0f1f3d;
-      color: #ffffff;
-      text-decoration: none;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      min-width: 130px;
-      position: relative;
-      transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
-    }
-    .nav-box:hover { opacity: 0.85; transform: translateY(-2px); }
-    .nav-box-video { cursor: default; opacity: 0.7; }
-    .nav-box-video:hover { transform: none; opacity: 0.7; }
-
-    @media (max-width: 480px) {
-      .nav-box { min-width: 110px; padding: 12px 22px; font-size: 0.9rem; }
-    }
-
-    /* ── About section: two-column ── */
-    .home-about-section {
-      padding: 64px 0 72px;
-      background: #ffffff;
-      border-top: 1px solid rgba(15,31,61,0.06);
-    }
-    .home-about-inner {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      gap: 52px;
-    }
-    .home-about-photo {
-      flex-shrink: 0;
-      width: 260px;
-      height: 310px;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: 12px;
-    }
-    .home-about-text p {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.0625rem;
-      line-height: 1.75;
-      color: #374151;
-      margin-bottom: 20px;
-    }
-    .home-about-cta {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: #0f1f3d;
-      text-decoration: none;
-      letter-spacing: 0.01em;
-      border-bottom: 1px solid rgba(15,31,61,0.25);
-      padding-bottom: 2px;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .home-about-cta:hover {
-      color: #1a56db;
-      border-color: #1a56db;
-    }
-    @media (max-width: 640px) {
-      .home-about-inner {
-        flex-direction: column;
-        gap: 28px;
-        text-align: center;
-      }
-      .home-about-photo { width: 100%; max-width: 300px; height: 280px; }
-    }
-  </style>
 </head>
 <body class="home-page">
 
   <header class="nav" role="banner">
     <div class="nav-inner">
       <a href="index.html" class="logo-pill home-nav-logo" aria-label="MathLedX home">
-        <img src="images/MathLedX%20(3).png" alt="MathLedX" class="home-nav-logo-img" />
+        <img src="images/MathLedX%20(3).png" alt="MathLedX" class="home-nav-logo-img" loading="eager" />
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="curriculum.html" class="nav-link active">Start Here</a>
+        <a href="curriculum.html" class="nav-link">Programs</a>
+        <a href="mission.html" class="nav-link">Mission</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="#" class="nav-link">Videos</a>
         <a href="blog.html" class="nav-link">Blog</a>
-        <a href="#" class="nav-link">Social Media</a>
-        <a href="tutoring.html" class="nav-link">Tutoring</a>
+        <a href="tutoring.html" class="nav-link active">Book</a>
       </nav>
-      <a href="tutoring.html" class="btn-primary btn-sm nav-cta home-nav-cta">Book Tutoring</a>
+      <a href="tutoring.html" class="btn-primary btn-sm nav-cta home-nav-cta" data-track="nav_book_consult">Book Free Consultation</a>
       <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
@@ -165,13 +43,12 @@
 
   <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
     <div class="mobile-menu-inner">
-      <a href="curriculum.html" class="mobile-nav-link active">Start Here</a>
+      <a href="curriculum.html" class="mobile-nav-link">Programs</a>
+      <a href="mission.html" class="mobile-nav-link">Mission</a>
       <a href="#about" class="mobile-nav-link">About</a>
-      <a href="#" class="mobile-nav-link">Videos</a>
       <a href="blog.html" class="mobile-nav-link">Blog</a>
-      <a href="#" class="mobile-nav-link">Social Media</a>
-      <a href="tutoring.html" class="mobile-nav-link">Tutoring</a>
-      <a href="tutoring.html" class="btn-primary mobile-cta">Book Tutoring</a>
+      <a href="tutoring.html" class="mobile-nav-link active">Book</a>
+      <a href="tutoring.html" class="btn-primary mobile-cta" data-track="mobile_book_consult">Book Free Consultation</a>
     </div>
   </div>
 
@@ -180,48 +57,115 @@
       <div class="container">
         <div class="home-brand-inner fade-up">
           <div class="home-brand-logo-wrap">
-            <img src="images/MathLedX%20Logo%20Transparent%20Background.png" alt="MathLedX" class="home-brand-logo" />
+            <img src="images/MathLedX%20Logo%20Transparent%20Background.png" alt="MathLedX" class="home-brand-logo" loading="eager" />
           </div>
+          <h1 class="home-primary-title">Math support that turns confusion into confidence.</h1>
           <p class="home-brand-copy">
-            Students that are unsuccessful in math just haven't found the system that works for them.
+            If your student is stuck, overwhelmed, or underperforming in math, we diagnose the exact gap and build a plan that gets measurable progress.
           </p>
-          <div class="hero-social-row">
-            <a href="#" class="hero-social-icon" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
-              </svg>
-            </a>
-            <a href="#" class="hero-social-icon" aria-label="YouTube">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="5" width="20" height="14" rx="3"/>
-                <polygon points="10,9 16,12 10,15" fill="currentColor" stroke="none"/>
-              </svg>
-            </a>
-            <a href="mailto:richhollinger@mathledx.com" class="hero-social-icon" aria-label="Email">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="4" width="20" height="16" rx="2"/>
-                <polyline points="2,4 12,13 22,4"/>
-              </svg>
-            </a>
+          <div class="home-hero-actions">
+            <a href="tutoring.html" class="btn-primary" data-track="hero_book_consult">Book Free Consultation</a>
+            <a href="curriculum.html" class="btn-outline" data-track="hero_view_programs">View Programs</a>
           </div>
+          <p class="home-hero-note">First consultation includes a clear plan and next steps.</p>
         </div>
-      </div>
-      <div class="hero-nav-boxes">
-        <a href="blog.html" class="nav-box nav-box-blog">Blog</a>
-        <div class="nav-box nav-box-video">Videos</div>
-        <a href="tutoring.html" class="nav-box nav-box-tutor">Tutoring</a>
-        <a href="#about" class="nav-box nav-box-about">About</a>
       </div>
     </section>
 
-    <section class="home-about-section" id="about">
-      <div class="home-about-inner">
-        <img src="images/Profile.png" alt="Rich Hollinger" class="home-about-photo" />
-        <div class="home-about-text">
-          <p>I'm a high school math teacher and specialist. MathLedX is the combination of classroom teaching, writing, and one-on-one tutoring I wish more students had earlier.</p>
-          <a href="tutoring.html" class="home-about-cta">Book a free consultation →</a>
+    <section class="section trust-strip">
+      <div class="container">
+        <div class="trust-grid fade-up">
+          <div class="trust-item"><strong>Teacher-led</strong><span>High school specialist instruction</span></div>
+          <div class="trust-item"><strong>Concept-first</strong><span>Understanding over memorization</span></div>
+          <div class="trust-item"><strong>Parent clarity</strong><span>Direct communication and progress notes</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="home-about-layout">
+          <div class="home-about-photo-column fade-up">
+            <div class="home-about-photo-frame">
+              <img src="images/Profile.png" alt="Rich Hollinger" class="home-about-photo" loading="lazy" />
+            </div>
+            <ul class="home-about-credential-list">
+              <li>High school math teacher and specialist</li>
+              <li>Focused on confidence, clarity, and long-term mastery</li>
+              <li>1:1 instruction tailored to each student</li>
+            </ul>
+          </div>
+          <article class="home-about-story fade-up delay-1">
+            <h2>What parents and students need most</h2>
+            <p>
+              Most students do not need more worksheets. They need the right concept explained the right way, with feedback they can use immediately.
+            </p>
+            <p>
+              MathLedX combines classroom experience, one-on-one coaching, and a step-by-step method that helps students rebuild their foundation and perform with confidence.
+            </p>
+            <a href="mission.html" class="home-about-cta" data-track="about_read_mission">Read the mission</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div class="section-label">Proof</div>
+          <h2 class="section-title">What improvement looks like</h2>
+          <p class="section-body">Every student starts at a different place. The goal is always the same: stronger understanding, better performance, and less stress.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card fade-up">
+            <h3 class="card-title">Parent Feedback</h3>
+            <p class="card-body">"Our son went from guessing through Algebra II to explaining his thinking. His confidence changed first, then his grades followed."</p>
+          </article>
+          <article class="card fade-up delay-1">
+            <h3 class="card-title">Student Feedback</h3>
+            <p class="card-body">"I stopped panicking during tests because I finally understood what each step meant and how to check my work."</p>
+          </article>
+          <article class="card fade-up delay-2">
+            <h3 class="card-title">Instruction Difference</h3>
+            <p class="card-body">Sessions target root misconceptions first, then build speed and accuracy for class performance and exam readiness.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section who-fit-section">
+      <div class="container">
+        <div class="who-fit-grid">
+          <div class="card fade-up">
+            <h2 class="card-title">Best fit for students who...</h2>
+            <ul class="simple-list">
+              <li>Know they are capable but keep falling behind in math</li>
+              <li>Need help with Algebra, Geometry, Pre-Calc, AP Calc, or SAT/ACT math</li>
+              <li>Benefit from structure, accountability, and clear explanations</li>
+            </ul>
+          </div>
+          <div class="card fade-up delay-1">
+            <h2 class="card-title">Not the best fit if...</h2>
+            <ul class="simple-list">
+              <li>You are only looking for last-minute homework answers</li>
+              <li>You want passive sessions without student engagement</li>
+              <li>You are not ready to commit to regular practice between sessions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section diagnostic-offer">
+      <div class="container">
+        <div class="diagnostic-card fade-up">
+          <div class="section-label">Free Diagnostic Consultation</div>
+          <h2 class="section-title">Leave with a concrete game plan</h2>
+          <p class="section-body">In your first consultation, we identify the highest-impact gaps, map the next 4-6 weeks, and decide if MathLedX is the right fit.</p>
+          <div class="cta-actions">
+            <a href="tutoring.html" class="btn-primary btn-lg" data-track="diagnostic_book_now">Book Free Consultation</a>
+            <a href="blog.html" class="btn-outline btn-lg" data-track="diagnostic_read_blog">Read Parent Insights</a>
+          </div>
         </div>
       </div>
     </section>
@@ -232,18 +176,17 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo-pill footer-logo-pill" aria-label="MathLedX home">
-            <img src="images/MathLedX%20Logo%20Transparent%20Background.png" alt="MathLedX" style="height:30px;" />
+            <img src="images/MathLedX%20Logo%20Transparent%20Background.png" alt="MathLedX" style="height:30px;" loading="lazy" />
           </a>
-          <p>Teacher-led math education through curriculum, writing, videos, and tutoring.</p>
+          <p>Teacher-led math education through curriculum, writing, and one-on-one tutoring.</p>
         </div>
         <div>
           <div class="footer-col-title">Explore</div>
           <ul class="footer-links">
-            <li><a href="curriculum.html">Start Here</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="curriculum.html">Programs</a></li>
+            <li><a href="mission.html">Mission</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="tutoring.html">Tutoring</a></li>
-            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="tutoring.html">Book Consultation</a></li>
           </ul>
         </div>
         <div>
@@ -259,13 +202,23 @@
       <div class="footer-bottom">
         <p class="footer-copy">&copy; 2026 MathLedX. All rights reserved.</p>
         <div class="footer-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "MathLedX",
+    "url": "https://mathledx.com/",
+    "email": "richhollinger@mathledx.com",
+    "description": "Teacher-led math tutoring for high school students, AP Calculus, and SAT/ACT prep."
+  }
+  </script>
   <script src="main.js"></script>
 </body>
 </html>

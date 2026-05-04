@@ -1923,3 +1923,135 @@ textarea.form-input { resize: vertical; min-height: 120px; }
     height: 260px;
   }
 }
+
+/* ── Conversion layout additions ──────────────────────────────── */
+body.menu-open {
+  overflow: hidden;
+}
+
+.home-primary-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--navy);
+  max-width: 18ch;
+  margin: 0 auto 16px;
+  text-wrap: balance;
+}
+
+.home-hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.home-hero-note {
+  margin-top: 14px;
+  font-size: 0.9rem;
+  color: #5a6372;
+}
+
+.trust-strip {
+  padding: 36px 0 18px;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 768px) {
+  .trust-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.trust-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #fff;
+  padding: 16px 18px;
+  display: grid;
+  gap: 2px;
+}
+
+.trust-item strong {
+  color: var(--navy);
+  font-size: 0.98rem;
+}
+
+.trust-item span {
+  color: #5a6372;
+  font-size: 0.88rem;
+}
+
+.who-fit-section {
+  background: var(--bg-alt);
+}
+
+.who-fit-grid,
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 820px) {
+  .who-fit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .faq-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.simple-list {
+  list-style: disc;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+  color: #3f4755;
+}
+
+.diagnostic-offer {
+  padding-top: 10px;
+}
+
+.diagnostic-card {
+  border: 1px solid rgba(26,86,219,0.25);
+  background: linear-gradient(145deg, rgba(238,242,255,0.6), #fff 35%);
+  border-radius: var(--radius-lg);
+  padding: 38px 32px;
+  box-shadow: 0 8px 28px rgba(15,31,61,0.08);
+  text-align: center;
+}
+
+.blog-grid-fix {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .fade-up {
+    opacity: 1;
+    transform: none;
+  }
+}

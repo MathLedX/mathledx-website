@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book Tutoring — MathLedX</title>
+  <title>Book Tutoring - MathLedX</title>
+  <meta name="description" content="Book a free MathLedX consultation. Get a clear assessment of your student's math gaps and a focused plan for improvement." />
+  <link rel="canonical" href="https://mathledx.com/tutoring.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Book Tutoring - MathLedX" />
+  <meta property="og:description" content="Book a free consultation and leave with a concrete student improvement plan." />
+  <meta property="og:url" content="https://mathledx.com/tutoring.html" />
+  <meta property="og:image" content="https://mathledx.com/images/Profile.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Book Tutoring - MathLedX" />
+  <meta name="twitter:description" content="Book a free consultation and leave with a concrete student improvement plan." />
+  <meta name="twitter:image" content="https://mathledx.com/images/Profile.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -11,22 +22,19 @@
 </head>
 <body>
 
-  <!-- ═══ NAV ═══ -->
   <header class="nav" role="banner">
     <div class="nav-inner">
       <a href="index.html" class="logo-pill" aria-label="MathLedX home">
-        <img src="images/MathLedX%20Logo%20Transparent%20Background.png" alt="MathLedX" />
+        <img src="images/MathLedX%20Logo%20Transparent%20Background.png" alt="MathLedX" loading="eager" />
       </a>
-
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="curriculum.html" class="nav-link">Curriculum</a>
-        <a href="tutoring.html" class="nav-link active">Tutoring</a>
+        <a href="curriculum.html" class="nav-link">Programs</a>
+        <a href="mission.html" class="nav-link">Mission</a>
         <a href="blog.html" class="nav-link">Blog</a>
+        <a href="tutoring.html" class="nav-link active">Book</a>
       </nav>
-
-      <a href="tutoring.html" class="btn-primary btn-sm nav-cta" style="box-shadow: 0 0 0 2px rgba(26,86,219,0.3), 0 4px 16px rgba(26,86,219,0.35);">Book Tutoring</a>
-
+      <a href="#consultation-form" class="btn-primary btn-sm nav-cta" data-track="nav_start_consult">Start Consultation</a>
       <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
@@ -36,150 +44,195 @@
   <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
     <div class="mobile-menu-inner">
       <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="curriculum.html" class="mobile-nav-link">Curriculum</a>
-      <a href="tutoring.html" class="mobile-nav-link active">Tutoring</a>
+      <a href="curriculum.html" class="mobile-nav-link">Programs</a>
+      <a href="mission.html" class="mobile-nav-link">Mission</a>
       <a href="blog.html" class="mobile-nav-link">Blog</a>
-      <a href="tutoring.html" class="btn-primary mobile-cta">Book Tutoring</a>
+      <a href="tutoring.html" class="mobile-nav-link active">Book</a>
+      <a href="#consultation-form" class="btn-primary mobile-cta" data-track="mobile_start_consult">Start Consultation</a>
     </div>
   </div>
 
-  <!-- ═══ PAGE HERO ═══ -->
-  <section class="page-hero">
-    <div class="container">
-      <div class="page-hero-inner">
-        <div class="section-label" style="justify-content:center; margin-bottom:20px;">Let's Get Started</div>
-        <h1 class="page-hero-title">Book a session</h1>
-        <p class="page-hero-sub">
-          The first consultation is free. We'll talk through where your student is, where they want to be, and whether I'm the right fit. No pressure — just an honest conversation.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ PROCESS ═══ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header fade-up">
-        <div class="section-label">How It Works</div>
-        <h2 class="section-title">What to expect</h2>
-      </div>
-
-      <div class="grid-3" style="max-width: 900px; margin: 0 auto;">
-        <div class="step-card fade-up">
-          <div class="step-num">1</div>
-          <div class="step-title">Free Consultation</div>
-          <p class="step-body">We'll connect to understand your student's current level, goals, and challenges — no pressure, just a genuine conversation.</p>
-        </div>
-        <div class="step-card fade-up delay-1">
-          <div class="step-num">2</div>
-          <div class="step-title">Personalized Plan</div>
-          <p class="step-body">I'll recommend the right focus area, format, and schedule — tailored to your student's needs, learning style, and timeline.</p>
-        </div>
-        <div class="step-card fade-up delay-2">
-          <div class="step-num">3</div>
-          <div class="step-title">Begin Learning</div>
-          <p class="step-body">Start your sessions and experience the MathLedX difference — clear explanations, real progress, and understanding that actually sticks.</p>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-inner">
+          <div class="section-label" style="justify-content:center; margin-bottom:20px;">MathLedX Consultation</div>
+          <h1 class="page-hero-title">Book your free diagnostic consultation</h1>
+          <p class="page-hero-sub">
+            In 20-30 minutes, we identify exactly where your student is stuck, what to prioritize first, and whether MathLedX is the right fit.
+          </p>
+          <div class="hero-actions" style="justify-content:center; margin-top:20px;">
+            <a href="#consultation-form" class="btn-primary" data-track="hero_start_consult">Start Consultation</a>
+            <a href="curriculum.html" class="btn-outline" data-track="hero_view_programs">View Programs</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══ CONTACT FORM ═══ -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-header fade-up max-w-2xl">
-        <div class="section-label">Get In Touch</div>
-        <h2 class="section-title">Send me a message</h2>
-        <p class="section-body">
-          Fill out the form below and I'll reply within 24 hours at
-          <a href="mailto:richhollinger@mathledx.com" style="color: var(--text); font-weight: 500; transition: color 0.2s ease;">richhollinger@mathledx.com</a>.
-        </p>
+    <section class="section">
+      <div class="container">
+        <div class="grid-3" style="max-width: 980px; margin: 0 auto;">
+          <article class="step-card fade-up">
+            <div class="step-num">1</div>
+            <div class="step-title">Gap Diagnosis</div>
+            <p class="step-body">We review course level, current performance, and the specific concept gaps that are creating repeated struggle.</p>
+          </article>
+          <article class="step-card fade-up delay-1">
+            <div class="step-num">2</div>
+            <div class="step-title">4-6 Week Plan</div>
+            <p class="step-body">You receive a practical improvement roadmap with session focus, pacing, and at-home reinforcement priorities.</p>
+          </article>
+          <article class="step-card fade-up delay-2">
+            <div class="step-num">3</div>
+            <div class="step-title">Right-Fit Decision</div>
+            <p class="step-body">If we are a fit, we start. If not, you still leave with clear next steps and no-pressure recommendations.</p>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <div class="card fade-up delay-1 max-w-2xl" style="padding: 40px;">
-        <form id="contact-form" novalidate>
+    <section class="section section-alt">
+      <div class="container">
+        <div class="who-fit-grid">
+          <div class="card fade-up">
+            <h2 class="card-title">Who this is for</h2>
+            <ul class="simple-list">
+              <li>Students in Algebra, Geometry, Pre-Calc, AP Calc, or SAT/ACT math</li>
+              <li>Families who want structured, teacher-led support with measurable progress</li>
+              <li>Students who need confidence and conceptual understanding, not shortcuts</li>
+            </ul>
+          </div>
+          <div class="card fade-up delay-1">
+            <h2 class="card-title">What we do not offer</h2>
+            <ul class="simple-list">
+              <li>Last-minute assignment completion without learning</li>
+              <li>Passive tutoring where the student is not engaged</li>
+              <li>One-size-fits-all scripts that ignore individual learning gaps</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="form-row">
-            <div>
-              <label class="form-label" for="firstName">First Name <span class="req">*</span></label>
-              <input class="form-input" type="text" id="firstName" name="First Name" placeholder="John" required />
+    <section class="section" id="consultation-form">
+      <div class="container">
+        <div class="section-header fade-up max-w-2xl">
+          <div class="section-label">Request Consultation</div>
+          <h2 class="section-title">Tell me about your student</h2>
+          <p class="section-body">
+            Complete this form and you'll receive a response within 24 hours to coordinate your free consultation.
+            You can also email
+            <a href="mailto:richhollinger@mathledx.com" style="color: var(--text); font-weight: 600;">richhollinger@mathledx.com</a>.
+          </p>
+        </div>
+
+        <div class="card fade-up delay-1 max-w-2xl" style="padding: 40px;">
+          <form id="contact-form" data-track-form="consultation_request" action="https://formsubmit.co/richhollinger@mathledx.com" method="POST">
+            <input type="hidden" name="_subject" value="New MathLedX Consultation Request" />
+            <input type="hidden" name="_next" value="https://mathledx.com/thank-you.html" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+
+            <div class="form-row">
+              <div>
+                <label class="form-label" for="firstName">First Name <span class="req">*</span></label>
+                <input class="form-input" type="text" id="firstName" name="Parent First Name" placeholder="John" required />
+              </div>
+              <div>
+                <label class="form-label" for="lastName">Last Name <span class="req">*</span></label>
+                <input class="form-input" type="text" id="lastName" name="Parent Last Name" placeholder="Smith" required />
+              </div>
             </div>
-            <div>
-              <label class="form-label" for="lastName">Last Name <span class="req">*</span></label>
-              <input class="form-input" type="text" id="lastName" name="Last Name" placeholder="Smith" required />
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address <span class="req">*</span></label>
+              <input class="form-input" type="email" id="email" name="Email" placeholder="john@example.com" required />
             </div>
-          </div>
 
-          <div class="form-group">
-            <label class="form-label" for="email">Email Address <span class="req">*</span></label>
-            <input class="form-input" type="email" id="email" name="Email" placeholder="john@example.com" required />
-          </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input class="form-input" type="tel" id="phone" name="Phone" placeholder="(555) 000-0000" />
+            </div>
 
-          <div class="form-group">
-            <label class="form-label" for="phone">
-              Phone Number <span style="font-size:0.8125rem; color: var(--text-subtle); font-weight: 400;">(optional)</span>
-            </label>
-            <input class="form-input" type="tel" id="phone" name="Phone" placeholder="(555) 000-0000" />
-          </div>
+            <div class="form-group">
+              <label class="form-label" for="program">Program of Interest <span class="req">*</span></label>
+              <select class="form-input" id="program" name="Program of Interest" required>
+                <option value="">Select a program...</option>
+                <option value="High School Core Math">High School Core Math (Algebra, Geometry, Pre-Calc, Trig)</option>
+                <option value="AP Calculus">AP Calculus (AB or BC)</option>
+                <option value="SAT / ACT Math">SAT / ACT Math Prep</option>
+                <option value="Not Sure">Not Sure - Need Recommendation</option>
+              </select>
+            </div>
 
-          <div class="form-group">
-            <label class="form-label" for="program">Program of Interest <span class="req">*</span></label>
-            <select class="form-input" id="program" name="Program of Interest" required>
-              <option value="">Select a program...</option>
-              <option value="High School Core Math">High School Core Math (Algebra, Geometry, Pre-Calc, Trig)</option>
-              <option value="AP Calculus">AP Calculus (AB or BC)</option>
-              <option value="SAT / ACT Math">SAT / ACT Math Prep</option>
-              <option value="Not Sure - Let's Talk">Not Sure — Let's Talk</option>
-            </select>
-          </div>
+            <div class="form-row">
+              <div>
+                <label class="form-label" for="grade">Student Grade / Level</label>
+                <input class="form-input" type="text" id="grade" name="Student Grade Level" placeholder="e.g., Grade 10, AP Calc BC" />
+              </div>
+              <div>
+                <label class="form-label" for="timeline">Timeline Priority</label>
+                <select class="form-input" id="timeline" name="Timeline Priority">
+                  <option value="As soon as possible">As soon as possible</option>
+                  <option value="Within 2-3 weeks">Within 2-3 weeks</option>
+                  <option value="Planning ahead">Planning ahead</option>
+                </select>
+              </div>
+            </div>
 
-          <div class="form-group">
-            <label class="form-label" for="grade">Student's Current Grade / Level</label>
-            <input class="form-input" type="text" id="grade" name="Grade Level" placeholder="e.g., Grade 10, Junior, AP Calc BC..." />
-          </div>
+            <div class="form-group" style="margin-bottom: 28px;">
+              <label class="form-label" for="message">Current Challenges and Goals <span class="req">*</span></label>
+              <textarea class="form-input" id="message" name="Goals and Challenges" rows="5" placeholder="Share what your student is struggling with, what outcomes matter most, and any upcoming exams or deadlines." required></textarea>
+            </div>
 
-          <div class="form-group" style="margin-bottom: 28px;">
-            <label class="form-label" for="message">Tell Me About Your Goals <span class="req">*</span></label>
-            <textarea class="form-input" id="message" name="Message" rows="4" placeholder="What are your student's current challenges and goals? Any specific topics, exams, or timelines I should know about?" required></textarea>
-          </div>
-
-          <div class="form-error" id="form-error">Please fill in all required fields before submitting.</div>
-
-          <button type="submit" class="btn-primary btn-full">
-            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M1.5 3.5h14v10h-14v-10zm0 0l7 6 7-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Send Message
-          </button>
-
-        </form>
+            <button type="submit" class="btn-primary btn-full" data-track="consultation_submit">
+              <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M1.5 3.5h14v10h-14v-10zm0 0l7 6 7-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Submit Consultation Request
+            </button>
+          </form>
+        </div>
       </div>
+    </section>
 
-      <div class="text-center mt-8 fade-up" style="transition-delay: 0.14s;">
-        <p class="text-muted" style="font-size: 0.9375rem; line-height: 1.7;">
-          Prefer to reach out directly?<br>
-          <a href="mailto:richhollinger@mathledx.com" style="color: var(--navy); font-weight: 600; font-size: 1.0625rem; text-decoration: none; transition: color 0.2s ease;">
-            richhollinger@mathledx.com
-          </a>
-        </p>
+    <section class="section section-alt faq-section">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div class="section-label">FAQ</div>
+          <h2 class="section-title">Questions families usually ask first</h2>
+        </div>
+        <div class="faq-grid">
+          <article class="card fade-up">
+            <h3 class="card-title">How quickly will we see progress?</h3>
+            <p class="card-body">Most families notice confidence and clarity improvements early, with grade impact following as foundations are rebuilt and reinforced.</p>
+          </article>
+          <article class="card fade-up delay-1">
+            <h3 class="card-title">What happens if we're not a fit?</h3>
+            <p class="card-body">You still receive a clear action plan and honest guidance on your best next step. The consultation is genuinely no-pressure.</p>
+          </article>
+          <article class="card fade-up delay-2">
+            <h3 class="card-title">Do you only help with current homework?</h3>
+            <p class="card-body">Homework is addressed, but sessions prioritize root concept gaps so students stop repeating the same mistakes week after week.</p>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- ═══ FOOTER ═══ -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo-pill" style="margin-bottom:4px;" aria-label="MathLedX home">
-            <img src="images/MathLedX%20Logo%20Transparent%20Background.png" alt="MathLedX" style="height:28px;" />
+            <img src="images/MathLedX%20Logo%20Transparent%20Background.png" alt="MathLedX" style="height:28px;" loading="lazy" />
           </a>
-          <p>Built by a math teacher who had to figure it out the hard way.</p>
+          <p>Built by a math teacher who helps students learn how math actually works.</p>
         </div>
         <div>
           <div class="footer-col-title">Pages</div>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="curriculum.html">Curriculum</a></li>
-            <li><a href="tutoring.html">Tutoring</a></li>
+            <li><a href="curriculum.html">Programs</a></li>
+            <li><a href="mission.html">Mission</a></li>
             <li><a href="blog.html">Blog</a></li>
           </ul>
         </div>
@@ -196,60 +249,13 @@
       <div class="footer-bottom">
         <p class="footer-copy">&copy; 2026 MathLedX. All rights reserved.</p>
         <div class="footer-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- ═══ SUCCESS OVERLAY ═══ -->
-  <div id="success-overlay">
-    <div class="success-icon">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M6 17l6 6 14-14" stroke="#1a56db" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </div>
-    <h2 class="success-title">Message Sent!</h2>
-    <p class="success-body">Your email client will open with your message pre-filled. Hit send to reach me at <strong style="color: #ffffff;">richhollinger@mathledx.com</strong>. I'll reply within 24 hours.</p>
-    <button onclick="document.getElementById('success-overlay').classList.remove('show')" class="btn-outline">
-      Close
-    </button>
-  </div>
-
   <script src="main.js"></script>
-  <script>
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const firstName = document.getElementById('firstName').value.trim();
-      const lastName  = document.getElementById('lastName').value.trim();
-      const email     = document.getElementById('email').value.trim();
-      const phone     = document.getElementById('phone').value.trim();
-      const program   = document.getElementById('program').value;
-      const grade     = document.getElementById('grade').value.trim();
-      const message   = document.getElementById('message').value.trim();
-      const errorEl   = document.getElementById('form-error');
-
-      if (!firstName || !lastName || !email || !program || !message) {
-        errorEl.style.display = 'block';
-        errorEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        return;
-      }
-      errorEl.style.display = 'none';
-
-      const subject = `MathLedX Inquiry — ${firstName} ${lastName}`;
-      const body = [
-        `Name: ${firstName} ${lastName}`,
-        `Email: ${email}`,
-        phone ? `Phone: ${phone}` : null,
-        `Program of Interest: ${program}`,
-        grade ? `Grade / Level: ${grade}` : null,
-        ``,
-        `Message:`,
-        message,
-      ].filter(l => l !== null).join('\n');
-
-      window.location.href = `mailto:richhollinger@mathledx.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      document.getElementById('success-overlay').classList.add('show');
-    });
-  </script>
 </body>
 </html>
